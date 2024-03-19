@@ -1,0 +1,719 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.Form..Create(BaseForm)
+Gui.Form..Caption("Form")
+Gui.Form..Size(589,482)
+Gui.Form..MinX(0)
+Gui.Form..MinY(0)
+Gui.Form..Position(0,0)
+Gui.Form..AlwaysOnTop(False)
+Gui.Form..FontName("Tahoma")
+Gui.Form..FontSize(8.25)
+Gui.Form..ControlBox(True)
+Gui.Form..MaxButton(True)
+Gui.Form..MinButton(True)
+Gui.Form..MousePointer(0)
+Gui.Form..Moveable(True)
+Gui.Form..Sizeable(True)
+Gui.Form..ShowInTaskBar(True)
+Gui.Form..TitleBar(True)
+Gui.Form..Event(UnLoad,Form_UnLoad)
+Gui.Form.tab1.Create(Tab)
+Gui.Form.tab1.Enabled(True)
+Gui.Form.tab1.Visible(True)
+Gui.Form.tab1.Zorder(0)
+Gui.Form.tab1.Size(579,445)
+Gui.Form.tab1.Position(5,5)
+Gui.Form.tab1.FontName("Tahoma")
+Gui.Form.tab1.FontSize(8.25)
+Gui.Form.tab1.Anchor(15)
+Gui.Form.tab1.Tabs(3)
+Gui.Form.tab1.SetTab(0)
+Gui.Form.tab1.Caption("Gross Up Factors")
+Gui.Form.tab1.SetTab(1)
+Gui.Form.tab1.Caption("Method Tables")
+Gui.Form.tab1.SetTab(2)
+Gui.Form.tab1.Caption("Cut Tables")
+Gui.Form.GsGcCuts.Create(GsGridControl)
+Gui.Form.GsGcCuts.Enabled(True)
+Gui.Form.GsGcCuts.Visible(True)
+Gui.Form.GsGcCuts.Zorder(0)
+Gui.Form.GsGcCuts.Size(571,381)
+Gui.Form.GsGcCuts.Position(3,31)
+Gui.Form.GsGcCuts.Parent("tab1",2)
+Gui.Form.GsGcCuts.Anchor(15)
+Gui.Form.GsGcCuts.Event(RowCellClick,GsGcCuts_RowCellClick)
+Gui.Form.cmdCuts.Create(Button)
+Gui.Form.cmdCuts.Enabled(True)
+Gui.Form.cmdCuts.Visible(True)
+Gui.Form.cmdCuts.Zorder(0)
+Gui.Form.cmdCuts.Size(75,23)
+Gui.Form.cmdCuts.Position(500,2)
+Gui.Form.cmdCuts.Caption("Save")
+Gui.Form.cmdCuts.FontName("Tahoma")
+Gui.Form.cmdCuts.FontSize(8.25)
+Gui.Form.cmdCuts.Parent("tab1",2)
+Gui.Form.cmdCuts.Anchor(9)
+Gui.Form.cmdCuts.Event(Click,cmdCuts_Click)
+Gui.Form.SCPriceMethod.Create(SplitContainer)
+Gui.Form.SCPriceMethod.Enabled(True)
+Gui.Form.SCPriceMethod.Visible(True)
+Gui.Form.SCPriceMethod.Zorder(0)
+Gui.Form.SCPriceMethod.Size(566,407)
+Gui.Form.SCPriceMethod.Position(6,7)
+Gui.Form.SCPriceMethod.Orientation(0)
+Gui.Form.SCPriceMethod.SplitterPosition(278)
+Gui.Form.SCPriceMethod.Collapsed(False)
+Gui.Form.SCPriceMethod.Parent("tab1",1)
+Gui.Form.SCPriceMethod.Anchor(15)
+Gui.Form.cmdMethod.Create(Button)
+Gui.Form.cmdMethod.Enabled(True)
+Gui.Form.cmdMethod.Visible(True)
+Gui.Form.cmdMethod.Zorder(0)
+Gui.Form.cmdMethod.Size(75,23)
+Gui.Form.cmdMethod.Position(198,4)
+Gui.Form.cmdMethod.Caption("Save")
+Gui.Form.cmdMethod.FontName("Tahoma")
+Gui.Form.cmdMethod.FontSize(8.25)
+Gui.Form.cmdMethod.Parent("SCPriceMethod",1)
+Gui.Form.cmdMethod.Anchor(9)
+Gui.Form.cmdMethod.Event(Click,cmdMethod_Click)
+Gui.Form.GsGcMethods.Create(GsGridControl)
+Gui.Form.GsGcMethods.Enabled(True)
+Gui.Form.GsGcMethods.Visible(True)
+Gui.Form.GsGcMethods.Zorder(0)
+Gui.Form.GsGcMethods.Size(263,365)
+Gui.Form.GsGcMethods.Position(8,33)
+Gui.Form.GsGcMethods.Anchor(15)
+Gui.Form.GsGcMethods.Parent("SCPriceMethod",1)
+Gui.Form.ddList.Create(DropDownList)
+Gui.Form.ddList.Enabled(True)
+Gui.Form.ddList.Visible(True)
+Gui.Form.ddList.Zorder(0)
+Gui.Form.ddList.Size(100,20)
+Gui.Form.ddList.Position(1,4)
+Gui.Form.ddList.FontName("Tahoma")
+Gui.Form.ddList.FontSize(8.25)
+Gui.Form.ddList.Parent("SCPriceMethod",0)
+Gui.Form.ddList.Event(Change,ddList_Change)
+Gui.Form.GsGcFeatures.Create(GsGridControl)
+Gui.Form.GsGcFeatures.Enabled(True)
+Gui.Form.GsGcFeatures.Visible(True)
+Gui.Form.GsGcFeatures.Zorder(0)
+Gui.Form.GsGcFeatures.Size(263,365)
+Gui.Form.GsGcFeatures.Position(5,32)
+Gui.Form.GsGcFeatures.Anchor(15)
+Gui.Form.GsGcFeatures.Parent("SCPriceMethod",0)
+Gui.Form.GsGcFeatures.Event(RowCellClick,GsGcFeatures_RowCellClick)
+Gui.Form.cmdFeatSave.Create(Button)
+Gui.Form.cmdFeatSave.Enabled(True)
+Gui.Form.cmdFeatSave.Visible(True)
+Gui.Form.cmdFeatSave.Zorder(0)
+Gui.Form.cmdFeatSave.Size(75,23)
+Gui.Form.cmdFeatSave.Position(188,2)
+Gui.Form.cmdFeatSave.Caption("Save")
+Gui.Form.cmdFeatSave.FontName("Tahoma")
+Gui.Form.cmdFeatSave.FontSize(8.25)
+Gui.Form.cmdFeatSave.Parent("SCPriceMethod",0)
+Gui.Form.cmdFeatSave.Anchor(9)
+Gui.Form.cmdFeatSave.Event(Click,cmdFeatSave_Click)
+Gui.Form.SC2Ds.Create(SplitContainer)
+Gui.Form.SC2Ds.Enabled(True)
+Gui.Form.SC2Ds.Visible(True)
+Gui.Form.SC2Ds.Zorder(0)
+Gui.Form.SC2Ds.Size(569,406)
+Gui.Form.SC2Ds.Position(5,5)
+Gui.Form.SC2Ds.Orientation(0)
+Gui.Form.SC2Ds.SplitterPosition(279)
+Gui.Form.SC2Ds.Collapsed(False)
+Gui.Form.SC2Ds.Parent("tab1",0)
+Gui.Form.SC2Ds.Anchor(15)
+Gui.Form.frame2.Create(Frame)
+Gui.Form.frame2.Enabled(True)
+Gui.Form.frame2.Visible(True)
+Gui.Form.frame2.Zorder(0)
+Gui.Form.frame2.Size(266,395)
+Gui.Form.frame2.Position(8,7)
+Gui.Form.frame2.Caption("2D - Adder")
+Gui.Form.frame2.FontName("Tahoma")
+Gui.Form.frame2.FontSize(8.25)
+Gui.Form.frame2.BorderStyle(1)
+Gui.Form.frame2.Anchor(15)
+Gui.Form.frame2.Parent("SC2Ds",1)
+Gui.Form.cmd2D.Create(Button)
+Gui.Form.cmd2D.Enabled(True)
+Gui.Form.cmd2D.Visible(True)
+Gui.Form.cmd2D.Zorder(0)
+Gui.Form.cmd2D.Size(75,23)
+Gui.Form.cmd2D.Position(188,29)
+Gui.Form.cmd2D.Caption("Save")
+Gui.Form.cmd2D.FontName("Tahoma")
+Gui.Form.cmd2D.FontSize(8.25)
+Gui.Form.cmd2D.Parent("frame2")
+Gui.Form.cmd2D.Anchor(9)
+Gui.Form.cmd2D.Event(Click,cmd2D_Click)
+Gui.Form.GsGc2Adder.Create(GsGridControl)
+Gui.Form.GsGc2Adder.Enabled(True)
+Gui.Form.GsGc2Adder.Visible(True)
+Gui.Form.GsGc2Adder.Zorder(0)
+Gui.Form.GsGc2Adder.Size(260,333)
+Gui.Form.GsGc2Adder.Position(4,57)
+Gui.Form.GsGc2Adder.Parent("frame2")
+Gui.Form.GsGc2Adder.Anchor(15)
+Gui.Form.GsGc2Adder.Event(RowCellClick,GsGc2Adder_RowCellClick)
+Gui.Form.frame1.Create(Frame)
+Gui.Form.frame1.Enabled(True)
+Gui.Form.frame1.Visible(True)
+Gui.Form.frame1.Zorder(0)
+Gui.Form.frame1.Size(269,396)
+Gui.Form.frame1.Position(4,7)
+Gui.Form.frame1.Caption("2D - %")
+Gui.Form.frame1.FontName("Tahoma")
+Gui.Form.frame1.FontSize(8.25)
+Gui.Form.frame1.BorderStyle(1)
+Gui.Form.frame1.Parent("SC2Ds",0)
+Gui.Form.frame1.Anchor(15)
+Gui.Form.cmd2Dsave.Create(Button)
+Gui.Form.cmd2Dsave.Enabled(True)
+Gui.Form.cmd2Dsave.Visible(True)
+Gui.Form.cmd2Dsave.Zorder(0)
+Gui.Form.cmd2Dsave.Size(75,23)
+Gui.Form.cmd2Dsave.Position(190,31)
+Gui.Form.cmd2Dsave.Caption("Save")
+Gui.Form.cmd2Dsave.FontName("Tahoma")
+Gui.Form.cmd2Dsave.FontSize(8.25)
+Gui.Form.cmd2Dsave.Parent("frame1")
+Gui.Form.cmd2Dsave.Anchor(9)
+Gui.Form.cmd2Dsave.Event(Click,cmd2Dsave_Click)
+Gui.Form.GsGc2Dpercent.Create(GsGridControl)
+Gui.Form.GsGc2Dpercent.Enabled(True)
+Gui.Form.GsGc2Dpercent.Visible(True)
+Gui.Form.GsGc2Dpercent.Zorder(0)
+Gui.Form.GsGc2Dpercent.Size(260,333)
+Gui.Form.GsGc2Dpercent.Position(4,61)
+Gui.Form.GsGc2Dpercent.Parent("frame1")
+Gui.Form.GsGc2Dpercent.Anchor(15)
+Gui.Form.GsGc2Dpercent.Event(RowCellClick,GsGc2Dpercent_RowCellClick)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+Function.Intrinsic.UI.UsePixels ' Allows you to use Pixels instead of Twips throughout
+
+f.Intrinsic.Control.CallSub(createDisplayDT)
+f.Intrinsic.Control.CallSub(loadGridProperties)
+f.Intrinsic.Control.CallSub(loadData)
+'Add Combobox
+gui.Form.ddList.AddItem(" ")
+gui.Form.ddList.AddItem("PRICING")
+gui.Form.ddList.AddItem("MATERIAL")
+gui.Form..Show
+Program.Sub.Main.End
+
+Program.Sub.ErrorMsg.Start
+v.Local.sError.Declare
+
+'Generic Error message.
+f.Intrinsic.String.Build("Project GCG_6827_Maint.g2u {0}{0}Subroutine: {1}{0}Error: {2} with Description: {3}", v.Ambient.NewLine, v.Args.CurrentSub, v.Ambient.ErrorNumber, v.Ambient.ErrorDescription, v.Local.sError)
+f.Intrinsic.UI.Msgbox(v.Local.sError)
+Program.Sub.ErrorMsg.End
+
+Program.Sub.createDisplayDT.Start
+f.Intrinsic.Control.Try
+	f.Data.DataTable.Create("dt2DPercent", true)
+	f.Data.DataTable.AddColumn("dt2DPercent", "Del_Col", "String", "DELETE")
+	f.Data.DataTable.AddColumn("dt2DPercent", "PL", "String")
+	f.Data.DataTable.AddColumn("dt2DPercent", "Width", "Float", 0)
+	f.Data.DataTable.AddColumn("dt2DPercent", "Length", "Float", 0)
+	f.Data.Datatable.AddExpressionColumn("dt2DPercent", "Area", "Float", "Width*Length")
+	f.Data.DataTable.AddColumn("dt2DPercent", "Percentage", "Float", 0)
+	
+	
+	f.Data.DataView.Create("dt2DPercent", "dv2DPercent", 22)
+	gui.Form.GsGc2Dpercent.AddGridviewFromDataview("gv2DPercent", "dt2DPercent", "dv2DPercent")
+	gui.Form.GsGc2Dpercent.MainView("gv2DPercent")	
+	
+	
+	f.Data.DataTable.Create("dt2DAdder", true)
+	f.Data.DataTable.AddColumn("dt2DAdder", "Del_Col", "String", "DELETE")
+	f.Data.DataTable.AddColumn("dt2DAdder", "Thickness", "Float", 0)
+	f.Data.DataTable.AddColumn("dt2DAdder", "Adder", "Float", 0)
+	f.Data.DataTable.AddColumn("dt2DAdder", "Correction", "Float", 0)
+	
+	f.Data.DataView.Create("dt2DAdder", "dv2DAdder", 22)
+	gui.Form.GsGc2Adder.AddGridviewFromDataview("gv2DAdder", "dt2DAdder", "dv2DAdder")
+	gui.Form.GsGc2Adder.MainView("gv2DAdder")
+	
+	
+	f.Data.DataTable.Create("dtLists", true)
+	f.Data.DataTable.AddColumn("dtLists", "Del_Col", "String", "DELETE")
+	f.Data.DataTable.AddColumn("dtLists", "ListType", "String")
+	f.Data.DataTable.AddColumn("dtLists", "Feature", "String")
+	f.Data.DataTable.AddColumn("dtLists", "Feature_Type", "String")
+	
+	f.Data.DataView.Create("dtLists", "dvLists", 22)
+	gui.Form.GsGcFeatures.AddGridviewFromDataview("gvLists", "dtLists", "dvLists")
+	gui.Form.GsGcFeatures.MainView("gvLists")
+	
+	
+	f.Data.DataTable.Create("dtMethods", true)
+	'f.Data.DataTable.AddColumn("dtMethods", "Del_Col", "String", "DELETE")
+	f.Data.DataTable.AddColumn("dtMethods", "Method", "String")
+	f.Data.DataTable.AddColumn("dtMethods", "Method_Name", "String")
+	f.Data.DataTable.AddColumn("dtMethods", "Method_Type", "String")
+	f.Data.DataTable.AddColumn("dtMethods", "Dept", "String")
+	f.Data.DataTable.AddColumn("dtMethods", "Setup", "Float", 0)
+	f.Data.DataTable.AddColumn("dtMethods", "Minimum", "Float", 0)
+	f.Data.DataTable.AddColumn("dtMethods", "RuntimeMultiplier", "Float", 1.5)
+	f.Data.DataTable.AddColumn("dtMethods", "D_One", "Boolean", False)
+	f.Data.DataTable.AddColumn("dtMethods", "D_Two", "Boolean", False)
+	
+	f.Data.DataView.Create("dtMethods", "dvMethods", 22)
+	gui.Form.GsGcMethods.AddGridviewFromDataview("gvMethods", "dtMethods", "dvMethods")
+	gui.Form.GsGcMethods.MainView("gvMethods")
+	
+	
+	f.Data.DataTable.Create("dtCuts", true)
+	f.Data.DataTable.AddColumn("dtCuts", "Del_Col", "String", "DELETE")
+	f.Data.DataTable.AddColumn("dtCuts", "Thickness", "String")
+	f.Data.DataTable.AddColumn("dtCuts", "Inches", "Float", 0)
+	f.Data.DataTable.AddColumn("dtCuts", "CutType", "String")
+	f.Data.DataTable.AddColumn("dtCuts", "Material", "String")
+	f.Data.DataTable.AddColumn("dtCuts", "Mat_Value", "Float", 0)
+	
+	f.Data.DataView.Create("dtCuts", "dvCuts", 22)
+	gui.Form.GsGcCuts.AddGridviewFromDataview("gvCuts", "dtCuts", "dvCuts")
+	gui.Form.GsGcCuts.MainView("gvCuts")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.createDisplayDT.End
+
+Program.Sub.loadGridProperties.Start
+v.Local.iCnt.Declare
+v.Local.sFields.Declare
+v.Local.iVisibleIndex.Declare
+
+f.Intrinsic.Control.Try
+	f.Intrinsic.String.Split(v.DataTable.dt2DPercent.FieldNames, "*!*", v.Local.sFields)
+	f.Intrinsic.Control.For(v.Local.iCnt, 0, v.Local.sFields.UBound, 1)
+		gui.Form.GsGc2Dpercent.SetColumnProperty("gv2DPercent", v.Local.sFields(v.Local.iCnt), "HeaderFontBold", True)
+		gui.Form.GsGc2Dpercent.SetColumnProperty("gv2DPercent", v.Local.sFields(v.Local.iCnt), "Visible", True)
+		gui.Form.GsGc2Dpercent.SetColumnProperty("gv2DPercent", v.Local.sFields(v.Local.iCnt), "ReadOnly", False)
+		gui.Form.GsGc2Dpercent.SetColumnProperty("gv2DPercent", v.Local.sFields(v.Local.iCnt), "AllowEdit", True)
+		gui.Form.GsGc2Dpercent.SetColumnProperty("gv2DPercent", v.Local.sFields(v.Local.iCnt), "HeaderHAlignment", "Near")
+		gui.Form.GsGc2Dpercent.SetColumnProperty("gv2DPercent", v.Local.sFields(v.Local.iCnt), "CellHAlignment", "Near")
+		gui.Form.GsGc2Dpercent.SetColumnProperty("gv2DPercent", v.Local.sFields(v.Local.iCnt), "HeaderBackColor", v.Color.GSS)
+		gui.Form.GsGc2Dpercent.SetColumnProperty("gv2DPercent", v.Local.sFields(v.Local.iCnt), "HeaderForeColor", v.Color.White)
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	
+	'GridView Properties
+	gui.Form.GsGc2Dpercent.BestFitColumns("gv2DPercent")
+	gui.Form.GsGc2Dpercent.SetGridviewProperty("gv2DPercent", "OptionsViewColumnAutoWidth", False)
+	gui.Form.GsGc2Dpercent.SetGridviewProperty("gv2DPercent", "AllowAddRows", True)
+	'gui.Form.GsGc2Dpercent.SetGridviewProperty("gv2DPercent", "OptionsFindAlwaysVisible", True)
+	'gui.Form.GsGc2Dpercent.SetGridviewProperty("gv2DPercent", "Showgrouppanel", True)
+	
+	'Possible Column Properties 
+	gui.Form.GsGc2Dpercent.SetColumnProperty("gv2DPercent", "PL", "ReadOnly", True)
+	gui.Form.GsGc2Dpercent.SetColumnProperty("gv2DPercent", "PL", "AllowEdit", False)
+	'gui.Form.GsGc2Dpercent.SetColumnProperty("gv2DPercent", "Default", "HeaderHAlignment", "Center")
+	'gui.Form.GsGc2Dpercent.SetColumnProperty("gv2DPercent", "Default", "CellHAlignment", "Center")
+	'gui.Form.GsGc2Dpercent.SetColumnProperty("gv2DPercent", "Default", "Caption", "Default")
+	'gui.Form.GsGc2Dpercent.SetColumnProperty("gv2DPercent", "Default", "Visible", False)
+	'gui.Form.GsGc2Dpercent.SetColumnProperty("gv2DPercent", "Default", "DisplayCustomDatetime", "d")
+	
+	f.Intrinsic.String.Split(v.DataTable.dt2DAdder.FieldNames, "*!*", v.Local.sFields)
+	f.Intrinsic.Control.For(v.Local.iCnt, 0, v.Local.sFields.UBound, 1)
+		gui.Form.GsGc2Adder.SetColumnProperty("gv2DAdder", v.Local.sFields(v.Local.iCnt), "HeaderFontBold", True)
+		gui.Form.GsGc2Adder.SetColumnProperty("gv2DAdder", v.Local.sFields(v.Local.iCnt), "Visible", True)
+		gui.Form.GsGc2Adder.SetColumnProperty("gv2DAdder", v.Local.sFields(v.Local.iCnt), "ReadOnly", False)
+		gui.Form.GsGc2Adder.SetColumnProperty("gv2DAdder", v.Local.sFields(v.Local.iCnt), "AllowEdit", True)
+		gui.Form.GsGc2Adder.SetColumnProperty("gv2DAdder", v.Local.sFields(v.Local.iCnt), "HeaderHAlignment", "Near")
+		gui.Form.GsGc2Adder.SetColumnProperty("gv2DAdder", v.Local.sFields(v.Local.iCnt), "CellHAlignment", "Near")
+		gui.Form.GsGc2Adder.SetColumnProperty("gv2DAdder", v.Local.sFields(v.Local.iCnt), "HeaderBackColor", v.Color.GSS)
+		gui.Form.GsGc2Adder.SetColumnProperty("gv2DAdder", v.Local.sFields(v.Local.iCnt), "HeaderForeColor", v.Color.White)
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	
+	'GridView Properties
+	gui.Form.GsGc2Adder.BestFitColumns("gv2DAdder")
+	gui.Form.GsGc2Adder.SetGridviewProperty("gv2DAdder", "OptionsViewColumnAutoWidth", False)
+	gui.Form.GsGc2Adder.SetGridviewProperty("gv2DAdder", "AllowAddRows", True)
+	'gui.Form.GsGc2Adder.SetGridviewProperty("gv2DAdder", "OptionsFindAlwaysVisible", True)
+	'gui.Form.GsGc2Adder.SetGridviewProperty("gv2DAdder", "Showgrouppanel", True)
+	
+	'Possible Column Properties 
+	'gui.Form.GsGc2Adder.SetColumnProperty("gv2DAdder", "Default", "ReadOnly", False)
+	'gui.Form.GsGc2Adder.SetColumnProperty("gv2DAdder", "Default", "AllowEdit", True)
+	'gui.Form.GsGc2Adder.SetColumnProperty("gv2DAdder", "Default", "HeaderHAlignment", "Center")
+	'gui.Form.GsGc2Adder.SetColumnProperty("gv2DAdder", "Default", "CellHAlignment", "Center")
+	'gui.Form.GsGc2Adder.SetColumnProperty("gv2DAdder", "Default", "Caption", "Default")
+	'gui.Form.GsGc2Adder.SetColumnProperty("gv2DAdder", "Default", "Visible", False)
+	'gui.Form.GsGc2Adder.SetColumnProperty("gv2DAdder", "Default", "DisplayCustomDatetime", "d")
+	
+	'VisibleIndex
+	'gui.Form.GsGc2Adder.SetColumnProperty("gv2DAdder", "Default", "VisibleIndex", v.Local.iVisibleIndex)
+	'gui.Form.GsGc2Adder.SetColumnProperty("gv2DAdder", "Default", "VisibleIndex", v.Local.iVisibleIndex.++)
+	
+	
+	f.Intrinsic.String.Split(v.DataTable.dtLists.FieldNames, "*!*", v.Local.sFields)
+	f.Intrinsic.Control.For(v.Local.iCnt, 0, v.Local.sFields.UBound, 1)
+		gui.Form.GsGcFeatures.SetColumnProperty("gvLists", v.Local.sFields(v.Local.iCnt), "HeaderFontBold", True)
+		gui.Form.GsGcFeatures.SetColumnProperty("gvLists", v.Local.sFields(v.Local.iCnt), "Visible", True)
+		gui.Form.GsGcFeatures.SetColumnProperty("gvLists", v.Local.sFields(v.Local.iCnt), "ReadOnly", False)
+		gui.Form.GsGcFeatures.SetColumnProperty("gvLists", v.Local.sFields(v.Local.iCnt), "AllowEdit", True)
+		gui.Form.GsGcFeatures.SetColumnProperty("gvLists", v.Local.sFields(v.Local.iCnt), "HeaderHAlignment", "Near")
+		gui.Form.GsGcFeatures.SetColumnProperty("gvLists", v.Local.sFields(v.Local.iCnt), "CellHAlignment", "Near")
+		gui.Form.GsGcFeatures.SetColumnProperty("gvLists", v.Local.sFields(v.Local.iCnt), "HeaderBackColor", v.Color.GSS)
+		gui.Form.GsGcFeatures.SetColumnProperty("gvLists", v.Local.sFields(v.Local.iCnt), "HeaderForeColor", v.Color.White)
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	
+	'GridView Properties
+	gui.Form.GsGcFeatures.BestFitColumns("gvLists")
+	gui.Form.GsGcFeatures.SetGridviewProperty("gvLists", "OptionsViewColumnAutoWidth", False)
+	gui.Form.GsGcFeatures.SetGridviewProperty("gvLists", "AllowAddRows", True)
+	gui.Form.GsGcFeatures.ColumnEdit("gvLists", "Feature_Type", "COMBOBOX", "PRICING*!*MATERIAL")
+	'gui.Form.GsGcFeatures.SetGridviewProperty("gvLists", "OptionsFindAlwaysVisible", True)
+	'gui.Form.GsGcFeatures.SetGridviewProperty("gvLists", "Showgrouppanel", True)
+	
+	'Possible Column Properties 
+	'gui.Form.GsGcFeatures.SetColumnProperty("gvLists", "Default", "ReadOnly", False)
+	'gui.Form.GsGcFeatures.SetColumnProperty("gvLists", "Default", "AllowEdit", True)
+	'gui.Form.GsGcFeatures.SetColumnProperty("gvLists", "Default", "HeaderHAlignment", "Center")
+	'gui.Form.GsGcFeatures.SetColumnProperty("gvLists", "Default", "CellHAlignment", "Center")
+	'gui.Form.GsGcFeatures.SetColumnProperty("gvLists", "Default", "Caption", "Default")
+	'gui.Form.GsGcFeatures.SetColumnProperty("gvLists", "Default", "Visible", False)
+	'gui.Form.GsGcFeatures.SetColumnProperty("gvLists", "Default", "DisplayCustomDatetime", "d")
+	
+	'VisibleIndex
+	'gui.Form.GsGcFeatures.SetColumnProperty("gvLists", "Default", "VisibleIndex", v.Local.iVisibleIndex)
+	'gui.Form.GsGcFeatures.SetColumnProperty("gvLists", "Default", "VisibleIndex", v.Local.iVisibleIndex.++)
+	
+	
+	f.Intrinsic.String.Split(v.DataTable.dtMethods.FieldNames, "*!*", v.Local.sFields)
+	f.Intrinsic.Control.For(v.Local.iCnt, 0, v.Local.sFields.UBound, 1)
+		gui.Form.GsGcMethods.SetColumnProperty("gvMethods", v.Local.sFields(v.Local.iCnt), "HeaderFontBold", True)
+		gui.Form.GsGcMethods.SetColumnProperty("gvMethods", v.Local.sFields(v.Local.iCnt), "Visible", True)
+		gui.Form.GsGcMethods.SetColumnProperty("gvMethods", v.Local.sFields(v.Local.iCnt), "ReadOnly", False)
+		gui.Form.GsGcMethods.SetColumnProperty("gvMethods", v.Local.sFields(v.Local.iCnt), "AllowEdit", True)
+		gui.Form.GsGcMethods.SetColumnProperty("gvMethods", v.Local.sFields(v.Local.iCnt), "HeaderHAlignment", "Near")
+		gui.Form.GsGcMethods.SetColumnProperty("gvMethods", v.Local.sFields(v.Local.iCnt), "CellHAlignment", "Near")
+		gui.Form.GsGcMethods.SetColumnProperty("gvMethods", v.Local.sFields(v.Local.iCnt), "HeaderBackColor", v.Color.GSS)
+		gui.Form.GsGcMethods.SetColumnProperty("gvMethods", v.Local.sFields(v.Local.iCnt), "HeaderForeColor", v.Color.White)
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	
+	'GridView Properties
+	gui.Form.GsGcMethods.BestFitColumns("gvMethods")
+	gui.Form.GsGcMethods.SetGridviewProperty("gvMethods", "OptionsViewColumnAutoWidth", False)
+	'gui.Form.GsGcMethods.SetGridviewProperty("gvMethods", "AllowAddRows", True)
+	'gui.Form.GsGcMethods.SetGridviewProperty("gv2DAdder", "OptionsFindAlwaysVisible", True)
+	'gui.Form.GsGcMethods.SetGridviewProperty("gv2DAdder", "Showgrouppanel", True)
+	
+	'Possible Column Properties 
+	'gui.Form.GsGcMethods.SetColumnProperty("gv2DAdder", "Default", "ReadOnly", False)
+	'gui.Form.GsGcMethods.SetColumnProperty("gv2DAdder", "Default", "AllowEdit", True)
+	'gui.Form.GsGcMethods.SetColumnProperty("gv2DAdder", "Default", "HeaderHAlignment", "Center")
+	'gui.Form.GsGcMethods.SetColumnProperty("gv2DAdder", "Default", "CellHAlignment", "Center")
+	'gui.Form.GsGcMethods.SetColumnProperty("gv2DAdder", "Default", "Caption", "Default")
+	gui.Form.GsGcMethods.SetColumnProperty("gvMethods", "Dept", "Visible", False)
+	'gui.Form.GsGcMethods.SetColumnProperty("gv2DAdder", "Default", "DisplayCustomDatetime", "d")
+	
+	'VisibleIndex
+	'gui.Form.GsGcMethods.SetColumnProperty("gv2DAdder", "Default", "VisibleIndex", v.Local.iVisibleIndex)
+	'gui.Form.GsGcMethods.SetColumnProperty("gv2DAdder", "Default", "VisibleIndex", v.Local.iVisibleIndex.++)
+	
+	
+	f.Intrinsic.String.Split(v.DataTable.dtCuts.FieldNames, "*!*", v.Local.sFields)
+	f.Intrinsic.Control.For(v.Local.iCnt, 0, v.Local.sFields.UBound, 1)
+		gui.Form.GsGcCuts.SetColumnProperty("gvCuts", v.Local.sFields(v.Local.iCnt), "HeaderFontBold", True)
+		gui.Form.GsGcCuts.SetColumnProperty("gvCuts", v.Local.sFields(v.Local.iCnt), "Visible", True)
+		gui.Form.GsGcCuts.SetColumnProperty("gvCuts", v.Local.sFields(v.Local.iCnt), "ReadOnly", False)
+		gui.Form.GsGcCuts.SetColumnProperty("gvCuts", v.Local.sFields(v.Local.iCnt), "AllowEdit", True)
+		gui.Form.GsGcCuts.SetColumnProperty("gvCuts", v.Local.sFields(v.Local.iCnt), "HeaderHAlignment", "Near")
+		gui.Form.GsGcCuts.SetColumnProperty("gvCuts", v.Local.sFields(v.Local.iCnt), "CellHAlignment", "Near")
+		gui.Form.GsGcCuts.SetColumnProperty("gvCuts", v.Local.sFields(v.Local.iCnt), "HeaderBackColor", v.Color.GSS)
+		gui.Form.GsGcCuts.SetColumnProperty("gvCuts", v.Local.sFields(v.Local.iCnt), "HeaderForeColor", v.Color.White)
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	
+	'GridView Properties
+	gui.Form.GsGcCuts.BestFitColumns("gvCuts")
+	gui.Form.GsGcCuts.SetGridviewProperty("gvCuts", "OptionsViewColumnAutoWidth", False)
+	gui.Form.GsGcCuts.SetGridviewProperty("gvCuts", "AllowAddRows", True)
+	'gui.Form.GsGcCuts.SetGridviewProperty("gv2DAdder", "OptionsFindAlwaysVisible", True)
+	'gui.Form.GsGcCuts.SetGridviewProperty("gv2DAdder", "Showgrouppanel", True)
+	
+	'Possible Column Properties 
+	'gui.Form.GsGcCuts.SetColumnProperty("gv2DAdder", "Default", "ReadOnly", False)
+	'gui.Form.GsGcCuts.SetColumnProperty("gv2DAdder", "Default", "AllowEdit", True)
+	'gui.Form.GsGcCuts.SetColumnProperty("gv2DAdder", "Default", "HeaderHAlignment", "Center")
+	'gui.Form.GsGcCuts.SetColumnProperty("gv2DAdder", "Default", "CellHAlignment", "Center")
+	'gui.Form.GsGcCuts.SetColumnProperty("gv2DAdder", "Default", "Caption", "Default")
+	'gui.Form.GsGcCuts.SetColumnProperty("gv2DAdder", "Default", "Visible", False)
+	'gui.Form.GsGcCuts.SetColumnProperty("gv2DAdder", "Default", "DisplayCustomDatetime", "d")
+	
+	'VisibleIndex
+	'gui.Form.GsGcCuts.SetColumnProperty("gv2DAdder", "Default", "VisibleIndex", v.Local.iVisibleIndex)
+	'gui.Form.GsGcCuts.SetColumnProperty("gv2DAdder", "Default", "VisibleIndex", v.Local.iVisibleIndex.++)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.loadGridProperties.End
+
+Program.Sub.ddList_Change.Start
+v.Local.sFilter.Declare
+v.Local.sSQL.Declare
+f.Intrinsic.Control.Try
+'	'Get Filter.
+'	v.Local.sFilter.Set(v.Screen.Form!ddList.Value)
+'	f.Intrinsic.String.RTrim(v.Local.sFilter, v.Local.sFilter)
+'	'Check if empty
+'	f.Intrinsic.Control.If(v.Local.sFilter.Trim, =, "")
+'		v.Local.sFilter.Set("")
+'	f.Intrinsic.Control.Else
+'		f.Intrinsic.String.Build("Feature_Type = '{0}'", v.Local.sFilter.UCase, v.Local.sFilter)
+'	f.Intrinsic.Control.EndIf
+'	'Set Filter
+'	f.Data.DataView.SetFilter("dtLists", "dvLists", v.Local.sFilter)
+
+	f.ODBC.Connection!con.OpenCompanyConnection
+		'Load List
+		f.Intrinsic.String.Build("Select * from GCG_6827_ListType where ListType = '{0}'", v.Screen.Form!ddList.Value, v.Local.sSQL)
+		f.Data.DataTable.CreateFromSQL("tmpDT", "con", v.Local.sSQL)
+		f.Data.DataTable.DeleteRow("dtLists")
+		f.Data.DataTable.Merge("tmpDT", "dtLists", false, 2)
+		f.Data.DataTable.AcceptChanges("dtLists")
+		f.Data.DataTable.Close("tmpDT")
+	f.ODBC.Connection!con.Close
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.ddList_Change.End
+
+Program.Sub.Form_UnLoad.Start
+f.Intrinsic.Control.Try
+'Try something
+	f.Intrinsic.Control.End
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.Form_UnLoad.End
+
+Program.Sub.loadData.Start
+f.Intrinsic.Control.Try
+'Try something
+	f.ODBC.Connection!con.OpenCompanyConnection
+		'Methods
+		f.Data.DataTable.CreateFromSQL("tmpDT", "con", "Select a.Machine as Method, a.description as Method_Name, a.operation as Method_type, b.Setup, b.Minimum, b.RuntimeMultiplier, b.D_One, b.D_Two from V_OP_CODES a left join GCG_6827_METHOD B on a.machine = b.method where a.lmo = 'L'")
+		f.Data.DataTable.DeleteRow("dtMethods")
+		f.Data.DataTable.AcceptChanges("dtMethods")
+		f.Data.DataTable.Merge("tmpDT", "dtMethods", false, 2)
+		f.Data.DataTable.AcceptChanges("dtMethods")
+		f.Data.DataTable.Close("tmpDT")
+		'Load 2D %
+		f.Data.DataTable.CreateFromSQL("tmpDT", "con", "Select * from GCG_6827_2D_PERCENT")
+		f.Data.DataTable.DeleteRow("dt2DPercent")
+		f.Data.DataTable.Merge("tmpDT", "dt2DPercent", false, 2)
+		f.Data.DataTable.AcceptChanges("dt2DPercent")
+		f.Data.DataTable.Close("tmpDT")
+		'Load 2D Adder
+		f.Data.DataTable.CreateFromSQL("tmpDT", "con", "Select * from GCG_6827_2D_ADDER")
+		f.Data.DataTable.DeleteRow("dt2DAdder")
+		f.Data.DataTable.Merge("tmpDT", "dt2DAdder", false, 2)
+		f.Data.DataTable.AcceptChanges("dt2DAdder")
+		f.Data.DataTable.Close("tmpDT")
+		'Load 2D Adder
+		f.Data.DataTable.CreateFromSQL("tmpDT", "con", "Select * from GCG_6827_Cuts")
+		f.Data.DataTable.DeleteRow("dtCuts")
+		f.Data.DataTable.Merge("tmpDT", "dtCuts", false, 2)
+		f.Data.DataTable.AcceptChanges("dtCuts")
+		f.Data.DataTable.Close("tmpDT")
+	f.ODBC.Connection!con.Close
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.loadData.End
+	
+Program.Sub.cmdMethod_Click.Start
+f.Intrinsic.Control.Try
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Data.DataTable.CreateFromSQL("tmpDT", "con", "Select * from GCG_6827_METHOD where Method = '-1'")
+		f.Data.DataTable.DeleteRow("tmpDT")
+		f.Data.DataTable.AcceptChanges("tmpDT")
+		f.Data.DataTable.AcceptChanges("dtMethods")
+		f.Data.DataTable.Merge("dtMethods", "tmpDT", false, 2)
+		f.Data.DataTable.AcceptChanges("tmpDT")
+		f.ODBC.Connection!con.Execute("Delete From GCG_6827_METHOD")
+		f.Data.DataTable.SaveToDB("tmpDT", "con", "GCG_6827_METHOD", "Method", 256)
+		f.Data.DataTable.Close("tmpDT")
+	f.ODBC.Connection!con.Close
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdMethod_Click.End
+
+Program.Sub.cmd2Dsave_Click.Start
+f.Intrinsic.Control.Try
+	'Check if PL is filled.
+	f.Data.DataView.Create("dt2DPercent", "checkDV", 22, "Width = ''", "")
+		f.Intrinsic.Control.If(v.DataView.dt2DPercent!checkDV.RowCount, >, 0)
+			f.Data.DataView.Close("dt2DPercent", "checkDV")
+			f.Intrinsic.UI.Msgbox("Please Fill all Width Cells.")
+			f.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.EndIf
+		
+		f.Data.DataView.Create("dt2DPercent", "checkDV", 22, "Length = ''", "")
+		f.Intrinsic.Control.If(v.DataView.dt2DPercent!checkDV.RowCount, >, 0)
+			f.Data.DataView.Close("dt2DPercent", "checkDV")
+			f.Intrinsic.UI.Msgbox("Please Fill all Length Cells.")
+			f.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.EndIf
+		
+		f.Data.DataView.Create("dt2DPercent", "checkDV", 22, "PL = ''", "")
+		f.Intrinsic.Control.If(v.DataView.dt2DPercent!checkDV.RowCount, >, 0)
+			f.Data.DataView.Close("dt2DPercent", "checkDV")
+			f.Intrinsic.UI.Msgbox("Please Fill all PL Cells.")
+			f.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.EndIf
+	f.Data.DataView.Close("dt2DPercent", "checkDV")
+	
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Data.DataTable.CreateFromSQL("tmpDT", "con", "Select * from GCG_6827_2D_PERCENT where Width = '-1'")
+		f.Data.DataTable.DeleteRow("tmpDT")
+		f.Data.DataTable.AcceptChanges("tmpDT")
+		f.Data.DataTable.AcceptChanges("dt2DPercent")
+		f.Data.DataTable.Merge("dt2DPercent", "tmpDT", false, 2)
+		f.Data.DataTable.AcceptChanges("tmpDT")
+		f.ODBC.Connection!con.Execute("Delete From GCG_6827_2D_PERCENT")
+		f.Data.DataTable.SaveToDB("tmpDT", "con", "GCG_6827_2D_PERCENT", "Width*!*Length*!*PL", 256)
+		f.Data.DataTable.Close("tmpDT")
+	f.ODBC.Connection!con.Close
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmd2Dsave_Click.End
+
+Program.Sub.cmd2D_Click.Start
+f.Intrinsic.Control.Try
+	f.Data.DataView.Create("dt2DAdder", "checkDV", 22, "Thickness = ''", "")
+		f.Intrinsic.Control.If(v.DataView.dt2DAdder!checkDV.RowCount, >, 0)
+			f.Data.DataView.Close("dt2DAdder", "checkDV")
+			f.Intrinsic.UI.Msgbox("Please Fill all Thickness Cells.")
+			f.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.EndIf
+	f.Data.DataView.Close("dt2DAdder", "checkDV")
+	
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Data.DataTable.CreateFromSQL("tmpDT", "con", "Select * from GCG_6827_2D_ADDER where Thickness = '-1'")
+		f.Data.DataTable.DeleteRow("tmpDT")
+		f.Data.DataTable.AcceptChanges("tmpDT")
+		f.Data.DataTable.AcceptChanges("dt2DAdder")
+		f.Data.DataTable.Merge("dt2DAdder", "tmpDT", false, 2)
+		f.Data.DataTable.AcceptChanges("tmpDT")
+		f.ODBC.Connection!con.Execute("Delete From GCG_6827_2D_PERCENT")
+		f.Data.DataTable.SaveToDB("tmpDT", "con", "GCG_6827_2D_ADDER", "Thickness", 256)
+		f.Data.DataTable.Close("tmpDT")
+	f.ODBC.Connection!con.Close
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmd2D_Click.End
+
+Program.Sub.cmdFeatSave_Click.Start
+f.Intrinsic.Control.Try
+	'Check List Type DDL
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Data.DataTable.CreateFromSQL("tmpDT", "con", "Select * from GCG_6827_ListType where dtLists = '-1'")
+		f.Data.DataTable.DeleteRow("tmpDT")
+		f.Data.DataTable.AcceptChanges("tmpDT")
+		f.Data.DataTable.SetValue("dtLists", -1, "ListType", v.Screen.Form!ddList.Value)
+		f.Data.DataTable.AcceptChanges("dtLists")
+		f.Data.DataTable.Merge("dtLists", "tmpDT", false, 2)
+		f.Data.DataTable.AcceptChanges("tmpDT")
+		f.ODBC.Connection!con.Execute("Delete From GCG_6827_ListType")
+		f.Data.DataTable.SaveToDB("tmpDT", "con", "GCG_6827_ListType", "dtLists*!*Feature", 256)
+		f.Data.DataTable.Close("tmpDT")
+	f.ODBC.Connection!con.Close
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdFeatSave_Click.End
+
+Program.Sub.cmdCuts_Click.Start
+f.Intrinsic.Control.Try
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Data.DataTable.CreateFromSQL("tmpDT", "con", "Select * from GCG_6827_Cuts where Thickness = '-1'")
+		f.Data.DataTable.DeleteRow("tmpDT")
+		f.Data.DataTable.AcceptChanges("tmpDT")
+		f.Data.DataTable.AcceptChanges("dtCuts")
+		f.Data.DataTable.Merge("dtCuts", "tmpDT", false, 2)
+		f.Data.DataTable.AcceptChanges("tmpDT")
+		f.ODBC.Connection!con.Execute("Delete From GCG_6827_Cuts")
+		f.Data.DataTable.SaveToDB("tmpDT", "con", "GCG_6827_Cuts", "Thickness*!*Inches*!*CutType*!*Material", 256)
+		f.Data.DataTable.Close("tmpDT")
+	f.ODBC.Connection!con.Close
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdCuts_Click.End
+
+Program.Sub.GsGc2Dpercent_RowCellClick.Start
+v.Local.sRet.Declare
+f.Intrinsic.Control.Try
+	f.Intrinsic.Control.If(v.Args.Column, =, "PL")
+		f.Data.DataTable.AcceptChanges("dt2DPercent")
+		f.Intrinsic.UI.Browser(130, ,v.Local.sRet)
+		f.Intrinsic.Control.If(v.Local.sRet, <>, "***CANCEL***")
+			f.Intrinsic.String.Split(v.Local.sRet, "*!*",  v.Local.sRet)
+			gui.Form.GsGc2Dpercent.SetCellValueByColumnName("gv2DPercent", "PL", v.Args.RowIndex, v.Local.sRet(0))
+		f.Intrinsic.Control.EndIf
+		f.Data.DataTable.AcceptChanges("dt2DPercent")
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Args.Column, =, "Del_Col")
+		f.Data.DataTable.DeleteRow("dt2DPercent", v.Args.RowIndex)
+		f.Data.DataTable.AcceptChanges("dt2DPercent")
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.GsGc2Dpercent_RowCellClick.End
+
+Program.Sub.GsGc2Adder_RowCellClick.Start
+f.Intrinsic.Control.Try	
+	f.Intrinsic.Control.If(v.Args.Column, =, "Del_Col")
+		f.Data.DataTable.DeleteRow("dt2DAdder", v.Args.RowIndex)
+		f.Data.DataTable.AcceptChanges("dt2DAdder")
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.GsGc2Adder_RowCellClick.End
+
+Program.Sub.GsGcFeatures_RowCellClick.Start
+f.Intrinsic.Control.Try	
+	f.Intrinsic.Control.If(v.Args.Column, =, "Del_Col")
+		f.Data.DataTable.DeleteRow("dtLists", v.Args.RowIndex)
+		f.Data.DataTable.AcceptChanges("dtLists")
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.GsGcFeatures_RowCellClick.End
+
+Program.Sub.GsGcCuts_RowCellClick.Start
+f.Intrinsic.Control.Try	
+	f.Intrinsic.Control.If(v.Args.Column, =, "Del_Col")
+		f.Data.DataTable.DeleteRow("dtCuts", v.Args.RowIndex)
+		f.Data.DataTable.AcceptChanges("dtCuts")
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.GsGcCuts_RowCellClick.End
+
+Program.Sub.Comments.Start
+${$5$}$3.0.0.0$}$1
+${$6$}$aanazco$}$20221116131018163$}$7aQAV3Tor/tR9bkuakHbuzQlHVuXCGOzMRKfpb5HcBimLKk3NlhKAVZ9aH5cjWf4YIb6A4oprvA=
+Program.Sub.Comments.End
