@@ -1,0 +1,3087 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.Form..Create(BaseForm)
+Gui.Form..Caption("Cut Screen")
+Gui.Form..Size(960,720)
+Gui.Form..MinX(0)
+Gui.Form..MinY(0)
+Gui.Form..Position(0,0)
+Gui.Form..AlwaysOnTop(False)
+Gui.Form..FontName("Tahoma")
+Gui.Form..FontSize(8.25)
+Gui.Form..ControlBox(True)
+Gui.Form..MaxButton(True)
+Gui.Form..MinButton(True)
+Gui.Form..MousePointer(0)
+Gui.Form..Moveable(True)
+Gui.Form..Sizeable(True)
+Gui.Form..ShowInTaskBar(True)
+Gui.Form..TitleBar(True)
+Gui.Form..Event(UnLoad,Form_UnLoad)
+Gui.Form.frame1.Create(Frame)
+Gui.Form.frame1.Enabled(True)
+Gui.Form.frame1.Visible(True)
+Gui.Form.frame1.Zorder(0)
+Gui.Form.frame1.Size(950,71)
+Gui.Form.frame1.Position(7,10)
+Gui.Form.frame1.Caption("Quote Data")
+Gui.Form.frame1.FontName("Tahoma")
+Gui.Form.frame1.FontSize(8.25)
+Gui.Form.frame1.BorderStyle(1)
+Gui.Form.frame1.Anchor(13)
+Gui.Form.lbl1.Create(Label,"Raw Item",True,46,13,0,8,29,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl1.BorderStyle(0)
+Gui.Form.lbl1.Parent("frame1")
+Gui.Form.txtRawItem.Create(TextBox,"",True,127,20,0,6,46,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtRawItem.Parent("frame1")
+Gui.Form.lbl4.Create(Label,"Qty",True,18,13,0,626,29,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl4.BorderStyle(0)
+Gui.Form.lbl4.Parent("frame1")
+Gui.Form.lblWidthOD.Create(Label,"Width",True,28,13,0,688,29,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lblWidthOD.BorderStyle(0)
+Gui.Form.lblWidthOD.Parent("frame1")
+Gui.Form.txtWidthOD.Create(TextBox,"",True,60,20,0,672,46,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtWidthOD.Parent("frame1")
+Gui.Form.txtWidthOD.TabStop(True)
+Gui.Form.txtWidthOD.TabIndex(7)
+Gui.Form.cmdBrwPart.Create(Button)
+Gui.Form.cmdBrwPart.Enabled(True)
+Gui.Form.cmdBrwPart.Visible(True)
+Gui.Form.cmdBrwPart.Zorder(0)
+Gui.Form.cmdBrwPart.Size(27,23)
+Gui.Form.cmdBrwPart.Position(137,44)
+Gui.Form.cmdBrwPart.Caption("")
+Gui.Form.cmdBrwPart.FontName("Tahoma")
+Gui.Form.cmdBrwPart.FontSize(8.25)
+Gui.Form.cmdBrwPart.Parent("frame1")
+Gui.Form.cmdBrwPart.SvgPicture("icon_browser_color")
+Gui.Form.cmdBrwPart.Event(Click,cmdBrwPart_Click)
+Gui.Form.cmdBrwPart.TabStop(True)
+Gui.Form.cmdBrwPart.TabIndex(1)
+Gui.Form.lbl2.Create(Label,"Raw Item",True,46,13,0,171,29,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl2.BorderStyle(0)
+Gui.Form.lbl2.Parent("frame1")
+Gui.Form.txtDesc.Create(TextBox,"",True,210,20,0,169,46,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtDesc.Parent("frame1")
+Gui.Form.txtDesc.TabStop(True)
+Gui.Form.txtDesc.TabIndex(2)
+Gui.Form.ddlMethod.Create(DropDownList)
+Gui.Form.ddlMethod.Enabled(True)
+Gui.Form.ddlMethod.Visible(True)
+Gui.Form.ddlMethod.Zorder(0)
+Gui.Form.ddlMethod.Size(101,20)
+Gui.Form.ddlMethod.Position(444,46)
+Gui.Form.ddlMethod.FontName("Tahoma")
+Gui.Form.ddlMethod.FontSize(8.25)
+Gui.Form.ddlMethod.Parent("frame1")
+Gui.Form.ddlMethod.TabStop(True)
+Gui.Form.ddlMethod.TabIndex(4)
+Gui.Form.ddlMethod.Event(Change,ddlMethod_Change)
+Gui.Form.lbl3.Create(Label,"Line Type",True,46,13,0,385,29,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl3.BorderStyle(0)
+Gui.Form.lbl3.Parent("frame1")
+Gui.Form.ddlLineType.Create(DropDownList)
+Gui.Form.ddlLineType.Enabled(True)
+Gui.Form.ddlLineType.Visible(True)
+Gui.Form.ddlLineType.Zorder(0)
+Gui.Form.ddlLineType.Size(56,20)
+Gui.Form.ddlLineType.Position(383,46)
+Gui.Form.ddlLineType.FontName("Tahoma")
+Gui.Form.ddlLineType.FontSize(8.25)
+Gui.Form.ddlLineType.Parent("frame1")
+Gui.Form.ddlLineType.Event(Change,ddlLineType_Change)
+Gui.Form.ddlLineType.TabStop(True)
+Gui.Form.ddlLineType.TabIndex(3)
+Gui.Form.lblLengthID.Create(Label,"Length",True,33,13,0,749,29,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lblLengthID.BorderStyle(0)
+Gui.Form.lblLengthID.Parent("frame1")
+Gui.Form.txtLengthID.Create(TextBox,"",True,60,20,0,736,46,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtLengthID.Parent("frame1")
+Gui.Form.txtLengthID.TabStop(True)
+Gui.Form.txtLengthID.TabIndex(8)
+Gui.Form.lbl7.Create(Label,"Cut Type",True,44,13,0,554,29,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl7.BorderStyle(0)
+Gui.Form.lbl7.Parent("frame1")
+Gui.Form.ddlCutType.Create(DropDownList)
+Gui.Form.ddlCutType.Enabled(True)
+Gui.Form.ddlCutType.Visible(True)
+Gui.Form.ddlCutType.Zorder(0)
+Gui.Form.ddlCutType.Size(56,20)
+Gui.Form.ddlCutType.Position(549,46)
+Gui.Form.ddlCutType.FontName("Tahoma")
+Gui.Form.ddlCutType.FontSize(8.25)
+Gui.Form.ddlCutType.Parent("frame1")
+Gui.Form.ddlCutType.Event(Change,ddlCutType_Change)
+Gui.Form.ddlCutType.TabStop(True)
+Gui.Form.ddlCutType.TabIndex(5)
+Gui.Form.txtQTY.Create(TextBox,"",True,60,20,0,608,46,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtQTY.Parent("frame1")
+Gui.Form.txtQTY.TabStop(True)
+Gui.Form.txtQTY.TabIndex(6)
+Gui.Form.lbl8.Create(Label,"Method",True,36,13,0,479,29,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl8.BorderStyle(0)
+Gui.Form.lbl8.Parent("frame1")
+Gui.Form.txtCuts.Create(TextBox,"",True,60,20,0,801,46,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtCuts.Parent("frame1")
+Gui.Form.txtCuts.TabStop(True)
+Gui.Form.txtCuts.TabIndex(10)
+Gui.Form.lblInches.Create(Label,"Inches Of Cut",True,67,13,0,801,29,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lblInches.BorderStyle(0)
+Gui.Form.lblInches.Parent("frame1")
+Gui.Form.cmdReset.Create(Button)
+Gui.Form.cmdReset.Enabled(True)
+Gui.Form.cmdReset.Visible(True)
+Gui.Form.cmdReset.Zorder(0)
+Gui.Form.cmdReset.Size(75,16)
+Gui.Form.cmdReset.Position(872,29)
+Gui.Form.cmdReset.Caption("Reset")
+Gui.Form.cmdReset.FontName("Tahoma")
+Gui.Form.cmdReset.FontSize(8.25)
+Gui.Form.cmdReset.Anchor(9)
+Gui.Form.cmdReset.Parent("frame1")
+Gui.Form.cmdReset.TabStop(True)
+Gui.Form.cmdReset.TabIndex(11)
+Gui.Form.cmdReset.Event(Click,cmdReset_Click)
+Gui.Form.cmdCalc.Create(Button)
+Gui.Form.cmdCalc.Enabled(True)
+Gui.Form.cmdCalc.Visible(True)
+Gui.Form.cmdCalc.Zorder(0)
+Gui.Form.cmdCalc.Size(75,16)
+Gui.Form.cmdCalc.Position(872,49)
+Gui.Form.cmdCalc.Anchor(9)
+Gui.Form.cmdCalc.Caption("Calc")
+Gui.Form.cmdCalc.FontName("Tahoma")
+Gui.Form.cmdCalc.FontSize(8.25)
+Gui.Form.cmdCalc.Parent("frame1")
+Gui.Form.cmdCalc.Event(Click,cmdCalc_Click)
+Gui.Form.cmdCalc.TabStop(True)
+Gui.Form.cmdCalc.TabIndex(9)
+Gui.Form.SplitContainer1.Create(SplitContainer)
+Gui.Form.SplitContainer1.Enabled(True)
+Gui.Form.SplitContainer1.Visible(True)
+Gui.Form.SplitContainer1.Zorder(0)
+Gui.Form.SplitContainer1.Size(947,599)
+Gui.Form.SplitContainer1.Position(8,85)
+Gui.Form.SplitContainer1.Orientation(0)
+Gui.Form.SplitContainer1.SplitterPosition(671)
+Gui.Form.SplitContainer1.Collapsed(False)
+Gui.Form.SplitContainer1.Anchor(15)
+Gui.Form.frameMaterial.Create(Frame)
+Gui.Form.frameMaterial.Enabled(True)
+Gui.Form.frameMaterial.Visible(True)
+Gui.Form.frameMaterial.Zorder(0)
+Gui.Form.frameMaterial.Size(665,144)
+Gui.Form.frameMaterial.Position(3,334)
+Gui.Form.frameMaterial.Anchor(13)
+Gui.Form.frameMaterial.Caption("Material Data")
+Gui.Form.frameMaterial.FontName("Tahoma")
+Gui.Form.frameMaterial.FontSize(8.25)
+Gui.Form.frameMaterial.BorderStyle(1)
+Gui.Form.frameMaterial.Parent("SplitContainer1",0)
+Gui.Form.txtUOM.Create(TextBox,"",True,55,20,0,84,121,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtUOM.Parent("frameMaterial")
+Gui.Form.lbl11.Create(Label,"Inv UOM",True,42,13,0,87,104,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl11.BorderStyle(0)
+Gui.Form.lbl11.Parent("frameMaterial")
+Gui.Form.GsGcMaterial.Create(GsGridControl)
+Gui.Form.GsGcMaterial.Enabled(True)
+Gui.Form.GsGcMaterial.Visible(True)
+Gui.Form.GsGcMaterial.Zorder(0)
+Gui.Form.GsGcMaterial.Size(657,70)
+Gui.Form.GsGcMaterial.Position(3,30)
+Gui.Form.GsGcMaterial.Parent("frameMaterial")
+Gui.Form.GsGcMaterial.Anchor(13)
+Gui.Form.cmdSave.Create(Button)
+Gui.Form.cmdSave.Enabled(False)
+Gui.Form.cmdSave.Visible(False)
+Gui.Form.cmdSave.Zorder(0)
+Gui.Form.cmdSave.Size(75,23)
+Gui.Form.cmdSave.Position(582,114)
+Gui.Form.cmdSave.Caption("Save")
+Gui.Form.cmdSave.FontName("Tahoma")
+Gui.Form.cmdSave.FontSize(8.25)
+Gui.Form.cmdSave.Parent("frameMaterial")
+Gui.Form.lbl10.Create(Label,"Pricing Type",True,58,13,0,14,104,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl10.BorderStyle(0)
+Gui.Form.lbl10.Parent("frameMaterial")
+Gui.Form.lbl12.Create(Label,"Over 30 ft?",True,55,13,0,150,104,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl12.BorderStyle(0)
+Gui.Form.lbl12.Parent("frameMaterial")
+Gui.Form.ddlPricingType.Create(DropDownList)
+Gui.Form.ddlPricingType.Enabled(True)
+Gui.Form.ddlPricingType.Visible(True)
+Gui.Form.ddlPricingType.Zorder(0)
+Gui.Form.ddlPricingType.Size(63,20)
+Gui.Form.ddlPricingType.Position(12,121)
+Gui.Form.ddlPricingType.FontName("Tahoma")
+Gui.Form.ddlPricingType.FontSize(8.25)
+Gui.Form.ddlPricingType.Parent("frameMaterial")
+Gui.Form.ddlOver.Create(DropDownList)
+Gui.Form.ddlOver.Enabled(True)
+Gui.Form.ddlOver.Visible(True)
+Gui.Form.ddlOver.Zorder(0)
+Gui.Form.ddlOver.Size(64,20)
+Gui.Form.ddlOver.Position(149,121)
+Gui.Form.ddlOver.FontName("Tahoma")
+Gui.Form.ddlOver.FontSize(8.25)
+Gui.Form.ddlOver.Parent("frameMaterial")
+Gui.Form.frmTotals.Create(Frame)
+Gui.Form.frmTotals.Enabled(True)
+Gui.Form.frmTotals.Visible(True)
+Gui.Form.frmTotals.Zorder(0)
+Gui.Form.frmTotals.Size(386,111)
+Gui.Form.frmTotals.Position(282,484)
+Gui.Form.frmTotals.Caption("Totals")
+Gui.Form.frmTotals.FontName("Tahoma")
+Gui.Form.frmTotals.FontSize(8.25)
+Gui.Form.frmTotals.BorderStyle(1)
+Gui.Form.frmTotals.Parent("SplitContainer1",0)
+Gui.Form.frmTotals.Anchor(15)
+Gui.Form.txtTotalGross.Create(TextBox,"",True,70,20,0,306,50,True,1,"Tahoma",8.25,,1)
+Gui.Form.txtTotalGross.Parent("frmTotals")
+Gui.Form.txtTotalGross.Mask(" ")
+Gui.Form.txtMarkUp.Create(TextBox,"",True,70,20,0,155,50,True,1,"Tahoma",8.25,,1)
+Gui.Form.txtMarkUp.Parent("frmTotals")
+Gui.Form.txtMarkUp.Mask(" ")
+Gui.Form.txtTotalQty.Create(TextBox,"",True,70,20,0,5,50,True,1,"Tahoma",8.25,,1)
+Gui.Form.txtTotalQty.Parent("frmTotals")
+Gui.Form.txtTotalQty.NumericOnly(1)
+Gui.Form.txtTotalQty.Mask("0.00")
+Gui.Form.lbl5.Create(Label,"Quantity",True,42,13,0,19,31,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl5.BorderStyle(0)
+Gui.Form.lbl5.Parent("frmTotals")
+Gui.Form.lbl15.Create(Label,"Gross Profit",True,56,13,0,313,31,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl15.BorderStyle(0)
+Gui.Form.lbl15.Parent("frmTotals")
+Gui.Form.lbl6.Create(Label,"Total Cost",True,49,13,0,90,31,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl6.BorderStyle(0)
+Gui.Form.lbl6.Parent("frmTotals")
+Gui.Form.txtTotalPrice.Create(TextBox,"",True,70,20,0,230,50,True,1,"Tahoma",8.25,,1)
+Gui.Form.txtTotalPrice.Parent("frmTotals")
+Gui.Form.txtTotalPrice.Mask(" ")
+Gui.Form.lbl14.Create(Label,"Price",True,23,13,0,254,31,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl14.BorderStyle(0)
+Gui.Form.lbl14.Parent("frmTotals")
+Gui.Form.txtTotalCost.Create(TextBox,"",True,67,20,0,82,50,True,1,"Tahoma",8.25,,1)
+Gui.Form.txtTotalCost.Parent("frmTotals")
+Gui.Form.txtTotalCost.Mask(" ")
+Gui.Form.cmdSD.Create(Button)
+Gui.Form.cmdSD.Enabled(True)
+Gui.Form.cmdSD.Visible(True)
+Gui.Form.cmdSD.Zorder(0)
+Gui.Form.cmdSD.Size(75,23)
+Gui.Form.cmdSD.Position(219,81)
+Gui.Form.cmdSD.Anchor(10)
+Gui.Form.cmdSD.Caption("S&D")
+Gui.Form.cmdSD.FontName("Tahoma")
+Gui.Form.cmdSD.FontSize(8.25)
+Gui.Form.cmdSD.Parent("frmTotals")
+Gui.Form.cmdSD.Event(Click,cmdSD_Click)
+Gui.Form.cmdLot.Create(Button)
+Gui.Form.cmdLot.Enabled(True)
+Gui.Form.cmdLot.Visible(True)
+Gui.Form.cmdLot.Zorder(0)
+Gui.Form.cmdLot.Size(75,23)
+Gui.Form.cmdLot.Position(135,81)
+Gui.Form.cmdLot.Anchor(10)
+Gui.Form.cmdLot.Caption("Lot/Serial")
+Gui.Form.cmdLot.FontName("Tahoma")
+Gui.Form.cmdLot.FontSize(8.25)
+Gui.Form.cmdLot.Parent("frmTotals")
+Gui.Form.cmdLot.Event(Click,cmdLot_Click)
+Gui.Form.lbl13.Create(Label,"Mark Up",True,39,13,0,170,31,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl13.BorderStyle(0)
+Gui.Form.lbl13.Parent("frmTotals")
+Gui.Form.cmdSaveSOline.Create(Button)
+Gui.Form.cmdSaveSOline.Enabled(True)
+Gui.Form.cmdSaveSOline.Visible(True)
+Gui.Form.cmdSaveSOline.Zorder(0)
+Gui.Form.cmdSaveSOline.Size(75,23)
+Gui.Form.cmdSaveSOline.Position(301,81)
+Gui.Form.cmdSaveSOline.Caption("Save Line")
+Gui.Form.cmdSaveSOline.FontName("Tahoma")
+Gui.Form.cmdSaveSOline.FontSize(8.25)
+Gui.Form.cmdSaveSOline.Parent("frmTotals")
+Gui.Form.cmdSaveSOline.Anchor(10)
+Gui.Form.cmdSaveSOline.Event(Click,cmdSaveSOline_Click)
+Gui.Form.frameLineNote.Create(Frame)
+Gui.Form.frameLineNote.Enabled(True)
+Gui.Form.frameLineNote.Visible(True)
+Gui.Form.frameLineNote.Zorder(0)
+Gui.Form.frameLineNote.Size(514,96)
+Gui.Form.frameLineNote.Position(3,5)
+Gui.Form.frameLineNote.Caption("Line Notes")
+Gui.Form.frameLineNote.FontName("Tahoma")
+Gui.Form.frameLineNote.FontSize(8.25)
+Gui.Form.frameLineNote.BorderStyle(1)
+Gui.Form.frameLineNote.Parent("SplitContainer1",0)
+Gui.Form.frameLineNote.Anchor(13)
+Gui.Form.txtLineNote.Create(TextboxM)
+Gui.Form.txtLineNote.Enabled(True)
+Gui.Form.txtLineNote.Visible(True)
+Gui.Form.txtLineNote.Zorder(0)
+Gui.Form.txtLineNote.Size(503,58)
+Gui.Form.txtLineNote.Position(5,31)
+Gui.Form.txtLineNote.FontName("Tahoma")
+Gui.Form.txtLineNote.FontSize(8.25)
+Gui.Form.txtLineNote.Parent("frameLineNote")
+Gui.Form.txtLineNote.Anchor(15)
+Gui.Form.frameGroupNote.Create(Frame)
+Gui.Form.frameGroupNote.Enabled(True)
+Gui.Form.frameGroupNote.Visible(True)
+Gui.Form.frameGroupNote.Zorder(0)
+Gui.Form.frameGroupNote.Size(147,96)
+Gui.Form.frameGroupNote.Position(521,3)
+Gui.Form.frameGroupNote.Caption("Group Notes")
+Gui.Form.frameGroupNote.FontName("Tahoma")
+Gui.Form.frameGroupNote.FontSize(8.25)
+Gui.Form.frameGroupNote.BorderStyle(1)
+Gui.Form.frameGroupNote.Parent("SplitContainer1",0)
+Gui.Form.frameGroupNote.Anchor(9)
+Gui.Form.txtGroupNote.Create(TextboxM)
+Gui.Form.txtGroupNote.Enabled(True)
+Gui.Form.txtGroupNote.Visible(True)
+Gui.Form.txtGroupNote.Zorder(0)
+Gui.Form.txtGroupNote.Size(136,58)
+Gui.Form.txtGroupNote.Position(3,30)
+Gui.Form.txtGroupNote.FontName("Tahoma")
+Gui.Form.txtGroupNote.FontSize(8.25)
+Gui.Form.txtGroupNote.Parent("frameGroupNote")
+Gui.Form.txtGroupNote.Anchor(15)
+Gui.Form.frameOutside.Create(Frame)
+Gui.Form.frameOutside.Enabled(True)
+Gui.Form.frameOutside.Visible(True)
+Gui.Form.frameOutside.Zorder(0)
+Gui.Form.frameOutside.Size(665,108)
+Gui.Form.frameOutside.Position(3,218)
+Gui.Form.frameOutside.Anchor(13)
+Gui.Form.frameOutside.Caption("Charge/Outside/Method Pricing Data")
+Gui.Form.frameOutside.FontName("Tahoma")
+Gui.Form.frameOutside.FontSize(8.25)
+Gui.Form.frameOutside.BorderStyle(1)
+Gui.Form.frameOutside.Parent("SplitContainer1",0)
+Gui.Form.cmdOtherCalc.Create(Button)
+Gui.Form.cmdOtherCalc.Enabled(True)
+Gui.Form.cmdOtherCalc.Visible(True)
+Gui.Form.cmdOtherCalc.Zorder(0)
+Gui.Form.cmdOtherCalc.Size(75,23)
+Gui.Form.cmdOtherCalc.Position(585,38)
+Gui.Form.cmdOtherCalc.Anchor(9)
+Gui.Form.cmdOtherCalc.Caption("^")
+Gui.Form.cmdOtherCalc.FontName("Tahoma")
+Gui.Form.cmdOtherCalc.FontSize(8.25)
+Gui.Form.cmdOtherCalc.Parent("frameOutside")
+Gui.Form.cmdOtherCalc.Event(Click,cmdOtherCalc_Click)
+Gui.Form.cmdSaveOther.Create(Button)
+Gui.Form.cmdSaveOther.Enabled(True)
+Gui.Form.cmdSaveOther.Visible(True)
+Gui.Form.cmdSaveOther.Zorder(0)
+Gui.Form.cmdSaveOther.Size(75,23)
+Gui.Form.cmdSaveOther.Position(583,74)
+Gui.Form.cmdSaveOther.Anchor(9)
+Gui.Form.cmdSaveOther.Caption("Save Other")
+Gui.Form.cmdSaveOther.FontName("Tahoma")
+Gui.Form.cmdSaveOther.FontSize(8.25)
+Gui.Form.cmdSaveOther.Parent("frameOutside")
+Gui.Form.cmdSaveOther.Event(Click,cmdSaveOther_Click)
+Gui.Form.GsGcOutside.Create(GsGridControl)
+Gui.Form.GsGcOutside.Enabled(True)
+Gui.Form.GsGcOutside.Visible(True)
+Gui.Form.GsGcOutside.Zorder(0)
+Gui.Form.GsGcOutside.Size(574,75)
+Gui.Form.GsGcOutside.Position(4,31)
+Gui.Form.GsGcOutside.Anchor(13)
+Gui.Form.GsGcOutside.Parent("frameOutside")
+Gui.Form.GsGcOutside.Event(KeyPressEnter,GsGcOutside_KeyPressEnter)
+Gui.Form.GsGcOutside.Event(RowCellClick,GsGcOutside_RowCellClick)
+Gui.Form.frameLabor.Create(Frame)
+Gui.Form.frameLabor.Enabled(True)
+Gui.Form.frameLabor.Visible(True)
+Gui.Form.frameLabor.Zorder(0)
+Gui.Form.frameLabor.Size(665,108)
+Gui.Form.frameLabor.Position(3,106)
+Gui.Form.frameLabor.Caption("Labor/Method Pricing Data")
+Gui.Form.frameLabor.FontName("Tahoma")
+Gui.Form.frameLabor.FontSize(8.25)
+Gui.Form.frameLabor.Parent("SplitContainer1",0)
+Gui.Form.frameLabor.BorderStyle(1)
+Gui.Form.frameLabor.Anchor(13)
+Gui.Form.GsGcLabor.Create(GsGridControl)
+Gui.Form.GsGcLabor.Enabled(True)
+Gui.Form.GsGcLabor.Visible(True)
+Gui.Form.GsGcLabor.Zorder(0)
+Gui.Form.GsGcLabor.Size(575,75)
+Gui.Form.GsGcLabor.Position(5,28)
+Gui.Form.GsGcLabor.Parent("frameLabor")
+Gui.Form.GsGcLabor.Anchor(13)
+Gui.Form.cmdSaveList.Create(Button)
+Gui.Form.cmdSaveList.Enabled(True)
+Gui.Form.cmdSaveList.Visible(True)
+Gui.Form.cmdSaveList.Zorder(0)
+Gui.Form.cmdSaveList.Size(75,23)
+Gui.Form.cmdSaveList.Position(585,55)
+Gui.Form.cmdSaveList.Caption("Save List")
+Gui.Form.cmdSaveList.FontName("Tahoma")
+Gui.Form.cmdSaveList.FontSize(8.25)
+Gui.Form.cmdSaveList.Parent("frameLabor")
+Gui.Form.cmdSaveList.Anchor(9)
+Gui.Form.cmdSaveList.Event(Click,cmdSaveList_Click)
+Gui.Form.cmdSaveMethod.Create(Button)
+Gui.Form.cmdSaveMethod.Enabled(True)
+Gui.Form.cmdSaveMethod.Visible(True)
+Gui.Form.cmdSaveMethod.Zorder(0)
+Gui.Form.cmdSaveMethod.Size(75,23)
+Gui.Form.cmdSaveMethod.Position(585,81)
+Gui.Form.cmdSaveMethod.Caption("Save Method")
+Gui.Form.cmdSaveMethod.FontName("Tahoma")
+Gui.Form.cmdSaveMethod.FontSize(8.25)
+Gui.Form.cmdSaveMethod.Parent("frameLabor")
+Gui.Form.cmdSaveMethod.Anchor(9)
+Gui.Form.cmdSaveMethod.Event(Click,cmdSaveMethod_Click)
+Gui.Form.cmdLoadMethod.Create(Button)
+Gui.Form.cmdLoadMethod.Enabled(True)
+Gui.Form.cmdLoadMethod.Visible(True)
+Gui.Form.cmdLoadMethod.Zorder(0)
+Gui.Form.cmdLoadMethod.Size(75,23)
+Gui.Form.cmdLoadMethod.Position(585,29)
+Gui.Form.cmdLoadMethod.Anchor(9)
+Gui.Form.cmdLoadMethod.Caption("^")
+Gui.Form.cmdLoadMethod.FontName("Tahoma")
+Gui.Form.cmdLoadMethod.FontSize(8.25)
+Gui.Form.cmdLoadMethod.Parent("frameLabor")
+Gui.Form.cmdLoadMethod.Event(Click,cmdLoadMethod_Click)
+Gui.Form.frmRouterData.Create(Frame)
+Gui.Form.frmRouterData.Enabled(True)
+Gui.Form.frmRouterData.Visible(True)
+Gui.Form.frmRouterData.Zorder(0)
+Gui.Form.frmRouterData.Size(275,111)
+Gui.Form.frmRouterData.Position(3,484)
+Gui.Form.frmRouterData.Caption("Router Data - Summary of Line Data")
+Gui.Form.frmRouterData.FontName("Tahoma")
+Gui.Form.frmRouterData.FontSize(8.25)
+Gui.Form.frmRouterData.BorderStyle(1)
+Gui.Form.frmRouterData.Parent("SplitContainer1",0)
+Gui.Form.frmRouterData.Anchor(7)
+Gui.Form.GsGcRouterInfo.Create(GsGridControl)
+Gui.Form.GsGcRouterInfo.Enabled(True)
+Gui.Form.GsGcRouterInfo.Visible(True)
+Gui.Form.GsGcRouterInfo.Zorder(0)
+Gui.Form.GsGcRouterInfo.Size(267,78)
+Gui.Form.GsGcRouterInfo.Position(3,29)
+Gui.Form.GsGcRouterInfo.Parent("frmRouterData")
+Gui.Form.GsGcRouterInfo.Anchor(7)
+Gui.Form.SplitContainer2.Create(SplitContainer)
+Gui.Form.SplitContainer2.Enabled(True)
+Gui.Form.SplitContainer2.Visible(True)
+Gui.Form.SplitContainer2.Zorder(0)
+Gui.Form.SplitContainer2.Size(360,581)
+Gui.Form.SplitContainer2.Position(5,8)
+Gui.Form.SplitContainer2.Orientation(1)
+Gui.Form.SplitContainer2.SplitterPosition(285)
+Gui.Form.SplitContainer2.Collapsed(False)
+Gui.Form.SplitContainer2.Parent("SplitContainer1",1)
+Gui.Form.SplitContainer2.Anchor(15)
+Gui.Form.frameRouter.Create(Frame)
+Gui.Form.frameRouter.Enabled(True)
+Gui.Form.frameRouter.Visible(True)
+Gui.Form.frameRouter.Zorder(0)
+Gui.Form.frameRouter.Size(245,268)
+Gui.Form.frameRouter.Position(6,7)
+Gui.Form.frameRouter.Caption("Router")
+Gui.Form.frameRouter.FontName("Tahoma")
+Gui.Form.frameRouter.FontSize(8.25)
+Gui.Form.frameRouter.Parent("SplitContainer2",1)
+Gui.Form.frameRouter.Anchor(15)
+Gui.Form.frameRouter.BorderStyle(1)
+Gui.Form.GsGcRouterData.Create(GsGridControl)
+Gui.Form.GsGcRouterData.Create(GsGridControl)
+Gui.Form.GsGcRouterData.Enabled(True)
+Gui.Form.GsGcRouterData.Visible(True)
+Gui.Form.GsGcRouterData.Zorder(0)
+Gui.Form.GsGcRouterData.Size(235,231)
+Gui.Form.GsGcRouterData.Position(5,31)
+Gui.Form.GsGcRouterData.Parent("frameRouter")
+Gui.Form.GsGcRouterData.Anchor(7)
+Gui.Form.GsGcRouterData.Enabled(True)
+Gui.Form.GsGcRouterData.Visible(True)
+Gui.Form.GsGcRouterData.Zorder(0)
+Gui.Form.GsGcRouterData.Size(332,234)
+Gui.Form.GsGcRouterData.Position(5,30)
+Gui.Form.GsGcRouterData.Anchor(15)
+Gui.Form.GsGcRouterData.Parent("frameRouter")
+Gui.Form.GsGcRouterData.Event(RowCellClick,GsGcRouterData_RowCellClick)
+Gui.Form.GsGcRouterData.Event(KeyPress,GsGcRouterData_KeyPress)
+Gui.Form.frameList.Create(Frame)
+Gui.Form.frameList.Enabled(True)
+Gui.Form.frameList.Visible(True)
+Gui.Form.frameList.Zorder(0)
+Gui.Form.frameList.Size(245,274)
+Gui.Form.frameList.Position(6,5)
+Gui.Form.frameList.Caption("List ")
+Gui.Form.frameList.FontName("Tahoma")
+Gui.Form.frameList.FontSize(8.25)
+Gui.Form.frameList.Parent("SplitContainer2",0)
+Gui.Form.frameList.BorderStyle(1)
+Gui.Form.frameList.Anchor(15)
+Gui.Form.GsGcListData.Create(GsGridControl)
+Gui.Form.GsGcListData.Enabled(True)
+Gui.Form.GsGcListData.Visible(True)
+Gui.Form.GsGcListData.Zorder(0)
+Gui.Form.GsGcListData.Size(235,236)
+Gui.Form.GsGcListData.Position(5,29)
+Gui.Form.GsGcListData.Parent("frameList")
+Gui.Form.GsGcListData.Anchor(15)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+v.Global.sPart.Declare
+v.Global.sCust.Declare
+v.Global.sQ_O.Declare
+v.Global.sMaterialMarkup.Declare
+v.Global.sMat_Dimension.Declare
+v.Global.fMargin.Declare
+v.Global.fArea.Declare
+v.Global.fTotalPrice.Declare
+v.Global.fTotalCost.Declare
+
+v.Global.fQty_S.Declare
+v.Global.fCost_S.Declare
+v.Global.fPrice_S.Declare
+
+v.Global.fCurW.Declare
+v.Global.fCurL.Declare
+v.Global.fMatMK.Declare
+v.Global.fWeight.Declare
+Program.External.Include.Library("6021.lib")
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+v.Local.sQuote.Declare
+v.Local.sLine.Declare
+v.Local.sSQL.Declare
+Function.Intrinsic.UI.UsePixels ' Allows you to use Pixels instead of Twips throughout
+'Select
+f.Intrinsic.Control.SelectCase(v.Caller.Hook)
+	f.Intrinsic.Control.Case("10260")
+		'Quote Populate
+		Variable.Passed.000201.Set("Part Builder")
+	f.Intrinsic.Control.Case("12010")
+		'SO Populate
+		Variable.Passed.000162.Set("Part Builder")
+	f.Intrinsic.Control.Case("10670")
+		'Quote Script 1
+		f.Intrinsic.String.LPad(Variable.Passed.000060, "0", 7, v.Local.sQuote)
+		f.Intrinsic.String.LPad(Variable.Passed.000051, "0", 3, v.Local.sLine)
+		f.Intrinsic.String.Build("{0}{1}", v.Local.sQuote, v.Local.sLine, v.Global.sPart)
+		v.Global.sCust.Set(Variable.Passed.000112)
+		v.Global.sQ_O.Set("Q")
+		f.Intrinsic.Control.CallSub(createDisplayDT)
+		f.Intrinsic.Control.CallSub(loadDD)
+		gui.Form.ddlOver.Text("N")
+		gui.Form.ddlPricingType.Text("Lot")
+		'Check if the part exists.
+		f.Intrinsic.Control.CallSub("LoadSavedDT")
+		'Show
+		gui.Form..Show
+	f.Intrinsic.Control.Case("12410")
+		'Quote Script 1
+		f.Intrinsic.String.LPad(Variable.Passed.000060, "0", 7, v.Local.sQuote)
+		f.Intrinsic.String.LPad(Variable.Passed.000051, "0", 3, v.Local.sLine)
+		f.Intrinsic.String.Build("{0}{1}", v.Local.sQuote, v.Local.sLine, v.Global.sPart)
+		f.ODBC.Connection!con.OpenCompanyConnection
+			f.Intrinsic.String.Build("Select top 1 Customer from V_Order_Header where Order_no = '{0}'", v.Local.sQuote, v.Local.sSQL)
+			f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, v.Global.sCust)
+		f.ODBC.Connection!con.Close
+		'v.Global.sCust.Set(Variable.Passed.000112)
+		v.Global.sQ_O.Set("S")
+		f.Intrinsic.Control.CallSub(createDisplayDT)
+		f.Intrinsic.Control.CallSub(loadDD)
+		gui.Form.ddlOver.Text("N")
+		gui.Form.ddlPricingType.Text("Lot")
+		'Check if the part exists.
+		f.Intrinsic.Control.CallSub("LoadSavedDT")
+		'Show
+		gui.Form..Show
+f.Intrinsic.Control.EndSelect
+Program.Sub.Main.End
+
+Program.Sub.cmdBrwPart_Click.Start
+v.Local.sRet.Declare
+v.Local.sSQL.Declare
+f.Intrinsic.Control.Try
+'Try something
+v.Global.sMaterialMarkup.Set("")
+v.Global.sMat_Dimension.Set("")
+
+f.Intrinsic.UI.Browser(105,,v.Local.sRet)
+
+f.Intrinsic.Control.If(v.Local.sRet.Trim, <>, "***CANCEL***")
+	f.Intrinsic.String.Split(v.Local.sRet, "*!*", v.Local.sRet)
+	'Check for Extra Fields
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Intrinsic.String.Build("Select User6 from  Inv_Extra where Part = '{0}'", v.Local.sRet(0), v.Local.sSQL)
+		f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, v.Global.sMat_Dimension)
+		f.Intrinsic.String.Build("Select TEXT_INFO2 from  V_Inventory_All where Part = '{0}'", v.Local.sRet(0), v.Local.sSQL)
+		f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, v.Global.sMaterialMarkup)
+	f.ODBC.Connection!con.Close
+	'Check values
+	f.Intrinsic.Control.If(v.Global.sMaterialMarkup.Trim, =, "")
+		f.Intrinsic.UI.Msgbox("This part doesn't have a Mark up value on the Extra Inventory User Fields.")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.If(v.Global.sMaterialMarkup.IsNumeric)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.UI.Msgbox("This part doesn't have a Valid Mark up value on the Extra Inventory User Fields.")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.If(v.Global.sMat_Dimension.Trim, =, "")
+		f.Intrinsic.UI.Msgbox("This part doesn't have a Material Dimension value on the Extra Inventory User Fields.")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.If(v.Global.sMat_Dimension.IsNumeric)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.UI.Msgbox("This part doesn't have a valid Material Dimension value on the Extra Inventory User Fields.")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	'Set Values
+	gui.Form.txtRawItem.Text(v.Local.sRet(0))
+	gui.Form.txtDesc.Text(v.Local.sRet(2))
+	'Set Fields
+	f.Intrinsic.Control.If(v.Global.sMat_Dimension.Trim, =, "1")
+		gui.Form.txtWidthOD.Text("0")
+		gui.Form.txtWidthOD.Enabled(False)
+	f.Intrinsic.Control.Else
+		gui.Form.txtWidthOD.Text("")
+		gui.Form.txtWidthOD.Enabled(True)
+	f.Intrinsic.Control.EndIf
+	'call extra info
+	f.Intrinsic.Control.CallSub(loadMaterial)
+f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdBrwPart_Click.End
+
+Program.Sub.createDisplayDT.Start
+f.Intrinsic.Control.Try
+'Create Tables 
+	'DT LAbor
+	f.Data.DataTable.Create("dtMethod", true)
+	f.Data.DataTable.AddColumn("dtMethod", "Router", "String", v.Global.sPart)
+	f.Data.DataTable.AddColumn("dtMethod", "Method", "String")
+	f.Data.DataTable.AddColumn("dtMethod", "Method_Name", "String")
+	f.Data.DataTable.AddColumn("dtMethod", "Setup", "Float", 0)
+	f.Data.DataTable.AddColumn("dtMethod", "Minimum", "Float", 0)
+	f.Data.DataTable.AddColumn("dtMethod", "Cost_WC", "Float", 0)
+	f.Data.DataTable.AddColumn("dtMethod", "Cost_One", "Float", 0)
+	f.Data.DataTable.AddColumn("dtMethod", "Cost_Lot", "Float", 0)
+	f.Data.DataTable.AddColumn("dtMethod", "Price_WC", "Float", 0)
+	f.Data.DataTable.AddColumn("dtMethod", "Price_One", "Float", 0)
+	f.Data.DataTable.AddColumn("dtMethod", "Price_Lot", "Float", 0)
+	f.Data.DataTable.AddColumn("dtMethod", "Time_HR_One", "Float", 0)
+	f.Data.DataTable.AddColumn("dtMethod", "Time_HR_Lot", "Float", 0)
+	'Load GV
+	f.Data.DataView.Create("dtMethod", "dvMethod", 22)
+	gui.Form.GsGcLabor.AddGridviewFromDataview("gvMethod", "dtMethod", "dvMethod")
+	gui.Form.GsGcLabor.MainView("gvMethod")
+	'Load Properties
+	f.Intrinsic.Control.CallSub(loadGridProperties, "SDT", "dtMethod", "sGC", "GsGcLabor", "sGV", "gvMethod")
+	'DT Method
+	f.Data.DataTable.Create("dtOutside", True)
+	f.Data.DataTable.AddColumn("dtOutside", "Router", "String", v.Global.sPart)
+	f.Data.DataTable.AddColumn("dtOutside", "Method", "String")
+	f.Data.DataTable.AddColumn("dtOutside", "MethodDesc", "String")
+	f.Data.DataTable.AddColumn("dtOutside", "Method_Type", "String")
+	f.Data.DataTable.AddColumn("dtOutside", "Vendor", "String")
+	f.Data.DataTable.AddColumn("dtOutside", "VendorName", "String")
+	f.Data.DataTable.AddColumn("dtOutside", "TotalCost", "Float")
+	f.Data.DataTable.AddColumn("dtOutside", "TotalPrice", "Float")
+	f.Data.DataTable.AddColumn("dtOutside", "Cost", "Float")
+	f.Data.DataTable.AddColumn("dtOutside", "Price", "Float")
+	f.Data.DataTable.AddColumn("dtOutside", "MarkUp", "Float")
+	
+	'Load GV
+	f.Data.DataView.Create("dtOutside", "dvOutside", 22)
+	gui.Form.GsGcOutside.AddGridviewFromDataview("gvOutside", "dtOutside", "dvOutside")
+	gui.Form.GsGcOutside.MainView("gvOutside")
+	'Load Properties
+	f.Intrinsic.Control.CallSub(loadGridProperties, "SDT", "dtOutside", "sGC", "GsGcOutside", "sGV", "gvOutside")
+	'DT Material
+	f.Data.DataTable.Create("dtMaterial", True)
+	f.Data.DataTable.AddColumn("dtMaterial", "Router", "String", v.Global.sPart)
+	f.Data.DataTable.AddColumn("dtMaterial", "Width", "Float")
+	f.Data.DataTable.AddColumn("dtMaterial", "Length", "Float")
+	f.Data.DataTable.AddExpressionColumn("dtMaterial", "Area_In", "Float", "Width*Length")
+	f.Data.DataTable.AddColumn("dtMaterial", "FaceArea", "Float", 0)
+	f.Data.DataTable.AddColumn("dtMaterial", "Weight", "Float", 0)
+	f.Data.DataTable.AddColumn("dtMaterial", "Cost_Lbs", "Float", 0)
+	f.Data.DataTable.AddColumn("dtMaterial", "Cost_PO", "Float", 0)
+	f.Data.DataTable.AddColumn("dtMaterial", "Price_Lbs", "Float", 0)
+	f.Data.DataTable.AddColumn("dtMaterial", "Material_Type", "String")
+	f.Data.DataTable.AddColumn("dtMaterial", "Shape", "String")
+	f.Data.DataTable.AddColumn("dtMaterial", "Thickness", "Float", 0)
+	f.Data.DataTable.AddColumn("dtMaterial", "UOM", "String")
+	f.Data.DataTable.AddColumn("dtMaterial", "Material_Used", "Float", 0)
+	f.Data.DataTable.AddExpressionColumn("dtMaterial", "Gross_Lbs", "Float", "Weight*Material_Used")
+	f.Data.DataTable.AddExpressionColumn("dtMaterial", "Gross_Ft", "Float", "Length*Material_Used/12")
+	f.Data.DataTable.AddExpressionColumn("dtMaterial", "Gross_In", "Float", "Length*Material_Used")
+	'Load GV
+	f.Data.DataView.Create("dtMaterial", "dvMaterial", 22)
+	gui.Form.GsGcMaterial.AddGridviewFromDataview("gvMaterial", "dtMaterial", "dvMaterial")
+	gui.Form.GsGcMaterial.MainView("gvMaterial")
+	'Load Properties
+	f.Intrinsic.Control.CallSub(loadGridProperties, "SDT", "dtMaterial", "sGC", "GsGcMaterial", "sGV", "gvMaterial")
+	'DT Router
+	f.Data.DataTable.Create("dtRouter", True)
+	f.Data.DataTable.AddColumn("dtRouter", "Router", "String", v.Global.sPart)
+	f.Data.DataTable.AddColumn("dtRouter", "Delete", "String", "Delete")
+	f.Data.DataTable.AddColumn("dtRouter", "Seq", "String")
+	f.Data.DataTable.AddColumn("dtRouter", "Part", "String")
+	f.Data.DataTable.AddColumn("dtRouter", "Description", "String")
+	f.Data.DataTable.AddColumn("dtRouter", "LMO", "String")
+	f.Data.DataTable.AddColumn("dtRouter", "Qty", "Float", 0)
+	f.Data.DataTable.AddColumn("dtRouter", "UOM", "String")
+	f.Data.DataTable.AddColumn("dtRouter", "Cost_UOM", "Float", 0)
+	f.Data.DataTable.AddColumn("dtRouter", "Cost_One", "Float", 0)
+	f.Data.DataTable.AddColumn("dtRouter", "Cost_Lot", "Float", 0)
+	f.Data.DataTable.AddColumn("dtRouter", "Price_UOM", "Float", 0)
+	f.Data.DataTable.AddColumn("dtRouter", "Price_One", "Float", 0)
+	f.Data.DataTable.AddColumn("dtRouter", "Price_Lot", "Float", 0)
+	f.Data.DataTable.AddExpressionColumn("dtRouter", "MarkUp", "Float", "IIF(Cost_One = 0, 0, ((Price_One-Cost_One)/Cost_One))")
+	f.Data.DataTable.AddColumn("dtRouter", "Note", "String")
+	f.Data.DataTable.AddColumn("dtRouter", "Vendor", "String")
+	
+	'f.Data.DataTable.AddColumn("dtRouter", "MARKUP", "Float", 0)
+	'Load GV
+	f.Data.DataView.Create("dtRouter", "dvRouter", 22, "", "Seq asc")
+	gui.Form.GsGcRouterData.AddGridviewFromDataview("gvRouter", "dtRouter", "dvRouter")
+	gui.Form.GsGcRouterData.MainView("gvRouter")
+	'Load Properties
+	f.Intrinsic.Control.CallSub(loadGridProperties, "SDT", "dtRouter", "sGC", "GsGcRouterData", "sGV", "gvRouter")
+	'DT List
+	f.Data.DataTable.Create("dtList", True)
+	f.Data.DataTable.AddColumn("dtList", "Router", "String", v.Global.sPart)
+	f.Data.DataTable.AddColumn("dtList", "Delete", "String", "Delete")
+	f.Data.DataTable.AddColumn("dtList", "Part", "String")
+	f.Data.DataTable.AddColumn("dtList", "Qty", "Float", 0)
+	f.Data.DataTable.AddColumn("dtList", "ListLbs", "Float", 0)
+	f.Data.DataTable.AddColumn("dtList", "List_Time_HR_One", "Float", 0)
+	f.Data.DataTable.AddColumn("dtList", "List_Time_HR_Lot", "Float", 0)
+	f.Data.DataTable.AddColumn("dtList", "ListCost", "Float", 0)
+	f.Data.DataTable.AddColumn("dtList", "ListPrice", "Float", 0)
+	f.Data.DataTable.AddColumn("dtList", "ListGroupNotes", "String")
+	f.Data.DataTable.AddColumn("dtList", "ListLineNotes", "String")
+	f.Data.DataTable.AddColumn("dtList", "CalcW", "Float", 0)
+	f.Data.DataTable.AddColumn("dtList", "CalcL", "Float", 0)
+	f.Data.DataTable.AddColumn("dtList", "LineID", "Float", 0)
+	'Load GV
+	f.Data.DataView.Create("dtList", "dvList", 22)
+	gui.Form.GsGcListData.AddGridviewFromDataview("gvList", "dtList", "dvList")
+	gui.Form.GsGcListData.MainView("gvList")
+	'Load Properties
+	f.Intrinsic.Control.CallSub(loadGridProperties, "SDT", "dtList", "sGC", "GsGcListData", "sGV", "gvList")
+	'Router Data GsGcRouterData
+	f.Data.DataTable.Create("dtRouterInfo", True)
+	f.Data.DataTable.AddColumn("dtRouterInfo", "Router", "String", v.Global.sPart)
+	f.Data.DataTable.AddColumn("dtRouterInfo", "PriceDesc", "String")
+	f.Data.DataTable.AddColumn("dtRouterInfo", "Price", "Float", 0)
+	f.Data.DataTable.AddColumn("dtRouterInfo", "Markup", "Float", 0)
+	'Add Rows
+	f.Data.DataTable.AddRow("dtRouterInfo", "PriceDesc", "Price/EA")
+	f.Data.DataTable.AddRow("dtRouterInfo", "PriceDesc", "Price/LBS")
+	f.Data.DataTable.AddRow("dtRouterInfo", "PriceDesc", "Price/Lot")
+	'Load GV
+	f.Data.DataView.Create("dtRouterInfo", "dvRouterInfo", 22)
+	gui.Form.GsGcRouterInfo.AddGridviewFromDataview("gvRouterInfo", "dtRouterInfo", "dvRouterInfo")
+	gui.Form.GsGcRouterInfo.MainView("gvRouterInfo")
+	'Load Properties
+	f.Intrinsic.Control.CallSub(loadGridProperties, "SDT", "dtRouterInfo", "sGC", "GsGcRouterInfo", "sGV", "gvRouterInfo")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.createDisplayDT.End
+
+Program.Sub.loadGridProperties.Start
+v.Local.iCnt.Declare
+v.Local.sFields.Declare
+v.Local.iVisibleIndex.Declare
+
+f.Intrinsic.Control.Try
+	f.Intrinsic.String.Split(v.DataTable.[v.Args.sDT].FieldNames, "*!*", v.Local.sFields)
+	f.Intrinsic.Control.For(v.Local.iCnt, 0, v.Local.sFields.UBound, 1)
+		gui.Form.[v.Args.sGC].SetColumnProperty(v.Args.sGV, v.Local.sFields(v.Local.iCnt), "HeaderFontBold", True)
+		gui.Form.[v.Args.sGC].SetColumnProperty(v.Args.sGV, v.Local.sFields(v.Local.iCnt), "Visible", True)
+		gui.Form.[v.Args.sGC].SetColumnProperty(v.Args.sGV, v.Local.sFields(v.Local.iCnt), "ReadOnly", True)
+		gui.Form.[v.Args.sGC].SetColumnProperty(v.Args.sGV, v.Local.sFields(v.Local.iCnt), "AllowEdit", False)
+		gui.Form.[v.Args.sGC].SetColumnProperty(v.Args.sGV, v.Local.sFields(v.Local.iCnt), "HeaderHAlignment", "Near")
+		gui.Form.[v.Args.sGC].SetColumnProperty(v.Args.sGV, v.Local.sFields(v.Local.iCnt), "CellHAlignment", "Near")
+		gui.Form.[v.Args.sGC].SetColumnProperty(v.Args.sGV, v.Local.sFields(v.Local.iCnt), "HeaderBackColor", v.Color.GSS)
+		gui.Form.[v.Args.sGC].SetColumnProperty(v.Args.sGV, v.Local.sFields(v.Local.iCnt), "HeaderForeColor", v.Color.White)
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	
+	'GridView Properties
+	gui.Form.[v.Args.sGC].BestFitColumns(v.Args.sGV)
+	gui.Form.[v.Args.sGC].SetGridviewProperty(v.Args.sGV, "OptionsViewColumnAutoWidth", False)
+	
+	f.Intrinsic.Control.If(v.Args.sGV, =, "gvOutside")
+'		gui.Form.GsGcOutside.SetColumnProperty("gvOutside", "Vendor", "ReadOnly", False)
+'		gui.Form.GsGcOutside.SetColumnProperty("gvOutside", "Vendor", "AllowEdit", True)
+		gui.Form.GsGcOutside.SetColumnProperty("gvOutside", "Cost", "ReadOnly", False)
+		gui.Form.GsGcOutside.SetColumnProperty("gvOutside", "Cost", "AllowEdit", True)
+		gui.Form.GsGcOutside.SetColumnProperty("gvOutside", "Price", "ReadOnly", False)
+		gui.Form.GsGcOutside.SetColumnProperty("gvOutside", "Price", "AllowEdit", True)
+		gui.Form.GsGcOutside.SetColumnProperty("gvOutside", "MarkUp", "ReadOnly", False)
+		gui.Form.GsGcOutside.SetColumnProperty("gvOutside", "MarkUp", "AllowEdit", True)
+		gui.Form.GsGcOutside.SetColumnProperty("gvOutside", "MarkUp", "DisplayCustomNumeric", "0.00 %")
+		
+		gui.Form.GsGcOutside.SetColumnProperty("gvOutside", "TotalCost", "DisplayCustomNumeric", "$ 0.00")
+		gui.Form.GsGcOutside.SetColumnProperty("gvOutside", "TotalPrice", "DisplayCustomNumeric", "$ 0.00")
+		gui.Form.GsGcOutside.SetColumnProperty("gvOutside", "Cost", "DisplayCustomNumeric", "$ 0.00")
+		gui.Form.GsGcOutside.SetColumnProperty("gvOutside", "Price", "DisplayCustomNumeric", "$ 0.00")
+		
+		gui.Form.GsGcOutside.SetColumnProperty("gvOutside", "MarkUp", "CellHAlignment", "far")
+		gui.Form.GsGcOutside.SetColumnProperty("gvOutside", "TotalCost", "CellHAlignment", "far")
+		gui.Form.GsGcOutside.SetColumnProperty("gvOutside", "TotalPrice", "CellHAlignment", "far")
+		gui.Form.GsGcOutside.SetColumnProperty("gvOutside", "Cost", "CellHAlignment", "far")
+		gui.Form.GsGcOutside.SetColumnProperty("gvOutside", "Price", "CellHAlignment", "far")
+		
+		gui.Form.GsGcOutside.SetColumnProperty("gvOutside", "Method", "VisibleIndex", v.Local.iVisibleIndex)
+		gui.Form.GsGcOutside.SetColumnProperty("gvOutside", "Method_Type", "VisibleIndex", v.Local.iVisibleIndex.++)
+		gui.Form.GsGcOutside.SetColumnProperty("gvOutside", "Vendor", "VisibleIndex", v.Local.iVisibleIndex.++)
+		gui.Form.GsGcOutside.SetColumnProperty("gvOutside", "VendorName", "VisibleIndex", v.Local.iVisibleIndex.++)
+		gui.Form.GsGcOutside.SetColumnProperty("gvOutside", "Cost", "VisibleIndex", v.Local.iVisibleIndex.++)
+		gui.Form.GsGcOutside.SetColumnProperty("gvOutside", "Price", "VisibleIndex", v.Local.iVisibleIndex.++)
+		gui.Form.GsGcOutside.SetColumnProperty("gvOutside", "MarkUp", "VisibleIndex", v.Local.iVisibleIndex.++)
+		gui.Form.GsGcOutside.SetColumnProperty("gvOutside", "TotalCost", "VisibleIndex", v.Local.iVisibleIndex.++)
+		gui.Form.GsGcOutside.SetColumnProperty("gvOutside", "TotalPrice", "VisibleIndex", v.Local.iVisibleIndex.++)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Args.sGV, =, "gvMethod")
+		gui.Form.GsGcLabor.SetColumnProperty("gvMethod", "Price_One", "ReadOnly", False)
+		gui.Form.GsGcLabor.SetColumnProperty("gvMethod", "Price_One", "AllowEdit", True)
+		gui.Form.GsGcLabor.SetColumnProperty("gvMethod", "Setup", "ReadOnly", False)
+		gui.Form.GsGcLabor.SetColumnProperty("gvMethod", "Setup", "AllowEdit", True)
+		gui.Form.GsGcLabor.SetColumnProperty("gvMethod", "Time_HR_One", "ReadOnly", False)
+		gui.Form.GsGcLabor.SetColumnProperty("gvMethod", "Time_HR_Lot", "AllowEdit", True)
+		
+		gui.Form.GsGcLabor.SetColumnProperty("gvMethod", "Setup", "DisplayCustomNumeric", "$ 0.00")
+		gui.Form.GsGcLabor.SetColumnProperty("gvMethod", "Minimum", "DisplayCustomNumeric", "$ 0.00")
+		gui.Form.GsGcLabor.SetColumnProperty("gvMethod", "Cost_WC", "DisplayCustomNumeric", "$ 0.00")
+		gui.Form.GsGcLabor.SetColumnProperty("gvMethod", "Cost_One", "DisplayCustomNumeric", "$ 0.00")
+		gui.Form.GsGcLabor.SetColumnProperty("gvMethod", "Cost_Lot", "DisplayCustomNumeric", "$ 0.00")
+		gui.Form.GsGcLabor.SetColumnProperty("gvMethod", "Price_WC", "DisplayCustomNumeric", "$ 0.00")
+		gui.Form.GsGcLabor.SetColumnProperty("gvMethod", "Price_One", "DisplayCustomNumeric", "$ 0.00")
+		gui.Form.GsGcLabor.SetColumnProperty("gvMethod", "Price_Lot", "DisplayCustomNumeric", "$ 0.00")
+		gui.Form.GsGcLabor.SetColumnProperty("gvMethod", "Time_HR_One", "DisplayCustomNumeric", "0.00")
+		gui.Form.GsGcLabor.SetColumnProperty("gvMethod", "Time_HR_Lot", "DisplayCustomNumeric", "0.00")
+		
+		gui.Form.GsGcLabor.SetColumnProperty("gvMethod", "Setup", "CellHAlignment", "far")
+		gui.Form.GsGcLabor.SetColumnProperty("gvMethod", "Minimum", "CellHAlignment", "far")
+		gui.Form.GsGcLabor.SetColumnProperty("gvMethod", "Cost_WC", "CellHAlignment", "far")
+		gui.Form.GsGcLabor.SetColumnProperty("gvMethod", "Cost_One", "CellHAlignment", "far")
+		gui.Form.GsGcLabor.SetColumnProperty("gvMethod", "Cost_Lot", "CellHAlignment", "far")
+		gui.Form.GsGcLabor.SetColumnProperty("gvMethod", "Price_WC", "CellHAlignment", "far")
+		gui.Form.GsGcLabor.SetColumnProperty("gvMethod", "Price_One", "CellHAlignment", "far")
+		gui.Form.GsGcLabor.SetColumnProperty("gvMethod", "Price_Lot", "CellHAlignment", "far")
+		gui.Form.GsGcLabor.SetColumnProperty("gvMethod", "Time_HR_One", "CellHAlignment", "far")
+		gui.Form.GsGcLabor.SetColumnProperty("gvMethod", "Time_HR_Lot", "CellHAlignment", "far")
+		
+		'gui.Form.GsGcLabor.SetColumnProperty("gvMethod", "Cost_WC", "Visible", False)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Args.sGV, =, "gvRouter")
+		gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "Seq", "ReadOnly", False)
+		gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "Seq", "AllowEdit", True)
+		gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "Cost_One", "ReadOnly", False)
+		gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "Cost_One", "AllowEdit", True)
+		gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "Price_One", "ReadOnly", False)
+		gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "Price_One", "AllowEdit", True)
+		gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "MARKUP", "ReadOnly", False)
+		gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "MARKUP", "AllowEdit", True)
+		
+		gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "Cost_UOM", "Caption", "UOM Cost")
+		gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "Price_UOM", "Caption", "UOM PRICE")
+		gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "Cost_One", "Caption", "Cost to Make 1")
+		gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "Price_One", "Caption", "Price to Make 1")
+		gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "Cost_Lot", "Caption", "Total Qty Cost")
+		gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "Price_Lot", "Caption", "Total Qty Price")
+		'gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "PRICE", "Visible", False)
+		
+		gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "Qty", "DisplayCustomNumeric", "0.00")
+		gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "Cost_UOM", "DisplayCustomNumeric", "$ 0.00")
+		gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "Price_UOM", "DisplayCustomNumeric", "$ 0.00")
+		gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "Cost_One", "DisplayCustomNumeric", "$ 0.00")
+		gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "Price_One", "DisplayCustomNumeric", "$ 0.00")
+		gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "MarkUp", "DisplayCustomNumeric", "0.00 %")
+		gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "Cost_Lot", "DisplayCustomNumeric", "$ 0.00")
+		gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "Price_Lot", "DisplayCustomNumeric", "$ 0.00")
+		
+		gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "Qty", "CellHAlignment", "far")
+		gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "Cost_UOM", "CellHAlignment", "far")
+		gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "Price_UOM", "CellHAlignment", "far")
+		gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "Cost_One", "CellHAlignment", "far")
+		gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "Price_One", "CellHAlignment", "far")
+		gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "Cost_Lot", "CellHAlignment", "far")
+		gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "Price_Lot", "CellHAlignment", "far")
+		gui.Form.GsGcRouterData.SetColumnProperty("gvRouter", "MarkUp", "CellHAlignment", "far")
+		
+		
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Args.sGV, =, "gvRouterInfo")
+		gui.Form.GsGcRouterInfo.SetColumnProperty("gvRouterInfo", "Price", "DisplayCustomNumeric", "$ 0.00")
+		gui.Form.GsGcRouterInfo.SetColumnProperty("gvRouterInfo", "Markup", "DisplayCustomNumeric", "0.00 %")
+		
+		gui.Form.GsGcRouterInfo.SetColumnProperty("gvRouterInfo", "Price", "CellHAlignment", "far")
+		gui.Form.GsGcRouterInfo.SetColumnProperty("gvRouterInfo", "MarkUp", "CellHAlignment", "far")
+			
+		gui.Form.GsGcRouterInfo.SetColumnProperty("gvRouterInfo", "Router", "Visible", False)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Args.sGV, =, "gvList")
+		gui.Form.GsGcListData.SetColumnProperty("gvList", "Qty", "DisplayCustomNumeric", "0.00")
+		gui.Form.GsGcListData.SetColumnProperty("gvList", "ListLbs", "DisplayCustomNumeric", "0.00")
+		gui.Form.GsGcListData.SetColumnProperty("gvList", "List_Time_HR_One", "DisplayCustomNumeric", "0.00")
+		gui.Form.GsGcListData.SetColumnProperty("gvList", "List_Time_HR_Lot", "DisplayCustomNumeric", "0.00")
+		gui.Form.GsGcListData.SetColumnProperty("gvList", "ListCost", "DisplayCustomNumeric", "$ 0.00")
+		gui.Form.GsGcListData.SetColumnProperty("gvList", "ListPrice", "DisplayCustomNumeric", "$ 0.00")
+		
+		gui.Form.GsGcListData.SetColumnProperty("gvList", "Qty", "CellHAlignment", "far")
+		gui.Form.GsGcListData.SetColumnProperty("gvList", "ListLbs", "CellHAlignment", "far")
+		gui.Form.GsGcListData.SetColumnProperty("gvList", "List_Time_HR_One", "CellHAlignment", "far")
+		gui.Form.GsGcListData.SetColumnProperty("gvList", "List_Time_HR_Lot", "CellHAlignment", "far")
+		gui.Form.GsGcListData.SetColumnProperty("gvList", "ListCost", "CellHAlignment", "far")
+		gui.Form.GsGcListData.SetColumnProperty("gvList", "ListPrice", "CellHAlignment", "far")
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Args.sGV, =, "gvMaterial")
+		gui.Form.GsGcMaterial.SetColumnProperty("gvMaterial", "Cost_lbs", "DisplayCustomNumeric", "$ 0.00")
+		gui.Form.GsGcMaterial.SetColumnProperty("gvMaterial", "Cost_PO", "DisplayCustomNumeric", "$ 0.00")
+		
+		gui.Form.GsGcMaterial.SetColumnProperty("gvMaterial", "Material_Used", "DisplayCustomNumeric", "0.00")
+		gui.Form.GsGcMaterial.SetColumnProperty("gvMaterial", "Gross_LBS", "DisplayCustomNumeric", "0.00")
+		gui.Form.GsGcMaterial.SetColumnProperty("gvMaterial", "Gross_FT", "DisplayCustomNumeric", "0.00")
+		gui.Form.GsGcMaterial.SetColumnProperty("gvMaterial", "Gross_In", "DisplayCustomNumeric", "0.00")
+	f.Intrinsic.Control.EndIf	
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.loadGridProperties.End
+
+Program.Sub.Form_UnLoad.Start
+f.Intrinsic.Control.Try
+	'End Program.
+	f.Intrinsic.Control.End
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.Form_UnLoad.End
+
+Program.Sub.ErrorMsg.Start
+v.Local.sError.Declare
+
+'Generic Error message.
+f.Intrinsic.String.Build("Project ProjectName.g2u {0}{0}Subroutine: {1}{0}Error: {2} with Description: {3}", v.Ambient.NewLine, v.Args.CurrentSub, v.Ambient.ErrorNumber, v.Ambient.ErrorDescription, v.Local.sError)
+f.Intrinsic.UI.Msgbox(v.Local.sError)
+Program.Sub.ErrorMsg.End
+
+Program.Sub.loadMaterial.Start
+v.Local.sPart.Declare
+v.Local.sSQL.Declare
+'var calc
+v.Local.fWidth.Declare
+v.Local.fLength.Declare
+v.Local.fLBS.Declare
+v.Local.fLBS_ALL.Declare
+v.Local.fQTY.Declare
+v.Local.fCost.Declare
+v.Local.fThickness.Declare
+v.Local.fMaterialUsed.Declare
+v.Local.sMaterial.Declare
+
+v.Local.fPrice.Declare
+v.Local.fTotalPrice.Declare
+v.Local.iCnt.Declare
+v.Local.fCostPO.Declare
+
+v.Local.fTotalCost.Declare
+f.Intrinsic.Control.Try
+	'Close DTs
+	f.Intrinsic.Control.If(v.DataTable.dtPart.Exists)
+		f.Data.DataTable.Close("dtPart")
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.If(v.DataTable.dtPartExtra.Exists)
+		f.Data.DataTable.Close("dtPartExtra")
+	f.Intrinsic.Control.EndIf
+	'Get Part lmo
+	v.Local.sPart.Set(v.Screen.Form!txtRawItem.Text)
+	f.Intrinsic.Control.If(v.Local.sPart.Trim, =, "")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	'Load Material Info
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Intrinsic.String.Build("Select * from V_INVENTORY_ALL where Part = '{0}'", v.Local.sPart, v.Local.sSQL)
+		f.Data.DataTable.CreateFromSQL("dtPart", "con", v.Local.sSQL)
+		
+		f.Intrinsic.String.Build("Select * from INV_EXTRA where Part = '{0}'", v.Local.sPart, v.Local.sSQL)
+		f.Data.DataTable.CreateFromSQL("dtPartExtra", "con", v.Local.sSQL, True)
+		'PO COst
+		f.Intrinsic.String.Build("Select top 1 Cost from V_PO_LINES where FLAG_RECV_CLOSE <> 'Y' and Part = '{0}' order by due_date_L asc", v.Local.sPart, v.Local.sSQL)
+		f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, v.Local.fCostPO)
+		f.Intrinsic.Control.If(v.Local.fCostPO, =, 0)
+			v.Local.fCostPO.Set(v.DataTable.dtPart(0).AMT_COST!FieldVal)
+		f.Intrinsic.Control.EndIf
+	f.ODBC.Connection!con.Close
+	
+	f.Intrinsic.Control.If(v.DataTable.dtPartExtra(0).User6!FieldValTrim, =, "")	
+		f.Intrinsic.UI.Msgbox("This Material, doesn't have a Dimension Value. Please Select a different Material.")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	v.Global.sMat_Dimension.Set(v.DataTable.dtPartExtra(0).User6!FieldValTrim)
+	v.Global.fArea.Set(v.DataTable.dtPartExtra(0).User7!FieldVal)
+	f.Intrinsic.Control.If(v.Global.sMat_Dimension.IsNumeric)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.UI.Msgbox("This Material, doesn't have a Valid Dimension Value. Please Select a different Material.")
+		v.Global.sMat_Dimension.Set("")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.If(v.DataTable.dtPart.RowCount, =, 0)
+		f.Data.DataTable.Close("dtPart")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	'Set Material Info
+	f.Data.DataTable.DeleteRow("dtMaterial")
+	f.Data.DataTable.AcceptChanges("dtMaterial")
+	'Get Variables
+	'Width
+	f.Intrinsic.Control.If(v.DataTable.dtPart(0).Width!FieldValTrim, =, "")
+		v.Local.fWidth.Set(0)
+	f.Intrinsic.Control.Else
+		v.Local.fWidth.Set(v.DataTable.dtPart(0).Width!FieldValTrim)
+	f.Intrinsic.Control.EndIf
+	'Length
+	f.Intrinsic.Control.If(v.DataTable.dtPart(0).Length!FieldValTrim, =, "")
+		v.Local.fLength.Set(0)
+	f.Intrinsic.Control.Else
+		v.Local.fLength.Set(v.DataTable.dtPart(0).Length!FieldValTrim)
+	f.Intrinsic.Control.EndIf
+	'Gross_NO (LBS)
+	f.Intrinsic.Control.If(v.DataTable.dtPart(0).LBS!FieldValTrim, =, "")
+		v.Local.fLBS.Set(0)
+	f.Intrinsic.Control.Else
+		v.Local.fLBS.Set(v.DataTable.dtPart(0).LBS!FieldValTrim)
+	f.Intrinsic.Control.EndIf
+	'Qty
+	f.Intrinsic.Control.If(v.Screen.Form!txtQTY.Text, =, "")
+		v.Local.fQTY.Set(1)
+	f.Intrinsic.Control.Else
+		v.Local.fQTY.Set(v.Screen.Form!txtQTY.Text)
+	f.Intrinsic.Control.EndIf
+	v.Local.fQTY.Set(1)
+	'LBS ALL
+	f.Intrinsic.Math.Mult(v.Local.fQTY, v.Local.fLBS, v.Local.fLBS_ALL)
+	'Cost
+	f.Intrinsic.Control.If(v.DataTable.dtPart(0).AMT_COST!FieldValTrim, =, "")
+		v.Local.fCost.Set(0)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.Control.If(v.DataTable.dtPart(0).UM_Inventory!FieldValTrim, =, "LB")
+			v.Local.fCost.Set(v.DataTable.dtPart(0).AMT_COST!FieldValTrim)
+		f.Intrinsic.Control.ElseIf(v.DataTable.dtPart(0).UM_Inventory!FieldValTrim, =, "FT")
+			v.Local.fCost.Set(v.DataTable.dtPart(0).AMT_COST!FieldValTrim)
+		f.Intrinsic.Control.Else
+			f.Intrinsic.Math.Div(v.DataTable.dtPart(0).AMT_COST!FieldValTrim, v.DataTable.dtPart(0).LBS!FieldValTrim, v.Local.fCost)			
+		f.Intrinsic.Control.EndIf
+		f.Intrinsic.Math.Round(v.Local.fCost, 2, v.Local.fCost)
+	f.Intrinsic.Control.EndIf
+	'Markup
+	f.Intrinsic.Math.Div(v.Global.sMaterialMarkup, 100, v.Local.fPrice)
+	f.Intrinsic.Math.Add(v.Local.fPrice, 1, v.Local.fPrice)
+	v.Global.fMatMK.Set(v.Local.fPrice)
+	'Price
+	f.Intrinsic.Math.Mult(v.Local.fCost, v.Local.fPrice, v.Local.fPrice)
+	f.Intrinsic.Math.Round(v.Local.fPrice, 2, v.Local.fPrice)
+	'Thickness
+	f.Intrinsic.Control.If(v.DataTable.dtPart(0).Thickness!FieldValTrim, =, "")
+		v.Local.fThickness.Set(0)
+	f.Intrinsic.Control.Else
+		v.Local.fThickness.Set(v.DataTable.dtPart(0).Thickness!FieldValTrim)
+	f.Intrinsic.Control.EndIf
+	'Material
+	f.Intrinsic.Control.If(v.DataTable.dtPartExtra.RowCount, =, 0)
+		v.Local.sMaterial.Set("")
+	f.Intrinsic.Control.Else
+		v.Local.sMaterial.Set(v.DataTable.dtPartExtra(0).User5!FieldValTrim)
+	f.Intrinsic.Control.EndIf	
+	
+	f.Data.DataTable.AddRow("dtMaterial", "Width", v.Local.fWidth, "Length", v.Local.fLength, "Weight", v.Local.fLBS, "Cost_Lbs", v.Local.fCost, "Price_Lbs", v.Local.fPrice, "Gross_Lbs", v.Local.fLBS_ALL, "Shape", v.DataTable.dtPart(0).CODE_RM_SHAPE!FieldValTrim, "Thickness", v.Local.fThickness, "Material_Type", v.Local.sMaterial, "Cost_PO", v.Local.fCostPO, "UOM", v.DataTable.dtPart(0).UM_Inventory!FieldValTrim, "FaceArea", v.DataTable.dtPartExtra(0).User9!FieldValFloat)
+	f.Data.DataTable.AcceptChanges("dtMaterial")
+	
+	f.Data.DataView.Create("dtRouter", "dvRouterM", 22, "LMO = 'M'", )
+	f.Intrinsic.Control.If(v.DataView.dtRouter!dvRouterM.RowCount, >, 0)
+		f.Intrinsic.Control.For(v.Local.iCnt, v.DataTable.dtRouter.RowCount--, 0, -1)
+			f.Intrinsic.Control.If(v.DataTable.dtRouter(v.Local.iCnt).LMO!FieldValTrim, =, "M")
+				f.Data.DataTable.DeleteRow("dtRouter", v.Local.iCnt)
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.Next(v.Local.iCnt)
+	f.Intrinsic.Control.EndIf
+	f.Data.DataView.Close("dtRouter", "dvRouterM")
+	'Add Material Line
+	f.Intrinsic.Math.Mult(v.Local.fQTY, v.Local.fPrice, v.Local.fTotalPrice)
+	f.Data.DataTable.AddRow("dtRouter", "LMO", "M", "Part", v.Local.sPart, "UOM", v.DataTable.dtPart(0).UM_Inventory!FieldValTrim, "Cost_UOM", v.Local.fCost, "Cost_One", v.Local.fCost, "Cost_Lot", v.Local.fCost, "Note", v.Screen.Form!txtLineNote.Text, "Price_UOM", v.Local.fPrice, "Price_One", v.Local.fTotalPrice, "Price_Lot", v.Local.fTotalPrice, "Seq", "000100", "Description", v.DataTable.dtPart(0).Description!FieldValTrim)
+	v.Global.fTotalPrice.Set(v.Local.fPrice)
+	v.Global.fTotalCost.Set(v.Local.fCost)
+	'TXT
+	gui.Form.txtUOM.Text(v.DataTable.dtPart(0).UM_Inventory!FieldValTrim)
+	'1D
+	f.Intrinsic.Control.If(v.Global.sMat_Dimension.Trim, =, "1")
+		gui.Form.txtWidthOD.Enabled(False)
+		gui.Form.lblInches.Caption("Number of Cuts")
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.loadMaterial.End
+
+Program.Sub.loadDD.Start
+f.Intrinsic.Control.Try
+'Try something
+	gui.Form.ddlLineType.AddItem("Pull")
+	gui.Form.ddlLineType.AddItem("Single")
+	gui.Form.ddlLineType.AddItem("List")
+	'Cut Type
+	gui.Form.ddlCutType.AddItem("Shape")
+	gui.Form.ddlCutType.AddItem("OD/ID")
+	gui.Form.ddlCutType.AddItem("Saw")
+	'Pricing Type
+	gui.Form.ddlPricingType.AddItem("Lot")
+	gui.Form.ddlPricingType.AddItem("Each")
+	gui.Form.ddlPricingType.AddItem("Detail")
+	gui.Form.ddlPricingType.AddItem("Weight")
+	gui.Form.ddlPricingType.AddItem("Feet")
+	'Over 30
+	gui.Form.ddlOver.AddItem("Y")
+	gui.Form.ddlOver.AddItem("N")
+	'Methods
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Data.Dictionary.CreateFromSQL("dictMethod", "con", "Select Method, Method_Name from GCG_6827_METHOD")
+		gui.Form.ddlMethod.AddItems("Dictionary", "dictMethod")
+		f.Data.Dictionary.Close("dictMethod")
+	f.ODBC.Connection!con.Close
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.loadDD.End
+
+Program.Sub.ddlMethod_Change.Start
+v.Local.sRet.Declare
+f.Intrinsic.Control.Try
+	v.Local.sRet.Set(v.Screen.Form!ddlMethod.Text)
+	f.Intrinsic.Control.If(v.Local.sRet.Trim, <>, "SHEAR")
+		gui.Form.lblInches.Caption("Inches Of Cut")
+	f.Intrinsic.Control.Else
+		gui.Form.lblInches.Caption("Number Of Cuts")
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.ddlMethod_Change.End
+
+Program.Sub.ddlCutType_Change.Start
+f.Intrinsic.Control.Try
+'Try something
+	'Set labels
+	f.Intrinsic.Control.If(v.Screen.Form!ddlCutType.Text, =, "Shape")
+		gui.Form.lblWidthOD.Caption("Width")
+		gui.Form.lblLengthID.Caption("Length")
+		gui.Form.lblInches.Caption("Inches Of Cut")
+	f.Intrinsic.Control.ElseIf(v.Screen.Form!ddlCutType.Text, =, "Saw")
+		gui.Form.lblWidthOD.Caption("Width")
+		gui.Form.lblLengthID.Caption("Length")
+		gui.Form.lblInches.Caption("Number of Cuts")
+	f.Intrinsic.Control.Else
+		gui.Form.lblWidthOD.Caption("OD")
+		gui.Form.lblLengthID.Caption("ID")
+		gui.Form.lblInches.Caption("Inches Of Cut")
+	f.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.ddlCutType_Change.End
+
+Program.Sub.cmdCalc_Click.Start
+f.Intrinsic.Control.Try
+	'Check 1D/2D
+	f.Intrinsic.Control.If(v.Global.sMat_Dimension.Trim, =, "1")
+		f.Intrinsic.Control.CallSub("calcOneDim")
+	f.Intrinsic.Control.Else
+		f.Intrinsic.Control.CallSub("calcTwoDim")
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdCalc_Click.End
+
+Program.Sub.ddlLineType_Change.Start
+v.Local.sText.Declare
+f.Intrinsic.Control.Try
+	'Set List
+	f.Intrinsic.Control.If(v.Screen.Form!ddlLineType.Text, =, "List")
+		f.Intrinsic.String.Build("{3} pcs {1}{4} X {2}{4}", v.Screen.Form!ddlCutType.Text, v.Screen.Form!txtLengthID.Text, v.Screen.Form!txtWidthOD.Text, v.Screen.Form!txtQTY.Text, v.Ambient.DblQuote, v.Local.sText)
+		f.Intrinsic.Control.If(v.Global.sMat_Dimension, =, "1")
+			f.Intrinsic.String.Build("{3} pcs {1}{4} ", v.Screen.Form!ddlCutType.Text, v.Screen.Form!txtLengthID.Text, v.Screen.Form!txtWidthOD.Text, v.Screen.Form!txtQTY.Text, v.Ambient.DblQuote, v.Local.sText)
+		f.Intrinsic.Control.EndIf
+		gui.Form.txtGroupNote.Text(v.Local.sText)
+		gui.Form.cmdSaveList.Enabled(True)
+		gui.Form.txtWidthOD.Enabled(True)
+		gui.Form.txtLengthID.Enabled(True)
+		gui.Form.ddlMethod.Enabled(True)
+		gui.Form.ddlCutType.Enabled(True)
+	f.Intrinsic.Control.ElseIf(v.Screen.Form!ddlLineType.Text, =, "Single")
+		gui.Form.txtGroupNote.Text("")
+		gui.Form.cmdSaveList.Enabled(False)
+		gui.Form.txtWidthOD.Enabled(True)
+		gui.Form.txtLengthID.Enabled(True)
+		gui.Form.ddlMethod.Enabled(True)
+		gui.Form.ddlCutType.Enabled(True)
+	f.Intrinsic.Control.ElseIf(v.Screen.Form!ddlLineType.Text, =, "Pull")
+		gui.Form.txtWidthOD.Enabled(False)
+		gui.Form.txtLengthID.Enabled(False)
+		gui.Form.cmdSaveList.Enabled(False)
+		gui.Form.ddlMethod.Enabled(False)
+		gui.Form.ddlCutType.Enabled(False)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.ddlLineType_Change.End
+
+Program.Sub.cmdSaveList_Click.Start
+'Cost/MK/Price
+v.Local.fCost.Declare
+v.Local.fMK.Declare
+v.Local.fPrice.Declare
+v.Local.fQty.Declare
+v.Local.fPriceCalc.Declare
+v.Local.fCostCalc.Declare
+v.Local.sLineType.Declare
+v.Local.fArg1.Declare
+v.Local.fListWeight.Declare
+v.Local.fPer.Declare
+v.Local.ssql.Declare
+v.Local.fArea.Declare
+v.Local.sPer.Declare
+v.Local.fTempText.Declare
+v.Local.fTotalCost.Declare
+
+'Router Variables
+v.Local.fQtyRouterOne.Declare
+v.Local.fCostUOM.Declare
+v.Local.fCostOne.Declare
+v.Local.fCostLot.Declare
+v.Local.fPriceUOM.Declare
+v.Local.fPriceOne.Declare
+v.Local.fPriceLot.Declare
+v.Local.fGross_Fts.Declare
+
+v.Local.fListPriceMethod.Declare
+f.Intrinsic.Control.Try
+	v.Local.sLineType.Set(v.Screen.Form!ddlLineType.Text)
+	'Add Lines to List
+	f.Intrinsic.Control.If(v.DataTable.dtMaterial.RowCount, <, 1)
+		f.Intrinsic.String.Build("Please select a Material before continue...")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	'Add to List
+	f.Intrinsic.Math.Mult(v.DataTable.dtMethod(0).Time_HR_Lot!FieldValFloat, v.DataTable.dtMethod(0).Price_WC!FieldValFloat, v.Local.fListPriceMethod)
+	f.Data.DataTable.AddRow("dtList", "Qty", v.Screen.Form!txtQTY.Text, "ListLbs", v.DataTable.dtMaterial(0).Gross_Lbs!FieldVal, "ListGroupNotes", v.Screen.Form!txtGroupNote.Text, "List_Time_HR_One", v.DataTable.dtMethod(0).Time_HR_One!FieldValFloat, "List_Time_HR_Lot", v.DataTable.dtMethod(0).Time_HR_Lot!FieldValFloat, "ListCost", v.DataTable.dtMethod(0).Cost_Lot!FieldValFloat, "ListPrice", v.Local.fListPriceMethod, "ListLineNotes", v.Screen.Form!txtLineNote.Text, "CalcW", v.Global.fCurW, "CalcL", v.Global.fCurL, "Part", v.Global.sPart)
+	'Set Series
+	f.Data.DataTable.SetSeries("dtList", "LineID", 0, 1)
+	'Get Qty
+	f.Data.DataTable.Compute("dtList", "SUM(Listlbs)", , v.Local.fQty)
+	'Get Percentage
+	f.ODBC.Connection!con.OpenCompanyConnection
+		v.Local.fArea.Set(v.DataTable.dtMaterial(0).Area_In!FieldVal)
+		f.Intrinsic.Control.If(v.Local.fArea, =, 0)
+			v.Local.fArea.Set(1)
+		f.Intrinsic.Control.EndIf
+		f.Intrinsic.String.Build("Select Top 1 Percentage from GCG_6827_2D_PERCENT where Area = '{0}'", v.Local.fArea, v.Local.sSQL)
+		f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, v.Local.fPer)
+	f.ODBC.Connection!con.Close
+	'Round Up Quantity
+	f.Intrinsic.Control.If(v.Local.fPer, =, 0)
+		v.Local.fPer.Set(1)
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Math.Div(v.Local.fQty, v.Local.fPer, v.Local.fQty)
+	f.Intrinsic.Math.Ceiling(v.Local.fQty, v.Local.fQty)
+	f.Intrinsic.Math.Mult(v.Local.fQty, v.Local.fPer, v.Local.fQty)
+
+	'Set Material
+	f.Data.DataView.Create("dtRouter", "dvRouterM", 22, "LMO = 'M'", "")
+	f.Intrinsic.Control.If(v.DataView.dtRouter!dvRouterM.RowCount, >, 0)
+		f.Data.DataTable.Compute("dtList", "SUM(ListLbs)", , v.Local.fListWeight)
+		'Compute next total Item.
+		f.Intrinsic.Math.Div(v.Local.fListWeight, v.DataTable.dtMaterial(0).Weight!FieldValFloat, v.Local.fListWeight)
+		f.Intrinsic.Math.Ceiling(v.Local.fListWeight, v.Local.fQtyRouterOne)
+		f.Intrinsic.Math.Mult(v.Local.fQtyRouterOne, v.DataTable.dtMaterial(0).Weight!FieldValFloat, v.Local.fListWeight)
+		'
+		v.Local.fPriceUOM.Set(v.DataTable.dtMaterial(0).Price_Lbs!FieldValFloat)
+		v.Local.fCostUOM.Set(v.DataTable.dtMaterial(0).Cost_Lbs!FieldValFloat)
+		
+		
+		'f.Data.DataTable.Compute("dtList", "SUM(ListPrice)", , v.Local.fPriceCalc)
+		f.Intrinsic.Math.Mult(v.Local.fListWeight, v.DataView.dtRouter!dvRouterM(0).Price_UOM!FieldValFloat, v.Local.fPriceLot)
+		f.Intrinsic.Math.Mult(v.Local.fListWeight, v.DataView.dtRouter!dvRouterM(0).Cost_UOM!FieldValFloat, v.Local.fCostLot)
+		
+		'To make one
+		f.Data.DataTable.Compute("dtList", "SUM(QTY)", , v.Local.fQty)
+		f.Intrinsic.Math.Div(v.Local.fListWeight, v.Local.fQty, v.Local.fQtyRouterOne)
+		f.Intrinsic.Math.Mult(v.Local.fQtyRouterOne, v.DataView.dtRouter!dvRouterM(0).Price_UOM!FieldValFloat, v.Local.fPriceOne)
+		f.Intrinsic.Math.Mult(v.Local.fQtyRouterOne, v.DataView.dtRouter!dvRouterM(0).Cost_UOM!FieldValFloat, v.Local.fCostOne)
+		
+		
+		'f.Data.DataView.SetValue("dtRouter", "dvRouterM", 0, "Qty", v.Local.fListWeight, "QTY_TOT_Price", v.Local.fPriceCalc, "TotalPrice", v.Local.fPriceCalc, "TotalCost", v.Local.fTotalCost)
+		
+		'Set Values
+		f.Data.DataView.SetValue("dtRouter", "dvRouterM", 0, "Qty", v.Local.fQtyRouterOne, "Cost_UOM", v.Local.fCostUOM , "Cost_One", v.Local.fCostOne, "Cost_Lot", v.Local.fCostLot, "Price_UOM", v.Local.fPriceUOM , "Price_One", v.Local.fPriceOne, "Price_Lot", v.Local.fPriceLot)
+			
+		'Calculate New Line Cost and Line Price
+'		v.Local.fPrice.Set(v.DataView.dtRouter!dvRouterM(0).QTY_TOT_Price!FieldValFloat)
+'		v.Local.fCost.Set(v.DataView.dtRouter!dvRouterM(0).TotalCost!FieldValFloat)
+'		f.Data.DataTable.Compute("dtList", "SUM(Qty)", ,v.Local.fQty)
+'		f.Intrinsic.Math.Div(v.Local.fPrice, v.Local.fQty, v.Local.fPrice)
+'		f.Intrinsic.Math.Div(v.Local.fCost, v.Local.fQty, v.Local.fCost)
+'		f.Data.DataView.SetValue("dtRouter", "dvRouterM", 0, "TotalCost", v.Local.fCost, "TotalPrice", v.Local.fPrice)
+	f.Intrinsic.Control.EndIf
+	f.Data.DataView.Close("dtRouter", "dvRouterM")
+	
+		'Get Total Prices and Costs
+	f.Intrinsic.Control.CallSub(calculateTotal)	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdSaveList_Click.End
+
+Program.Sub.cmdSaveMethod_Click.Start
+v.Local.fLastSeq.Declare
+v.Local.sNewSeq.Declare
+'Router Variables
+v.Local.fQtyRouterOne.Declare
+v.Local.fCostUOM.Declare
+v.Local.fCostOne.Declare
+v.Local.fCostLot.Declare
+v.Local.fPriceUOM.Declare
+v.Local.fPriceOne.Declare
+v.Local.fPriceLot.Declare
+v.Local.fGross_Fts.Declare
+v.Local.fQty.Declare
+f.Intrinsic.Control.Try
+	'Check Method
+	f.Intrinsic.Control.If(v.DataTable.dtMethod.RowCount, <, 1)
+		f.Intrinsic.UI.Msgbox("Please select a Method before continue...")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	'Get Seq
+	v.Local.fLastSeq.Set(v.DataTable.dtRouter(v.DataTable.dtRouter.RowCount--).Seq!FieldVal)
+	f.Intrinsic.Math.Add(v.Local.fLastSeq, 100, v.Local.fLastSeq)
+	f.Intrinsic.String.LPad(v.Local.fLastSeq, "0", 6, v.Local.sNewSeq)
+	
+	'if List
+	f.Intrinsic.Control.If(v.Screen.Form!ddlLineType.Text, =, "List")
+		f.Data.DataTable.Compute("dtList", "SUM(List_Time_HR_One)", ,v.Local.fQtyRouterOne)
+		f.Data.DataTable.Compute("dtList", "SUM(Qty)", ,v.Local.fQty)
+		f.Data.DataTable.Compute("dtList", "SUM(ListCost)", ,v.Local.fCostLot)
+		f.Data.DataTable.Compute("dtList", "SUM(ListPrice)", ,v.Local.fPriceLot)
+		'Check Minumum
+		f.Intrinsic.Control.If(v.Local.fPriceLot, <=, v.DataTable.dtMethod(0).Minimum!FieldValFloat)
+			f.Intrinsic.Math.Add(v.DataTable.dtMethod(0).Minimum!FieldValFloat, v.DataTable.dtMethod(0).Setup!FieldValFloat, v.Local.fPriceLot)
+		f.Intrinsic.Control.Else
+			f.Intrinsic.Math.Add(v.Local.fPriceLot, v.DataTable.dtMethod(0).Setup!FieldValFloat, v.Local.fPriceLot)
+		f.Intrinsic.Control.EndIf
+		f.Intrinsic.Math.Div(v.Local.fCostLot, v.Local.fQty, v.Local.fCostOne)
+		f.Intrinsic.Math.Div(v.Local.fPriceLot, v.Local.fQty, v.Local.fPriceOne)
+	f.Intrinsic.Control.Else
+		v.Local.fQtyRouterOne.Set(v.DataTable.dtMethod(0).Time_HR_One!FieldValFloat)
+		v.Local.fCostLot.Set(v.DataTable.dtMethod(0).Cost_Lot!FieldValFloat)
+		v.Local.fPriceLot.Set(v.DataTable.dtMethod(0).Price_Lot!FieldValFloat)
+		v.Local.fCostOne.Set(v.DataTable.dtMethod(0).Cost_One!FieldValFloat)
+		v.Local.fPriceOne.Set(v.DataTable.dtMethod(0).Price_One!FieldValFloat)
+	f.Intrinsic.Control.EndIf
+	
+	'Add Method to Router
+	f.Data.DataTable.AddRow("dtRouter", "Router", v.Global.sPart, "Seq", v.Local.sNewSeq, "Part", v.DataTable.dtMethod(0).Method!FieldValTrim, "Description", v.DataTable.dtMethod(0).Method_Name!FieldValTrim, "LMO", "L", "Qty", v.Local.fQtyRouterOne, "UOM", "HR", "Cost_UOM", v.DataTable.dtMethod(0).Cost_WC!FieldValFloat, "Cost_One", v.Local.fCostOne, "Cost_Lot", v.Local.fCostLot, "Price_UOM", v.DataTable.dtMethod(0).Price_WC!FieldValFloat, "Price_One", v.Local.fPriceOne, "Price_Lot", v.Local.fPriceLot, "Note", v.Screen.Form!txtLineNote.Text)
+	'Refresh Totals
+	f.Intrinsic.Control.CallSub(calculateTotal)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdSaveMethod_Click.End
+
+Program.Sub.cmdSaveOther_Click.Start
+'Cost/MK/Price
+v.Local.fCost.Declare
+v.Local.fMK.Declare
+v.Local.fPrice.Declare
+v.Local.fQty.Declare
+v.Local.fPriceCalc.Declare
+v.Local.fCostCalc.Declare
+v.Local.sLineType.Declare
+v.Local.fArg1.Declare
+v.Local.fLastSeq.Declare
+v.Local.sNewSeq.Declare
+v.Local.sPer.Declare
+v.Local.fTempText.Declare
+
+
+'Router Variables
+v.Local.fQtyRouterOne.Declare
+v.Local.fCostUOM.Declare
+v.Local.fCostOne.Declare
+v.Local.fCostLot.Declare
+v.Local.fPriceUOM.Declare
+v.Local.fPriceOne.Declare
+v.Local.fPriceLot.Declare
+f.Intrinsic.Control.Try
+	v.Local.fQty.Set(v.Screen.Form!txtTotalQty.Text)
+	v.Local.sLineType.Set(v.Screen.Form!ddlLineType.Text)
+	'Add Method
+	f.Intrinsic.Control.If(v.DataTable.dtMaterial.RowCount, <, 1)
+		f.Intrinsic.UI.Msgbox("Please select a Material before continue...")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	'Add Method
+	f.Intrinsic.Control.If(v.DataTable.dtOutside.RowCount, <, 1)
+		f.Intrinsic.UI.Msgbox("Please select a Method before continue...")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	'Get Seq
+	v.Local.fLastSeq.Set(v.DataTable.dtRouter(v.DataTable.dtRouter.RowCount--).Seq!FieldVal)
+	f.Intrinsic.Math.Add(v.Local.fLastSeq, 100, v.Local.fLastSeq)
+	f.Intrinsic.String.LPad(v.Local.fLastSeq, "0", 6, v.Local.sNewSeq)
+	
+	'Get Costs
+	f.Intrinsic.Math.Div(1, v.Local.fQty, v.Local.fQtyRouterOne)
+	v.Local.fCostUOM.Set(v.DataTable.dtOutside(0).Cost!FieldValFloat)
+	v.Local.fCostLot.Set(v.DataTable.dtOutside(0).Cost!FieldValFloat)
+	f.Intrinsic.Math.Div(v.Local.fCostLot, v.Local.fQty, v.Local.fCostOne)
+	'Get Prices
+	v.Local.fPriceUOM.Set(v.DataTable.dtOutside(0).Cost!FieldValFloat)
+	v.Local.fPriceLot.Set(v.DataTable.dtOutside(0).Cost!FieldValFloat)
+	f.Intrinsic.Math.Div(v.Local.fPriceLot, v.Local.fQty, v.Local.fPriceOne)
+	'ADd row
+	f.Data.DataTable.AddRow("dtRouter", "Part", v.DataTable.dtOutside(0).Method!FieldValTrim, "Cost", v.DataTable.dtOutside(0).Cost!FieldVal, "MarkUp", v.DataTable.dtOutside(0).MarkUp!FieldVal, "Price", v.DataTable.dtOutside(0).Price!FieldVal, "TotalPrice", v.DataTable.dtOutside(0).Price!FieldVal, "QTY_TOT_Price", v.DataTable.dtOutside(0).TotalPrice!FieldVal, "UOM", "EA", "Qty", 1, "Note", v.Screen.Form!txtLineNote.Text, "LMO", "O", "Seq", v.Local.sNewSeq, "Vendor", v.DataTable.dtOutside(0).Vendor!FieldValTrim, "Description", v.DataTable.dtOutside(0).MethodDesc!FieldVal)
+	'Add Method to Router
+	f.Data.DataTable.AddRow("dtRouter", "Router", v.Global.sPart, "Seq", v.Local.sNewSeq, "Part", v.DataTable.Method(0).Method!FieldValTrim, "Description", v.DataTable.Method(0).Method_Name!FieldValTrim, "LMO", "L", "Qty", v.Local.fQtyRouterOne, "UOM", "HR", "Cost_UOM", v.Local.fCostUOM, "Cost_One", v.Local.fCostOne, "Cost_Lot", v.Local.fCostLot, "Price_UOM", v.Local.fPriceUOM, "Price_One", v.Local.fPriceOne, "Price_Lot", v.Local.fPriceLot, "Note", v.Screen.Form!txtLineNote.Text)
+	'Clean p lune notes
+	gui.Form.txtLineNote.Text("")
+	'Get Total Prices and Costs
+	f.Intrinsic.Control.CallSub(calculateTotal)
+
+	gui.Form.txtLineNote.Text("")
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdSaveOther_Click.End
+
+Program.Sub.cmdOtherCalc_Click.Start
+v.Local.sRet.Declare
+f.Intrinsic.Control.Try
+	'f.Intrinsic.UI.Browser(400, , v.Local.sRet)
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Intrinsic.UI.Browser("Op Codes", "con", "Select Machine, Description from V_OP_CODES where LMO = 'O'", "Machine*!*Description", "60*!*120", v.Local.sRet)
+	f.ODBC.Connection!con.Close
+	f.Intrinsic.Control.If(v.Local.sRet, <>, "***CANCEL***")
+		f.Intrinsic.String.Split(v.Local.sRet, "*!*", v.Local.sRet)
+		f.Data.DataTable.DeleteRow("dtOutside")
+		f.Data.DataTable.AddRow("dtOutside", "Method", v.Local.sRet(0), "Method_Type", v.Local.sRet(1), "MethodDesc", v.Local.sRet(1))
+		f.Data.DataTable.AcceptChanges("dtOutside")
+	f.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdOtherCalc_Click.End
+
+Program.Sub.GsGcOutside_KeyPressEnter.Start
+v.Local.fQty.Declare
+v.Local.fPrice.Declare
+v.Local.fMarkup.Declare
+v.Local.fCost.Declare
+v.Local.fTotalPrice.Declare
+v.Local.fTotalCost.Declare
+v.Local.sColumn.Declare
+v.Local.sRet.Declare
+f.Intrinsic.Control.Try
+	'Get Price/Marckup
+	v.Local.fQty.Set(v.Screen.Form!txtQTY.Text)
+	v.Local.fCost.Set(v.DataTable.dtOutside(0).Cost!FieldVal)
+	v.Local.fPrice.Set(v.DataTable.dtOutside(0).Price!FieldVal)
+	v.Local.fMarkup.Set(v.DataTable.dtOutside(0).MarkUp!FieldVal)
+	f.Intrinsic.Math.Div(v.Local.fMarkup, 100, v.Local.fMarkup)
+	'Get the column
+	'v.Local.sColumn.Set(v.Args.Column)
+	gui.Form.GsGcOutside.GetColumnNameByIndex("gvOutside", v.Args.ColumnIndex, v.Local.sColumn)
+	f.Intrinsic.Control.SelectCase(v.Local.sColumn.UCase)
+		f.Intrinsic.Control.Case("COST")
+			f.Intrinsic.Math.Mult(v.Local.fQty, v.Local.fCost, v.Local.fTotalCost)
+			f.Data.DataTable.SetValue("dtOutside", 0, "TotalCost", v.Local.fTotalCost)
+		f.Intrinsic.Control.Case("PRICE")
+			'Get Totals
+			f.Intrinsic.Math.Mult(v.Local.fQty, v.Local.fCost, v.Local.fTotalCost)
+			f.Intrinsic.Math.Mult(v.Local.fQty, v.Local.fPrice, v.Local.fTotalPrice)
+			'Get Markup
+			f.Intrinsic.Control.If(v.Local.fCost, =, 0)
+				v.Local.fMarkup.Set(0)
+			f.Intrinsic.Control.Else
+				f.Intrinsic.Math.Sub(v.Local.fPrice, v.Local.fCost, v.Local.fMarkup)
+				f.Intrinsic.Math.Div(v.Local.fMarkup, v.Local.fCost, v.Local.fMarkup)
+			f.Intrinsic.Control.EndIf
+			f.Data.DataTable.SetValue("dtOutside", 0, "TotalCost", v.Local.fTotalCost, "MarkUp", v.Local.fMarkup, "TotalPrice", v.Local.fTotalPrice)
+		f.Intrinsic.Control.Case("MARKUP")			
+			'Get PRice
+			f.Intrinsic.Math.Add(v.Local.fMarkup, 1, v.Local.fMarkup)
+			f.Intrinsic.Math.Mult(v.Local.fCost, v.Local.fMarkup, v.Local.fPrice)
+			'Get Totals
+			f.Intrinsic.Math.Mult(v.Local.fQty, v.Local.fCost, v.Local.fTotalCost)
+			f.Intrinsic.Math.Mult(v.Local.fQty, v.Local.fPrice, v.Local.fTotalPrice)
+			f.Intrinsic.Math.Add(v.Local.fMarkup, -1, v.Local.fMarkup)
+			f.Data.DataTable.SetValue("dtOutside", 0, "TotalCost", v.Local.fTotalCost, "Price", v.Local.fPrice, "TotalPrice", v.Local.fTotalPrice, "MarkUp", v.Local.fMarkup)
+		f.Intrinsic.Control.Case("VENDOR")
+			f.Intrinsic.UI.Browser(300 , , v.Local.sRet)
+			f.Intrinsic.Control.If(v.Local.sRet, <>, "***CANCEL***")
+				f.Intrinsic.String.Split(v.Local.sRet, "*!*", v.Local.sRet)
+				f.Data.DataTable.SetValue("dtOutside", 0, "Vendor", v.Local.sRet(0), "VendorName", v.Local.sRet(1))
+			f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndSelect
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.GsGcOutside_KeyPressEnter.End
+
+Program.Sub.GsGcOutside_RowCellClick.Start
+v.Local.sCol.Declare
+v.Local.sRet.Declare
+f.Intrinsic.Control.Try
+	v.Local.sCol.Set(v.Args.Column)
+	f.Intrinsic.Control.If(v.Local.sCol.UCase, =, "VENDOR")
+		f.Intrinsic.UI.Browser(300 , , v.Local.sRet)
+		f.Intrinsic.Control.If(v.Local.sRet, <>, "***CANCEL***")
+			f.Intrinsic.String.Split(v.Local.sRet, "*!*", v.Local.sRet)
+			f.Data.DataTable.SetValue("dtOutside", 0, "Vendor", v.Local.sRet(0), "VendorName", v.Local.sRet(1))
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.If(v.Local.sCol.UCase, =, "VENDORNAME")
+		f.Intrinsic.UI.Browser(300 , , v.Local.sRet)
+		f.Intrinsic.Control.If(v.Local.sRet, <>, "***CANCEL***")
+			f.Intrinsic.String.Split(v.Local.sRet, "*!*", v.Local.sRet)
+			f.Data.DataTable.SetValue("dtOutside", 0, "Vendor", v.Local.sRet(0), "VendorName", v.Local.sRet(1))
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.GsGcOutside_RowCellClick.End
+
+Program.Sub.cmdSaveSOline_Click.Start
+v.Local.iCnt.Declare
+v.Local.sTemp.Declare
+v.Local.sSQL.Declare
+v.Local.sGL.Declare
+v.Local.fArg1.Declare
+v.Local.fArg2.Declare
+
+v.Local.sNotes.Declare
+
+v.Local.sQuote.Declare
+v.Local.sLine.Declare
+v.Local.sFilter.Declare
+v.Local.sDesc.Declare
+f.Intrinsic.Control.Try
+'Generate Router.
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Intrinsic.String.Build("Select * from V_INVENTORY_ALL where Part = '{0}'", v.Screen.Form!txtRawItem.Text, v.Local.sSQL)
+		f.Data.DataTable.CreateFromSQL("dtPartAll", "con", v.Local.sSQL)
+		f.Intrinsic.String.Build("Select top 1 GL_ACCT from V_PL_GL_ACCOUNTS where PROD_LINE = '{0}' and type = '1'", v.DataTable.dtPartAll(0).Product_Line!FieldValTrim, v.Local.sSQL)
+		f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, v.Local.sGL)
+	f.ODBC.Connection!con.Close
+	
+	'Initial Note
+	v.Local.sTemp.Set(v.Screen.Form!ddlMethod.Text)
+	f.Intrinsic.Control.If(v.DataView.dtRouter!dvRT.Exists)
+		f.Data.DataView.Close("dtRouter", "dvRT")
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.String.Build("Description = '{0}'", v.Local.sTemp, v.Local.sFilter)
+	f.Data.DataView.Create("dtRouter", "dvRT", 22, v.Local.sFilter, "")
+	f.Intrinsic.Control.If(v.DataView.dtRouter!dvRT.RowCount, >, 0)
+		f.Intrinsic.String.Build("{0}{1}{7}{1}{9}{8}{1}{1}{3} Pcs {4}{6} X {5}{6}{1}", v.DataTable.dtPartAll(0).Description!FieldValTrim, v.Ambient.NewLine, v.Local.sTemp.Trim, v.Screen.Form!txtQTY.Text, v.Screen.Form!txtWidthOD.Text, v.Screen.Form!txtLengthID.Text, v.Ambient.DblQuote, v.DataView.dtRouter!dvRT(0).Description!FieldValTrim, v.DataView.dtRouter!dvRT(0).Note!FieldValTrim, v.Ambient.Tab, v.Local.sNotes)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.String.Build("{0}{1}{2}, {3} Pcs {4}{6} X {5}{6}{1}", v.DataTable.dtPartAll(0).Description!FieldValTrim, v.Ambient.NewLine, v.Local.sTemp.Trim, v.Screen.Form!txtQTY.Text, v.Screen.Form!txtWidthOD.Text, v.Screen.Form!txtLengthID.Text, v.Ambient.DblQuote,v.Local.sNotes)
+	f.Intrinsic.Control.EndIf
+	
+
+	'List Note
+	f.Intrinsic.Control.If(v.Screen.Form!ddlLineType.Text, =, "List")
+		v.Local.sNotes.Set(v.DataTable.dtPartAll(0).Description!FieldValTrim)
+		
+		f.Intrinsic.Control.If(v.DataView.dtRouter!dvRT.RowCount, >, 0)
+			f.Intrinsic.String.Build("{0}{1}{2}{1}{4}{3}{1}", v.Local.sNotes, v.Ambient.NewLine, v.DataView.dtRouter!dvRT(0).Description!FieldValTrim, v.DataView.dtRouter!dvRT(0).Note!FieldValTrim, v.Ambient.Tab, v.Local.sNotes)
+		f.Intrinsic.Control.Else
+			f.Intrinsic.String.Build("{0}{1}{2}{1}", v.Local.sNotes, v.Ambient.NewLine, v.Local.sTemp, v.Local.sNotes)
+		f.Intrinsic.Control.EndIf
+		
+		f.Intrinsic.Control.For(v.Local.iCnt, 0, v.DataTable.dtList.RowCount--, 1)
+			'Notes,NL,GroupNotes,NL,LineNotes			
+			f.Intrinsic.String.Build("{0}{1}{2}{1}{4}{3}{1}",v.Local.sNotes, v.Ambient.NewLine, v.DataTable.dtList(v.Local.iCnt).ListGroupNotes!FieldValTrim, v.DataTable.dtList(v.Local.iCnt).ListLineNotes!FieldValTrim, v.Ambient.Tab, v.Local.sNotes)
+		f.Intrinsic.Control.Next(v.Local.iCnt)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.For(v.Local.iCnt, 0, v.DataTable.dtRouter.RowCount--, 1)
+		'Notes
+		f.Intrinsic.Control.If(v.DataTable.dtRouter(v.Local.iCnt).Note!FieldValTrim, <>, "")
+			f.Intrinsic.Control.If(v.DataTable.dtRouter(v.Local.iCnt).Description!FieldValTrim, <>, v.Local.sTemp.Trim)
+				f.Intrinsic.String.Build("{0}{1}{3}{1}{4}{2}{1}", v.Local.sNotes, v.Ambient.NewLine, v.DataTable.dtRouter(v.Local.iCnt).Note!FieldValTrim, v.DataTable.dtRouter(v.Local.iCnt).Description!FieldValTrim, v.Ambient.Tab, v.Local.sNotes)
+			f.Intrinsic.Control.EndIf			
+		f.Intrinsic.Control.EndIf		
+		
+		f.Intrinsic.Control.If(v.DataTable.dtRouter(v.Local.iCnt).LMO!FieldValTrim, =, "M")
+			f.Data.DataTable.AddRow("6021", "RouterNum", v.Global.sPart, "RouterDesc", v.Screen.Form!txtDesc.Text, "PartStepDesc", v.DataTable.dtPartAll(0).Description!FieldValTrim, "Seq", v.DataTable.dtRouter(v.Local.iCnt).Seq!FieldValTrim, "LineType", v.DataTable.dtRouter(v.Local.iCnt).LMO!FieldValTrim, "PartNum", v.DataTable.dtRouter(v.Local.iCnt).Part!FieldValTrim, "RunTimeMatlQty", v.DataTable.dtRouter(v.Local.iCnt).Qty!FieldVal, "CustID", v.Global.sCust, "OperationCodeVend", v.DataTable.dtRouter(v.Local.iCnt).Vendor!FieldValTrim, "RateUC", v.DataTable.dtRouter(v.Local.iCnt).Cost_One!FieldVal, "UM", v.DataTable.dtRouter(v.Local.iCnt).UOM!FieldValTrim)
+		f.Intrinsic.Control.Else
+			f.Data.DataTable.AddRow("6021", "RouterNum", v.Global.sPart, "RouterDesc", v.Screen.Form!txtDesc.Text, "PartStepDesc", v.DataTable.dtRouter(v.Local.iCnt).Description!FieldValTrim, "Seq", v.DataTable.dtRouter(v.Local.iCnt).Seq!FieldValTrim, "LineType", v.DataTable.dtRouter(v.Local.iCnt).LMO!FieldValTrim, "WC", v.DataTable.dtRouter(v.Local.iCnt).Part!FieldValTrim, "RunTimeMatlQty", v.DataTable.dtRouter(v.Local.iCnt).Qty!FieldVal, "CustID", v.Global.sCust, "OperationCodeVend", v.DataTable.dtRouter(v.Local.iCnt).Vendor!FieldValTrim, "RateUC", v.DataTable.dtRouter(v.Local.iCnt).Cost_One!FieldVal, "UM", v.DataTable.dtRouter(v.Local.iCnt).UOM!FieldValTrim)
+		f.Intrinsic.Control.EndIf		
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	'Upload Router
+	f.Intrinsic.Control.CallSub("6021Sync")
+'SO Screen Data.
+	'Set Parts
+	Variable.Passed.000052.Set(v.Global.sPart)
+	'Qty
+	Variable.Passed.000007.Set(v.Screen.Form!txtTotalQty.Text)
+	'Over 30	
+	f.Intrinsic.Control.If(v.Global.sQ_O, =, "Q")
+		Variable.Passed.000022.Set(v.Screen.Form!ddlOver.Text)
+		
+		'User fields Calcs
+		f.Intrinsic.Control.If(v.Screen.Form!ddlPricingType.Text, =, "Lot")
+			'uf1
+			Variable.Passed.000030.Set(1)
+			'uf2
+			Variable.Passed.000023.Set(v.DataTable.dtRouterInfo(2).Price!FieldVal)
+			'uf3
+			Variable.Passed.000015.Set(v.Screen.Form!ddlPricingType.Text)
+		f.Intrinsic.Control.ElseIf(v.Screen.Form!ddlPricingType.Text, =, "Each")
+			'uf1
+			Variable.Passed.000030.Set(v.Screen.Form!txtTotalQty.Text)
+			'uf2
+			Variable.Passed.000023.Set(v.DataTable.dtRouterInfo(0).Price!FieldVal)
+			'uf3
+			Variable.Passed.000015.Set(v.Screen.Form!ddlPricingType.Text)
+		f.Intrinsic.Control.ElseIf(v.Screen.Form!ddlPricingType.Text, =, "Weight")
+			'uf1
+			f.Intrinsic.Control.If(v.Screen.Form!ddlLineType.Text, =, "Single")
+				Variable.Passed.000030.Set(v.DataTable.dtMaterial(0).Gross_LBS!FieldVal)
+			f.Intrinsic.Control.ElseIf(v.Screen.Form!ddlLineType.Text, =, "List")
+				Variable.Passed.000030.Set(V.Screen.Form!txtTotalQty.Text)
+			f.Intrinsic.Control.Else
+				Variable.Passed.000030.Set(v.DataTable.dtMaterial(0).Gross_LBS!FieldVal)
+			f.Intrinsic.Control.EndIf
+			'uf2
+			Variable.Passed.000023.Set(v.DataTable.dtRouterInfo(1).Price!FieldVal)
+			'uf3
+			Variable.Passed.000015.Set(v.Screen.Form!ddlPricingType.Text)
+		f.Intrinsic.Control.EndIf		
+		'Price
+		Variable.Passed.000128.Set(v.Global.fPrice_S.Float)
+		Variable.Passed.000009.Set(v.Global.fPrice_S.Float)
+	f.Intrinsic.Control.Else
+		Variable.Passed.000084.Set(v.Screen.Form!ddlOver.Text)
+		'User fields Calcs
+		f.Intrinsic.Control.If(v.Screen.Form!ddlPricingType.Text, =, "Lot")
+			'uf1
+			Variable.Passed.000077.Set(1)
+			'uf2
+			Variable.Passed.000080.Set(v.DataTable.dtRouterInfo(2).Price!FieldVal)
+			'uf3
+			Variable.Passed.000082.Set(v.Screen.Form!ddlPricingType.Text)
+		f.Intrinsic.Control.ElseIf(v.Screen.Form!ddlPricingType.Text, =, "Each")
+			'uf1
+			Variable.Passed.000077.Set(v.Screen.Form!txtTotalQty.Text)
+			'uf2
+			Variable.Passed.000080.Set(v.DataTable.dtRouterInfo(0).Price!FieldVal)
+			'uf3
+			Variable.Passed.000082.Set(v.Screen.Form!ddlPricingType.Text)
+		f.Intrinsic.Control.ElseIf(v.Screen.Form!ddlPricingType.Text, =, "Weight")
+			'uf1
+			f.Intrinsic.Control.If(v.Screen.Form!ddlLineType.Text, =, "Single")
+				Variable.Passed.000077.Set(v.DataTable.dtMaterial(0).Gross_LBS!FieldVal)
+			f.Intrinsic.Control.ElseIf(v.Screen.Form!ddlLineType.Text, =, "List")
+				Variable.Passed.000077.Set(V.Screen.Form!txtTotalQty.Text)
+			f.Intrinsic.Control.Else
+				Variable.Passed.000077.Set(v.DataTable.dtMaterial(0).Gross_LBS!FieldVal)
+			f.Intrinsic.Control.EndIf
+			'uf2
+			Variable.Passed.000080.Set(v.DataTable.dtRouterInfo(1).Price!FieldVal)
+			'uf3
+			Variable.Passed.000082.Set(v.Screen.Form!ddlPricingType.Text)
+		f.Intrinsic.Control.EndIf
+		'Price
+		Variable.Passed.000105.Set(v.Global.fPrice_S.Float)
+		Variable.Passed.000009.Set(v.Global.fPrice_S.Float)
+	f.Intrinsic.Control.EndIf	
+	'Desc
+	Variable.Passed.000056.Set(v.DataTable.dtPartAll(0).Description!FieldValTrim)
+	'PL
+	Variable.Passed.000013.Set(v.DataTable.dtPartAll(0).Product_Line!FieldValTrim)
+	'GL
+	Variable.Passed.000018.Set(v.Local.sGL)
+	'UM
+	f.Intrinsic.Control.If(v.Screen.Form!ddlLineType.Text, =, "Pull")
+		Variable.Passed.000006.Set(v.DataTable.dtPartAll(0).UM_Inventory!FieldValTrim)
+	f.Intrinsic.Control.Else
+		Variable.Passed.000006.Set("EA")
+	f.Intrinsic.Control.EndIf
+	'Cost
+	Variable.Passed.000012.Set(v.Global.fCost_S.Float)
+'	'Margin
+'	Variable.Passed.000008.Set(v.Global.fMargin.Float)
+	'Weight
+	f.Intrinsic.Control.If(v.Screen.Form!ddlLineType.Text, =, "Single")
+		Variable.Passed.000016.Set(v.Global.fWeight)
+	f.Intrinsic.Control.ElseIf(v.Screen.Form!ddlLineType.Text, =, "List")
+		f.Data.DataTable.Compute("dtList", "SUM(ListLbs)", "", v.Local.fArg1)
+		Variable.Passed.000016.Set(v.Global.fWeight)
+	f.Intrinsic.Control.Else
+		Variable.Passed.000016.Set(v.DataTable.dtMaterial(0).Weight!FieldVal)
+	f.Intrinsic.Control.EndIf
+	'Save Router Info
+	f.Intrinsic.String.LPad(Variable.Passed.000060, "0", 7, v.Local.sQuote)
+	f.Intrinsic.String.LPad(Variable.Passed.000051, "0", 3, v.Local.sLine)
+	f.Intrinsic.String.RPad(v.Local.sLine, "0", 4, v.Local.sLine)
+	'Save DTs
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Intrinsic.String.Build("Delete From QUOTE_LN_TEXT Where Quote_Number = '{0}' and Quote_Line = '{1}' and Quote_Type = '9999'", v.Local.sQuote, v.Local.sLine, v.Local.sSQL)
+		f.ODBC.Connection!con.Execute(v.Local.sSQL)
+		f.Intrinsic.String.Build("Insert into  QUOTE_LN_TEXT Values ('{0}', '{1}', '9999', '{2}')", v.Local.sQuote, v.Local.sLine, v.Local.sNotes.PSQLFriendly, v.Local.sSQL)
+		f.ODBC.Connection!con.Execute(v.Local.sSQL)
+		
+		'Save Line
+		F.Intrinsic.String.Build("Delete From GCG_6827_Screen Where Part = '{0}'", v.Global.sPart, v.Local.sSQL)	
+		f.ODBC.Connection!con.Execute(v.Local.sSQL)
+		
+		v.Local.sDesc.Set(v.Screen.Form!txtDesc.Text)
+		
+		f.Intrinsic.String.Build("Insert into  GCG_6827_Screen (Q_O, Part, RawMat, Description, LineType, Method, Qty, Width, Length, InchesOfCut, PricingType, InvUoM, Oversized, CutType, TotalQty, TotalCost, Markup, TotalPrice, TotalGross, Global_Total_Price, Mat_Dim, Cust) Values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}', '{15}', '{16}', '{17}', '{18}', '{19}', '{20}', '{21}')", "Q", v.Global.sPart, v.DataTable.dtPartAll(0).Part!FieldValTrim, v.Local.sDesc.PSQLFriendly, v.Screen.Form!ddlLineType.Text, v.Screen.Form!ddlMethod.Text, v.Screen.Form!txtQTY.Text, v.Screen.Form!txtWidthOD.Text, v.Screen.Form!txtLengthID.Text, v.Screen.Form!txtCuts.Text, v.Screen.Form!ddlPricingType.Text, v.Screen.Form!txtUOM.Text, v.Screen.Form!ddlOver.Text, v.Screen.Form!ddlCutType.Text, v.Global.fQty_S, v.Global.fCost_S, v.Screen.Form!txtMarkUp.Text, v.Global.fPrice_S, v.Global.fMargin, v.Global.fTotalPrice, v.Global.sMat_Dimension, v.Global.sCust, v.Local.sSQL)
+		f.ODBC.Connection!con.Execute(v.Local.sSQL)
+		
+		f.Data.DataTable.AcceptChanges("dtMethod")
+		f.Data.DataTable.SaveToDB("dtMethod", "con", "GCG_6827_DTMethod", "Router", 256)
+		
+		f.Data.DataTable.AcceptChanges("dtOutside")
+		f.Data.DataTable.SaveToDB("dtOutside", "con", "GCG_6827_DTOutside", "Router", 256)
+		
+		f.Data.DataTable.AcceptChanges("dtMaterial")
+		f.Data.DataTable.SaveToDB("dtMaterial", "con", "GCG_6827_DTMat", "Router", 256, "Router@!@Router*!*Width@!@Width*!*Length@!@Length*!*FaceArea@!@FaceArea*!*Weight@!@Weight*!*Cost_Lbs@!@Cost_Lbs*!*Cost_PO@!@Cost_PO*!*Price_Lbs@!@Price_Lbs*!*Material_Type@!@Material_Type*!*Shape@!@Shape*!*Thickness@!@Thickness*!*UOM@!@UOM*!*Material_Used@!@Material_Used")
+		
+		f.Data.DataTable.AcceptChanges("dtRouter")
+		f.Data.DataTable.SaveToDB("dtRouter", "con", "GCG_6827_DT_RTR", "Router*!*Seq", 256, "Router@!@Router*!*Seq@!@Seq*!*Part@!@Part*!*Description@!@Description*!*LMO@!@LMO*!*Qty@!@Qty*!*UOM@!@UOM*!*Cost_UOM@!@Cost_UOM*!*Cost_One@!@Cost_One*!*Cost_Lot@!@Cost_Lot*!*Price_UOM@!@Price_UOM*!*Price_One@!@Price_One*!*Price_Lot@!@Price_Lot*!*Note@!@Note*!*Vendor@!@Vendor")
+		
+		f.Data.DataTable.SetSeries("dtList", "LineID", 0, 1)
+		f.Data.DataTable.AcceptChanges("dtList")
+		f.Data.DataTable.SaveToDB("dtList", "con", "GCG_6827_DTList", "Router*!*LineID", 256, "Router@!@Router*!*Part@!@Part*!*Qty@!@Qty*!*ListLbs@!@ListLbs*!*List_Time_HR_One@!@List_Time_HR_One*!*List_Time_HR_Lot@!@List_Time_HR_Lot*!*ListCost@!@ListCost*!*ListPrice@!@ListPrice*!*ListGroupNotes@!@ListGroupNotes*!*ListLineNotes@!@ListLineNotes*!*CalcW@!@CalcW*!*CalcL@!@CalcL*!*LineID@!@LineID")
+		
+		f.Data.DataTable.AcceptChanges("dtRouterInfo")
+		f.Data.DataTable.SaveToDB("dtRouterInfo", "con", "GCG_6827_DTinfo", "Router*!*PriceDesc", 256)
+				
+	f.ODBC.Connection!con.Close
+	f.Intrinsic.Control.End
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdSaveSOline_Click.End
+
+Program.Sub.GsGcRouterData_RowCellClick.Start
+v.Local.sCol.Declare
+v.Local.fQty.Declare
+v.Local.fPrice.Declare
+v.Local.fMarkup.Declare
+v.Local.fCost.Declare
+v.Local.fTotalPrice.Declare
+v.Local.fTotalCost.Declare
+v.Local.sColumn.Declare
+v.Local.sRet.Declare
+f.Intrinsic.Control.Try
+	v.Local.sCol.Set(v.Args.Column)
+	f.Intrinsic.Control.If(v.Local.sCol.UCase, =, "DELETE")
+		f.Data.DataTable.DeleteRow("dtRouter", v.Args.RowIndex)
+		f.Data.DataTable.AcceptChanges("dtRouter")
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.GsGcRouterData_RowCellClick.End
+
+Program.Sub.GsGcRouterData_KeyPress.Start
+Program.Sub.GsGcRouterData_KeyPress.End
+
+Program.Sub.cmdLoadMethod_Click.Start
+v.Local.sSQL.Declare
+v.Local.sRet.Declare
+v.Local.fStdPrice.Declare
+v.Local.fStdCost.Declare
+
+v.Local.fQty.Declare
+
+v.Local.fQtyRouterOne.Declare
+v.Local.fCostUOM.Declare
+v.Local.fCostOne.Declare
+v.Local.fCostLot.Declare
+v.Local.fPriceUOM.Declare
+v.Local.fPriceOne.Declare
+v.Local.fPriceLot.Declare
+
+v.Local.fMin.Declare
+v.Local.fSetup.Declare
+f.Intrinsic.Control.Try
+	v.Local.fQty.Set(v.Screen.Form!txtQTY.Text)
+	'Browser
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Intrinsic.UI.Browser("Method", "con", "Select Method, Method_Name from GCG_6827_METHOD", "Method*!*Method Name", "80*!*120", v.Local.sRet)
+	
+		f.Intrinsic.Control.If(v.Local.sRet, <>, "***CANCEL***")
+			f.Intrinsic.String.Split(v.Local.sRet, "*!*", v.Local.sRet)
+			
+			'Get Calc Price
+			f.Intrinsic.String.Build("Select top 1 standard_Bill from V_WORKCENTERS where machine = '{0}'", v.Local.sRet(0), v.Local.sSQL)
+			f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, v.Local.fPriceUOM)
+			'Get Calc Cost
+			f.Intrinsic.String.Build("Select top 1 standard_Cost from V_WORKCENTERS where machine = '{0}'", v.Local.sRet(0), v.Local.sSQL)
+			f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, v.Local.fCostUOM)
+		f.Intrinsic.Control.EndIf
+	f.ODBC.Connection!con.Close
+	f.Data.DataTable.DeleteRow("dtMethod")
+	f.Data.DataTable.AcceptChanges("dtMethod")
+	f.Data.DataTable.AddRow("dtMethod", "Method", v.Local.sRet(0), "Method_Name", v.Local.sRet(1))
+	
+	v.Local.fMin.Set(v.DataTable.dtMethod(0).Minimum!FieldVal)
+	v.Local.fSetup.Set(v.DataTable.dtMethod(0).Setup!FieldVal)
+	
+	'Calculate
+	f.Intrinsic.Math.Div(v.Local.fCostUOM, v.Local.fQty, v.Local.fCostOne)
+	f.Intrinsic.Math.Div(v.Local.fPriceUOM, v.Local.fQty, v.Local.fPriceUOM)
+	f.Intrinsic.Math.Div(1, v.Local.fQty, v.Local.fQtyRouterOne)
+	
+	f.Intrinsic.Math.Add(v.Local.fPriceLot, v.Local.fSetup, v.Local.fPriceLot)
+	f.Intrinsic.Control.If(v.Local.fPriceLot, <, v.Local.fMin)
+		v.Local.fPriceLot.Set(v.Local.fMin)
+		f.Intrinsic.Math.Div(v.Local.fPriceLot, v.Local.fQty, v.Local.fPriceOne)
+	f.Intrinsic.Control.EndIf
+	
+	f.Data.DataTable.SetValue("dtMethod", 0, "Cost_WC", v.Local.fCostUOM, "Cost_One", v.Local.fCostOne, "Cost_Lot", v.Local.fCostUOM, "Price_WC", v.Local.fPriceUOM, "Price_One", v.Local.fStdPrice, "Price_Lot", v.Local.fPriceUOM, "Time_HR_One", v.Local.fQtyRouterOne, "Time_HR_Lot", "1")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdLoadMethod_Click.End
+
+Program.Sub.cmdLot_Click.Start
+Program.Sub.cmdLot_Click.End
+
+Program.Sub.cmdSD_Click.Start
+v.Local.sPath.Declare
+v.Local.sPart.Declare
+v.Local.sLoc.Declare
+f.Intrinsic.Control.Try
+	'get part
+	v.Local.sPart.Set(v.Screen.Form!txtRawItem.Text)
+	v.Local.sLoc.Set("  ")
+	F.Intrinsic.String.Build("{0}bin\SupplyAndDemand.exe",V.Caller.LocalGSSTempDir,V.Local.sPath)
+	F.Intrinsic.Task.SetEnvironmentVariable("PARTNUMBER",V.Local.sPart)
+	F.Intrinsic.Task.SetEnvironmentVariable("LOCATIONCODE",V.Local.sLoc)
+	F.Intrinsic.Task.LaunchAsync(V.Local.sPath,1,V.Local.sPath)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdSD_Click.End
+
+Program.Sub.cmdReset_Click.Start
+f.Intrinsic.Control.Try
+	'Delete Rows
+	f.Data.DataTable.DeleteRow("dtMethod")
+	f.Data.DataTable.AcceptChanges("dtMethod")
+	f.Data.DataTable.DeleteRow("dtList")
+	f.Data.DataTable.AcceptChanges("dtList")
+	f.Data.DataTable.DeleteRow("dtMaterial")
+	f.Data.DataTable.AcceptChanges("dtMaterial")
+	f.Data.DataTable.DeleteRow("dtOutside")
+	f.Data.DataTable.AcceptChanges("dtOutside")
+	f.Data.DataTable.DeleteRow("dtRouter")
+	f.Data.DataTable.AcceptChanges("dtRouter")
+'	f.Data.DataTable.DeleteRow("dtRouterInfo")
+'	f.Data.DataTable.AcceptChanges("dtRouterInfo")
+	'Empty Text Boxes
+	gui.Form.txtRawItem.Text("")
+	gui.Form.txtDesc.Text("")
+	gui.Form.ddlLineType.Text("")
+	gui.Form.ddlLineType.ClearSelected
+	gui.Form.ddlMethod.Text("")
+	gui.Form.ddlMethod.ClearSelected
+	gui.Form.ddlCutType.Text("")
+	gui.Form.ddlCutType.ClearSelected
+	gui.Form.txtQTY.Text("")
+	gui.Form.txtWidthOD.Text("")
+	gui.Form.txtLengthID.Text("")
+	gui.Form.txtCuts.Text("")
+	gui.Form.txtLineNote.Text("")
+	gui.Form.txtGroupNote.Text("")
+	gui.Form.txtTotalQty.Text("")
+	gui.Form.txtTotalCost.Text("")
+	gui.Form.txtMarkUp.Text("")
+	gui.Form.txtTotalPrice.Text("")
+	gui.Form.txtTotalGross.Text("")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdReset_Click.End
+
+Program.Sub.LoadSavedDT.Start
+v.Local.sSQL.Declare
+f.Intrinsic.Control.Try
+	'Load DT and set Values.
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Intrinsic.String.Build("Select * from GCG_6827_Screen where Q_O = '{0}' and Part = '{1}'", v.Global.sQ_O, v.Global.sPart, v.Local.sSQL)
+		f.Data.DataTable.CreateFromSQL("loadDT", "con", v.Local.sSQL)
+		
+		f.Intrinsic.String.Build("select * from GCG_6827_DTMethod where Router = '{0}'", v.Global.sPart, v.Local.sSQL)
+		f.Data.DataTable.CreateFromSQL("tmpDT", "con", v.Local.sSQL)
+		f.Data.DataTable.Merge("tmpDT", "dtMethod", false, 2)
+		f.Data.DataTable.AcceptChanges("dtMethod")
+		f.Data.DataTable.Close("tmpDT")
+		
+		f.Intrinsic.String.Build("select * from GCG_6827_DTOutside where Router = '{0}'", v.Global.sPart, v.Local.sSQL)
+		f.Data.DataTable.CreateFromSQL("tmpDT", "con", v.Local.sSQL)
+		f.Data.DataTable.Merge("tmpDT", "dtOutside", false, 2)
+		f.Data.DataTable.AcceptChanges("dtOutside")
+		f.Data.DataTable.Close("tmpDT")
+		
+		f.Intrinsic.String.Build("select * from GCG_6827_DTMat where Router = '{0}'", v.Global.sPart, v.Local.sSQL)
+		f.Data.DataTable.CreateFromSQL("tmpDT", "con", v.Local.sSQL)
+		f.Data.DataTable.Merge("tmpDT", "dtMaterial", false, 2)
+		f.Data.DataTable.AcceptChanges("dtMaterial")
+		f.Data.DataTable.Close("tmpDT")
+		
+		f.Intrinsic.String.Build("select * from GCG_6827_DT_RTR where Router = '{0}'", v.Global.sPart, v.Local.sSQL)
+		f.Data.DataTable.CreateFromSQL("tmpDT", "con", v.Local.sSQL)
+		f.Data.DataTable.Merge("tmpDT", "dtRouter", false, 2)
+		f.Data.DataTable.AcceptChanges("dtRouter")
+		f.Data.DataTable.Close("tmpDT")
+		
+		f.Intrinsic.String.Build("select * from GCG_6827_DTList where Router = '{0}'", v.Global.sPart, v.Local.sSQL)
+		f.Data.DataTable.CreateFromSQL("tmpDT", "con", v.Local.sSQL)
+		f.Data.DataTable.Merge("tmpDT", "dtList", false, 2)
+		f.Data.DataTable.AcceptChanges("dtList")
+		f.Data.DataTable.Close("tmpDT")
+		
+		f.Intrinsic.String.Build("select * from GCG_6827_DTinfo where Router = '{0}'", v.Global.sPart, v.Local.sSQL)
+		f.Data.DataTable.CreateFromSQL("tmpDT", "con", v.Local.sSQL)
+		f.Intrinsic.Control.If(v.DataTable.tmpDT.RowCount, >, 0)
+			f.Data.DataTable.DeleteRow("dtRouterInfo")
+			f.Data.DataTable.AcceptChanges("dtRouterInfo")
+		f.Intrinsic.Control.EndIf		
+		f.Data.DataTable.Merge("tmpDT", "dtRouterInfo", false, 2)
+		f.Data.DataTable.AcceptChanges("dtRouterInfo")
+		f.Data.DataTable.Close("tmpDT")
+	f.ODBC.Connection!con.Close
+	f.Intrinsic.Control.If(v.DataTable.loadDT.RowCount, =, 0)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	'Load List and Router
+	gui.Form.txtRawItem.Text(v.DataTable.loadDT(0).RawMat!FieldValTrim)
+	gui.Form.txtDesc.Text(v.DataTable.loadDT(0).Description!FieldValTrim)
+	gui.Form.ddlLineType.Text(v.DataTable.loadDT(0).LineType!FieldValTrim)
+	gui.Form.ddlMethod.Text(v.DataTable.loadDT(0).Method!FieldValTrim)
+	gui.Form.ddlCutType.Text(v.DataTable.loadDT(0).CutType!FieldValTrim)
+	gui.Form.txtQTY.Text(v.DataTable.loadDT(0).Qty!FieldValTrim)
+	gui.Form.txtWidthOD.Text(v.DataTable.loadDT(0).Width!FieldValTrim)
+	gui.Form.txtLengthID.Text(v.DataTable.loadDT(0).Length!FieldValTrim)
+	gui.Form.txtCuts.Text(v.DataTable.loadDT(0).InchesOfCut!FieldValTrim)
+	gui.Form.txtLineNote.Text("")
+	gui.Form.txtGroupNote.Text("")
+	gui.Form.ddlPricingType.Text(v.DataTable.loadDT(0).PricingType!FieldValTrim)
+	gui.Form.txtUOM.Text(v.DataTable.loadDT(0).InvUoM!FieldValTrim)
+	gui.Form.ddlOver.Text(v.DataTable.loadDT(0).OverSized!FieldValTrim)
+	
+	gui.Form.txtTotalQty.Text(v.DataTable.loadDT(0).TotalQty!FieldValTrim)
+	gui.Form.txtTotalCost.Text(v.DataTable.loadDT(0).TotalCost!FieldValTrim)
+	gui.Form.txtMarkUp.Text(v.DataTable.loadDT(0).MarkUp!FieldValTrim)
+	gui.Form.txtTotalPrice.Text(v.DataTable.loadDT(0).TotalPrice!FieldValTrim)
+	gui.Form.txtTotalGross.Text(v.DataTable.loadDT(0).TotalGross!FieldValTrim)
+	
+	f.Intrinsic.Control.CallSub("calculateTotal")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.LoadSavedDT.End
+
+Program.Sub.calculateTotal.Start
+v.Local.fCost_U.Declare
+v.Local.fCost_T.Declare
+v.Local.fPrice_U.Declare
+v.Local.fPrice_T.Declare
+v.Local.fMarkup.Declare
+v.Local.fMargin.Declare
+v.Local.fGrossP.Declare
+
+v.Local.fEachP.Declare
+v.Local.fLbsP.Declare
+v.Local.fLotP.Declare
+
+v.Local.fQty.Declare
+v.Local.fWeight.Declare
+v.Local.sFormat.Declare
+f.Intrinsic.Control.Try
+'Try something
+'Get Unit Costs and Price from router
+f.Data.DataTable.AcceptChanges("dtRouter")
+f.Data.DataTable.Compute("dtRouter", "SUM(Cost_One)", , v.Local.fCost_U)
+	f.Intrinsic.Control.If(v.Local.fCost_U, =, 0)
+		v.Local.fCost_U.Set(1)
+	f.Intrinsic.Control.EndIf
+f.Data.DataTable.Compute("dtRouter", "SUM(Price_One)", , v.Local.fPrice_U)
+	f.Intrinsic.Control.If(v.Local.fPrice_U, =, 0)
+		v.Local.fPrice_U.Set(1)
+	f.Intrinsic.Control.EndIf
+'Get Quantity & weight
+f.Intrinsic.Control.If(v.Screen.Form!ddlLineType.Text, = ,"List")
+	f.Data.DataTable.Compute("dtList", "SUM(Qty)", "", v.Local.fQty)
+	f.Intrinsic.Control.If(v.Local.fQty, =, 0)
+		v.Local.fQty.Set(1)
+	f.Intrinsic.Control.EndIf
+	'f.Data.DataTable.Compute("dtList", "SUM(ListLbs)", "", v.Local.fWeight)
+	v.Local.fWeight.Set(v.DataTable.dtRouter(0).Qty!FieldValFloat)
+	f.Intrinsic.Math.Mult(v.Local.fWeight, v.Local.fQty, v.Local.fWeight)
+f.Intrinsic.Control.Else
+	v.Local.fQty.Set(v.Screen.Form!txtQTY.Text)
+	v.Local.fWeight.Set(v.DataTable.dtMaterial(0).Gross_LBS!FieldVal)
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Local.fWeight, =, 0)
+	v.Local.fWeight.Set(1)
+f.Intrinsic.Control.EndIf
+v.Global.fWeight.Set(v.Local.fWeight)
+'Round
+f.Intrinsic.Math.Round(v.Local.fCost_U, 2, v.Local.fCost_U)
+f.Intrinsic.Math.Round(v.Local.fPrice_U, 2, v.Local.fPrice_U)
+
+'f.Intrinsic.Control.If(v.Screen.Form!ddlLineType.Text, = ,"List")
+'	f.Intrinsic.Math.Div(v.Local.fCost_U, v.Local.fQty, v.Local.fCost_U)
+'	f.Intrinsic.Math.Div(v.Local.fPrice_U, v.Local.fQty, v.Local.fPrice_U)
+'f.Intrinsic.Control.EndIf
+
+'Get Total
+f.Data.DataTable.Compute("dtRouter", "SUM(Cost_Lot)", , v.Local.fCost_T)
+	f.Intrinsic.Control.If(v.Local.fCost_T, =, 0)
+		v.Local.fCost_T.Set(1)
+	f.Intrinsic.Control.EndIf
+f.Data.DataTable.Compute("dtRouter", "SUM(Price_Lot)", , v.Local.fPrice_T)
+	f.Intrinsic.Control.If(v.Local.fPrice_T, =, 0)
+		v.Local.fPrice_T.Set(1)
+	f.Intrinsic.Control.EndIf
+'f.Intrinsic.Math.Mult(v.Local.fCost_U, v.Local.fQty, v.Local.fCost_T)
+'f.Intrinsic.Math.Mult(v.Local.fPrice_U, v.Local.fQty, v.Local.fPrice_T)
+
+'Round
+f.Intrinsic.Math.Round(v.Local.fCost_T, 2, v.Local.fCost_T)
+f.Intrinsic.Math.Round(v.Local.fPrice_T, 2, v.Local.fPrice_T)
+
+
+f.Intrinsic.Math.Sub(v.Local.fPrice_T, v.Local.fCost_T, v.Local.fGrossP)
+
+f.Intrinsic.Control.If(v.Local.fCost_T, =, 0, "OR", v.Local.fPrice_T, =, 0)
+	v.Local.fMarkup.Set(1)
+	v.Local.fMargin.Set(0)
+f.Intrinsic.Control.Else
+	f.Intrinsic.Math.Div(v.Local.fGrossP, v.Local.fCost_T, v.Local.fMarkup)
+	f.Intrinsic.Math.Div(v.Local.fGrossP, v.Local.fPrice_T, v.Local.fMargin)
+	f.Intrinsic.Math.Mult(v.Local.fMargin, 100, v.Local.fMargin)
+	f.Intrinsic.Math.Round(v.Local.fMargin, 2, v.Local.fMargin)
+f.Intrinsic.Control.EndIf
+
+'Get Router Data
+'Each
+v.Local.fEachP.Set(v.Local.fPrice_U)
+f.Intrinsic.Math.Round(v.Local.fEachP, 2, v.Local.fEachP)
+'LBS
+f.Intrinsic.Math.Div(v.Local.fPrice_T, v.Local.fWeight, v.Local.fLbsP)
+f.Intrinsic.Math.Round(v.Local.fLbsP, 2, v.Local.fLbsP)
+'Lot
+v.Local.fLotP.Set(v.Local.fPrice_T)
+f.Intrinsic.Math.Round(v.Local.fLotP, 2, v.Local.fLotP)
+
+'Set Totals
+gui.Form.txtTotalQty.Text(v.Local.fQty)
+
+f.Intrinsic.Math.Round(v.Local.fCost_T, 2, v.Local.fCost_T)
+f.Intrinsic.String.Format(v.Local.fCost_T, "$ 0.00", v.Local.sFormat)
+gui.Form.txtTotalCost.Text(v.Local.sFormat)
+
+f.Intrinsic.Math.Round(v.Local.fMarkup, 2, v.Local.fMarkup)
+f.Intrinsic.String.Format(v.Local.fMarkup, "0.00 %", v.Local.sFormat)
+gui.Form.txtMarkUp.Text(v.Local.sFormat)
+
+f.Intrinsic.Math.Round(v.Local.fPrice_T, 2, v.Local.fPrice_T)
+f.Intrinsic.String.Format(v.Local.fPrice_T, "$ 0.00", v.Local.sFormat)
+gui.Form.txtTotalPrice.Text(v.Local.sFormat)
+
+f.Intrinsic.Math.Round(v.Local.fGrossP, 2, v.Local.fGrossP)
+f.Intrinsic.String.Format(v.Local.fGrossP, "$ 0.00", v.Local.sFormat)
+gui.Form.txtTotalGross.Text(v.Local.sFormat)
+
+'Set Router Data
+f.Data.DataTable.SetValue("dtRouterInfo", 0, "Price", v.Local.fEachP, "MarkUp", v.Local.fMarkup)
+f.Data.DataTable.SetValue("dtRouterInfo", 1, "Price", v.Local.fLbsP, "MarkUp", v.Local.fMarkup)
+f.Data.DataTable.SetValue("dtRouterInfo", 2, "Price", v.Local.fLotP, "MarkUp", v.Local.fMarkup)
+
+'Set Globals
+v.Global.fQty_S.Set(v.Local.fQty)
+v.Global.fPrice_S.Set(v.Local.fPrice_U)
+v.Global.fCost_S.Set(v.Local.fCost_U)
+v.Global.fMargin.Set(v.Local.fMargin)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.calculateTotal.End
+
+Program.Sub.CheckWL.Start
+v.Local.sTemp.Declare
+f.Intrinsic.Control.Try
+'Check Width / Length
+		v.Local.sTemp.Set(v.Screen.Form!txtWidthOD.Text)
+		f.Intrinsic.Control.If(v.Local.sTemp.IsNumeric)
+			'Do Nothing
+		f.Intrinsic.Control.Else
+			f.Intrinsic.UI.Msgbox("Please fill Width/OD field.")
+			f.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.EndIf
+		'Check Length
+		v.Local.sTemp.Set(v.Screen.Form!txtLengthID.Text)
+		f.Intrinsic.Control.If(v.Local.sTemp.IsNumeric)
+			'Do Nothing
+		f.Intrinsic.Control.Else
+			f.Intrinsic.Control.If(v.Local.sCutType.UCase, =, "OD/ID")
+				gui.Form.txtLengthID.Text("0")
+			f.Intrinsic.Control.Else
+				f.Intrinsic.UI.Msgbox("Please fill Length/ID field.")
+				f.Intrinsic.Control.ExitSub
+			f.Intrinsic.Control.EndIf		
+		f.Intrinsic.Control.EndIf	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.CheckWL.End
+
+Program.Sub.calcPull.Start
+v.Local.fQty.Declare
+v.Local.fWidth.Declare
+v.Local.fLenght.Declare
+
+v.Local.fQtyRouterOne.Declare
+
+v.Local.fCostUOM.Declare
+v.Local.fCostOne.Declare
+v.Local.fCostLot.Declare
+
+v.Local.fPriceUOM.Declare
+v.Local.fPriceOne.Declare
+v.Local.fPriceLot.Declare
+
+f.Intrinsic.Control.Try
+
+	'Set Pull Info
+	v.Local.fQty.Set(v.Screen.Form!txtQTY.Text)
+	gui.Form.txtCuts.Text(v.Local.fQty)
+	gui.Form.txtTotalQty.Text(v.Local.fQty)
+	'Set Material Use and Weight
+	f.Intrinsic.Control.If(v.DataTable.dtMaterial(0).UOM!FieldValTrim, =, "EA")
+		v.Local.fQtyRouterOne.Set(1)
+		'Cost per Each
+		f.Intrinsic.Math.Mult(v.DataTable.dtMaterial(0).Cost_Lbs!FieldValFloat, v.DataTable.dtMaterial(0).Weight!FieldValFloat ,v.Local.fCostUOM)
+		'Price per Each
+		f.Intrinsic.Math.Mult(v.DataTable.dtMaterial(0).Price_Lbs!FieldValFloat, v.DataTable.dtMaterial(0).Weight!FieldValFloat ,v.Local.fPriceUOM)
+	f.Intrinsic.Control.Else
+		v.Local.fQtyRouterOne.Set(v.DataTable.dtMaterial(0).weight!FieldVal)
+		'Cost per LBS
+		v.Local.fCostUOM.Set(v.DataTable.dtMaterial(0).Cost_Lbs!FieldValFloat)
+		'Price per LBS
+		v.Local.fPriceUOM.Set(v.DataTable.dtMaterial(0).Price_Lbs!FieldValFloat)
+	f.Intrinsic.Control.EndIf
+	'Set Material used:
+	f.Data.DataTable.SetValue("dtMaterial", 0, "Material_Used", v.Local.fQty)
+	'Set Router Data
+	f.Data.DataView.Create("dtRouter", "dvRouterM", 22, "LMO = 'M'", )
+		f.Intrinsic.Control.If(v.DataView.dtRouter!dvRouterM.RowCount, >, 0)
+			'Costs:
+			f.Intrinsic.Math.Mult(v.Local.fCostUOM, v.Local.fQtyRouterOne, v.Local.fCostOne)
+			f.Intrinsic.Math.Mult(v.Local.fCostOne, v.Local.fQty, v.Local.fCostLot)
+			
+			f.Intrinsic.Math.Mult(v.Local.fPriceUOM, v.Local.fQtyRouterOne, v.Local.fPriceOne)
+			f.Intrinsic.Math.Mult(v.Local.fPriceOne, v.Local.fQty, v.Local.fPriceLot)
+			'Set Values
+			f.Data.DataView.SetValue("dtRouter", "dvRouterM", 0, "Qty", v.Local.fQtyRouterOne, "Cost_UOM", v.Local.fCostUOM , "Cost_One", v.Local.fCostOne, "Cost_Lot", v.Local.fCostLot, "Price_UOM", v.Local.fPriceUOM , "Price_One", v.Local.fPriceOne, "Price_Lot", v.Local.fPriceLot)
+			f.Data.DataTable.AcceptChanges("dtRouter")
+		f.Intrinsic.Control.EndIf
+	f.Data.DataView.Close("dtRouter", "dvRouterM")
+	'Get Total Prices and Costs
+	f.Intrinsic.Control.CallSub(calculateTotal)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.calcPull.End
+
+Program.Sub.calcOneDim.Start
+f.Intrinsic.Control.Try
+	'Check Line Type
+	f.Intrinsic.Control.If(v.Screen.Form!ddlLineType.Text, =, "Pull")
+		f.Intrinsic.Control.CallSub("calcPull")
+	f.Intrinsic.Control.ElseIf(v.Screen.Form!ddlLineType.Text, =, "Single")
+		f.Intrinsic.Control.CallSub("calcSingleOneDim")
+	f.Intrinsic.Control.ElseIf(v.Screen.Form!ddlLineType.Text, =, "List")
+		f.Intrinsic.Control.CallSub("calcListOneDim")
+	f.Intrinsic.Control.Else	
+		f.Intrinsic.UI.Msgbox("No Line Type Selected.")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.calcOneDim.End
+
+Program.Sub.calcSingleOneDim.Start
+v.Local.sCutType.Declare
+v.Local.fWidth.Declare
+v.Local.fLength.Declare
+v.Local.sTemp.Declare
+v.Local.fCuts.Declare
+v.Local.fQty.Declare
+v.Local.sLineType.Declare
+'Material Used
+v.Local.fThickness.Declare
+v.Local.sSQL.Declare
+v.Local.fAdder.Declare
+v.Local.fArg1.Declare
+v.Local.fArea.Declare
+v.Local.fPer.Declare
+v.Local.fNum.Declare
+'Cost/MK/Price
+v.Local.fCost.Declare
+v.Local.fMK.Declare
+v.Local.fPrice.Declare
+'PriceInfo
+v.Local.fPriceCalc.Declare
+v.Local.fCostCalc.Declare
+v.Local.sPer.Declare
+v.Local.fTempText.Declare
+'
+v.Local.fTotQtyP.Declare
+v.Local.fRouterQty.Declare
+v.Local.fTotalCost.Declare
+'Router Variables
+v.Local.fQtyRouterOne.Declare
+v.Local.fCostUOM.Declare
+v.Local.fCostOne.Declare
+v.Local.fCostLot.Declare
+v.Local.fPriceUOM.Declare
+v.Local.fPriceOne.Declare
+v.Local.fPriceLot.Declare
+v.Local.fGross_Fts.Declare
+f.Intrinsic.Control.Try
+	f.Data.DataTable.AcceptChanges("dtMaterial")
+	f.Data.DataTable.AcceptChanges("dtRouter")
+	v.Local.sCutType.Set(v.Screen.Form!ddlCutType.Text)
+	v.Local.sLineType.Set(v.Screen.Form!ddlLineType.Text)
+	'Check Length
+	v.Local.fWidth.Set(0)
+	v.Local.sTemp.Set(v.Screen.Form!txtLengthID.Text)
+	f.Intrinsic.Control.If(v.Local.sTemp.IsNumeric)
+		v.Local.fLength.Set(v.Local.sTemp)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.UI.Msgbox("Please fill Length/ID field.")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf	
+	
+	f.Intrinsic.Control.If(v.Screen.Form!txtCuts.Text, =, "")
+		gui.Form.txtCuts.Text(v.Screen.Form!txtQTY.Text)
+	f.Intrinsic.Control.EndIf
+	
+	v.Local.fCuts.Set(v.Screen.Form!txtCuts.Text)
+	f.Intrinsic.Control.CallSub("ddlLineType_Change")
+	'Check Qty
+	v.Local.sLineType.Set(v.Screen.Form!ddlLineType.Text)
+	v.Local.fQty.Set(0)
+	v.Local.sTemp.Set(v.Screen.Form!txtQTY.Text)
+	f.Intrinsic.Control.If(v.Local.sTemp.IsNumeric)
+		v.Local.fQty.Set(v.Local.sTemp)
+	f.Intrinsic.Control.Else
+		v.Local.fQty.Set(0)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Math.Round(v.Local.fQty, 2, v.Local.fTempText)
+	gui.Form.txtTotalQty.Text(v.Local.fTempText)
+	'Get QTY
+	v.Local.sTemp.Set(v.Screen.Form!txtQTY.Text)
+		f.Intrinsic.Control.If(v.Local.sTemp.IsNumeric)
+			v.Local.fQty.Set(v.Local.sTemp)
+		f.Intrinsic.Control.Else
+			v.Local.fQty.Set(0)
+		f.Intrinsic.Control.EndIf
+	'Get Thickness
+	v.Local.fThickness.Set(v.DataTable.dtMaterial(0).Thickness!FieldVal)
+	'Get material Used.
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Intrinsic.String.Build("Select Top 1 Adder from GCG_6827_2D_ADDER where Thickness = '{0}'", v.Local.fThickness, v.Local.sSQL)
+		f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, v.Local.fAdder)
+		v.Local.fPer.Set(v.DataTable.dtPartExtra(0).User8!fieldVal)
+	f.ODBC.Connection!con.Close
+	
+	f.Intrinsic.Control.If(v.Local.fPer, =, 0)	
+		f.Intrinsic.UI.Msgbox("Cut Percentage not found on Extra User Field 8.")	
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	'Calc Material used
+	f.Intrinsic.Math.Mult(v.Local.fLength, v.Local.fQty, v.Local.fArg1)
+	f.Intrinsic.Math.Div(v.Local.fArg1, v.DataTable.dtMaterial(0).Length!fieldVal, v.Local.fArg1)
+	'
+	f.Intrinsic.Math.Div(v.Local.fArg1, v.Local.fPer, v.Local.fArg1)
+	'If not on a List do Ceiling
+	f.Intrinsic.Control.If(v.Local.sLineType.UCase, <>, "LIST")
+		f.Intrinsic.Math.Ceiling(v.Local.fArg1, v.Local.fArg1)
+	f.Intrinsic.Control.EndIf			
+	'SetMaterial Used.
+	f.Intrinsic.Control.If(v.DataTable.dtRouter(0).UOM!FieldValTrim, =, "FT")
+		f.Intrinsic.Math.Div(v.Local.fLength, 12, v.Local.fLength)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.Math.Mult(v.Local.fArg1, v.DataTable.dtMaterial(0).Weight!FieldVal, v.Local.fLength)
+	f.Intrinsic.Control.EndIf
+	
+	f.Data.DataTable.SetValue("dtMaterial", 0, "Material_Used", v.Local.fArg1)
+	'Calcualte Router Data
+	v.Local.fGross_Fts.Set(v.DataTable.dtMaterial(0).Gross_FT!FieldValFloat)
+	'Set Material Use and Weight
+	f.Intrinsic.Control.If(v.DataTable.dtMaterial(0).UOM!FieldValTrim, =, "EA")
+		v.Local.fQtyRouterOne.Set(1)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.Math.Div(v.Local.fGross_Fts, v.Local.fQty, v.Local.fQtyRouterOne)
+		'v.Local.fQtyRouterOne.Set(v.DataTable.dtMaterial(0).weight!FieldVal)
+	f.Intrinsic.Control.EndIf
+	'Set Router
+	f.Data.DataView.Create("dtRouter", "dvRouterM", 22, "LMO = 'M'", )
+		f.Intrinsic.Control.If(v.DataView.dtRouter!dvRouterM.RowCount, >, 0)
+			'Costs:
+			v.Local.fCostUOM.Set(v.DataTable.dtMaterial(0).Cost_Lbs!FieldValFloat)
+			f.Intrinsic.Math.Mult(v.Local.fCostUOM, v.Local.fQtyRouterOne, v.Local.fCostOne)
+			f.Intrinsic.Math.Mult(v.Local.fCostOne, v.Local.fQty, v.Local.fCostLot)
+			'Prices
+			v.Local.fPriceUOM.Set(v.DataTable.dtMaterial(0).Price_Lbs!FieldValFloat)
+			f.Intrinsic.Math.Mult(v.Local.fPriceUOM, v.Local.fQtyRouterOne, v.Local.fPriceOne)
+			f.Intrinsic.Math.Mult(v.Local.fPriceOne, v.Local.fQty, v.Local.fPriceLot)
+			'Set Values
+			f.Data.DataView.SetValue("dtRouter", "dvRouterM", 0, "Qty", v.Local.fQtyRouterOne, "Cost_UOM", v.Local.fCostUOM , "Cost_One", v.Local.fCostOne, "Cost_Lot", v.Local.fCostLot, "Price_UOM", v.Local.fPriceUOM , "Price_One", v.Local.fPriceOne, "Price_Lot", v.Local.fPriceLot)
+			f.Data.DataTable.AcceptChanges("dtRouter")
+		f.Intrinsic.Control.EndIf
+	f.Data.DataView.Close("dtRouter", "dvRouterM")
+	'Load Method
+	f.Intrinsic.Control.CallSub("LoadMethod")
+	'Calculate Totals
+	f.Intrinsic.Control.CallSub("calculateTotal")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.calcSingleOneDim.End
+
+Program.Sub.calcListOneDim.Start
+v.Local.sCutType.Declare
+v.Local.fWidth.Declare
+v.Local.fLength.Declare
+v.Local.sTemp.Declare
+v.Local.fCuts.Declare
+v.Local.fQty.Declare
+v.Local.sLineType.Declare
+'Material Used
+v.Local.fThickness.Declare
+v.Local.sSQL.Declare
+v.Local.fAdder.Declare
+v.Local.fArg1.Declare
+v.Local.fArea.Declare
+v.Local.fPer.Declare
+v.Local.fNum.Declare
+'Cost/MK/Price
+v.Local.fCost.Declare
+v.Local.fMK.Declare
+v.Local.fPrice.Declare
+'PriceInfo
+v.Local.fPriceCalc.Declare
+v.Local.fCostCalc.Declare
+v.Local.sPer.Declare
+v.Local.fTempText.Declare
+'
+v.Local.fTotQtyP.Declare
+v.Local.fRouterQty.Declare
+v.Local.fTotalCost.Declare
+'Router Variables
+v.Local.fQtyRouterOne.Declare
+v.Local.fCostUOM.Declare
+v.Local.fCostOne.Declare
+v.Local.fCostLot.Declare
+v.Local.fPriceUOM.Declare
+v.Local.fPriceOne.Declare
+v.Local.fPriceLot.Declare
+v.Local.fGross_Fts.Declare
+
+v.Local.sText.Declare
+f.Intrinsic.Control.Try
+	f.Data.DataTable.AcceptChanges("dtMaterial")
+	f.Data.DataTable.AcceptChanges("dtRouter")
+	v.Local.sCutType.Set(v.Screen.Form!ddlCutType.Text)
+	v.Local.sLineType.Set(v.Screen.Form!ddlLineType.Text)
+	'Check Length
+	v.Local.fWidth.Set(0)
+	v.Local.sTemp.Set(v.Screen.Form!txtLengthID.Text)
+	f.Intrinsic.Control.If(v.Local.sTemp.IsNumeric)
+		v.Local.fLength.Set(v.Local.sTemp)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.UI.Msgbox("Please fill Length/ID field.")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf	
+	
+	f.Intrinsic.Control.If(v.Screen.Form!txtCuts.Text, =, "")
+		gui.Form.txtCuts.Text(v.Screen.Form!txtQTY.Text)
+	f.Intrinsic.Control.EndIf
+	
+	v.Local.fCuts.Set(v.Screen.Form!txtCuts.Text)
+	f.Intrinsic.Control.CallSub("ddlLineType_Change")
+	'Check Qty
+	v.Local.sLineType.Set(v.Screen.Form!ddlLineType.Text)
+	v.Local.fQty.Set(0)
+	v.Local.sTemp.Set(v.Screen.Form!txtQTY.Text)
+	f.Intrinsic.Control.If(v.Local.sTemp.IsNumeric)
+		v.Local.fQty.Set(v.Local.sTemp)
+	f.Intrinsic.Control.Else
+		v.Local.fQty.Set(0)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Math.Round(v.Local.fQty, 2, v.Local.fTempText)
+	gui.Form.txtTotalQty.Text(v.Local.fTempText)
+	'Get QTY
+	v.Local.sTemp.Set(v.Screen.Form!txtQTY.Text)
+		f.Intrinsic.Control.If(v.Local.sTemp.IsNumeric)
+			v.Local.fQty.Set(v.Local.sTemp)
+		f.Intrinsic.Control.Else
+			v.Local.fQty.Set(0)
+		f.Intrinsic.Control.EndIf
+	'Get Thickness
+	v.Local.fThickness.Set(v.DataTable.dtMaterial(0).Thickness!FieldVal)
+	'Get material Used.
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Intrinsic.String.Build("Select Top 1 Adder from GCG_6827_2D_ADDER where Thickness = '{0}'", v.Local.fThickness, v.Local.sSQL)
+		f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, v.Local.fAdder)
+		v.Local.fPer.Set(v.DataTable.dtPartExtra(0).User8!fieldVal)
+	f.ODBC.Connection!con.Close
+	
+	f.Intrinsic.Control.If(v.Local.fPer, =, 0)	
+		f.Intrinsic.UI.Msgbox("Cut Percentage not found on Extra User Field 8.")	
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	'Calc Material used
+	f.Intrinsic.Math.Mult(v.Local.fLength, v.Local.fQty, v.Local.fArg1)
+	f.Intrinsic.Math.Div(v.Local.fArg1, v.DataTable.dtMaterial(0).Length!fieldVal, v.Local.fArg1)
+	'
+	f.Intrinsic.Math.Div(v.Local.fArg1, v.Local.fPer, v.Local.fArg1)
+	'If not on a List do Ceiling
+'	f.Intrinsic.Control.If(v.Local.sLineType.UCase, <>, "LIST")
+'		f.Intrinsic.Math.Ceiling(v.Local.fArg1, v.Local.fArg1)
+'	f.Intrinsic.Control.EndIf			
+	'SetMaterial Used.
+	f.Intrinsic.Control.If(v.DataTable.dtRouter(0).UOM!FieldValTrim, =, "FT")
+		f.Intrinsic.Math.Div(v.Local.fLength, 12, v.Local.fLength)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.Math.Mult(v.Local.fArg1, v.DataTable.dtMaterial(0).Weight!FieldVal, v.Local.fLength)
+	f.Intrinsic.Control.EndIf
+	
+	f.Data.DataTable.SetValue("dtMaterial", 0, "Material_Used", v.Local.fArg1)
+'	'Calcualte Router Data
+'	v.Local.fGross_Fts.Set(v.DataTable.dtMaterial(0).Gross_FT!FieldValFloat)
+'	'Set Material Use and Weight
+'	f.Intrinsic.Control.If(v.DataTable.dtMaterial(0).UOM!FieldValTrim, =, "EA")
+'		v.Local.fQtyRouterOne.Set(1)
+'	f.Intrinsic.Control.Else
+'		f.Intrinsic.Math.Div(v.Local.fGross_Fts, v.Local.fQty, v.Local.fQtyRouterOne)
+'		'v.Local.fQtyRouterOne.Set(v.DataTable.dtMaterial(0).weight!FieldVal)
+'	f.Intrinsic.Control.EndIf
+'	'Set Router
+'	f.Data.DataView.Create("dtRouter", "dvRouterM", 22, "LMO = 'M'", )
+'		f.Intrinsic.Control.If(v.DataView.dtRouter!dvRouterM.RowCount, >, 0)
+'			'Costs:
+'			v.Local.fCostUOM.Set(v.DataTable.dtMaterial(0).Cost_Lbs!FieldValFloat)
+'			f.Intrinsic.Math.Mult(v.Local.fCostUOM, v.Local.fQtyRouterOne, v.Local.fCostOne)
+'			f.Intrinsic.Math.Mult(v.Local.fCostOne, v.Local.fQty, v.Local.fCostLot)
+'			'Prices
+'			v.Local.fPriceUOM.Set(v.DataTable.dtMaterial(0).Price_Lbs!FieldValFloat)
+'			f.Intrinsic.Math.Mult(v.Local.fPriceUOM, v.Local.fQtyRouterOne, v.Local.fPriceOne)
+'			f.Intrinsic.Math.Mult(v.Local.fPriceOne, v.Local.fQty, v.Local.fPriceLot)
+'			'Set Values
+'			f.Data.DataView.SetValue("dtRouter", "dvRouterM", 0, "Qty", v.Local.fQtyRouterOne, "Cost_UOM", v.Local.fCostUOM , "Cost_One", v.Local.fCostOne, "Cost_Lot", v.Local.fCostLot, "Price_UOM", v.Local.fPriceUOM , "Price_One", v.Local.fPriceOne, "Price_Lot", v.Local.fPriceLot)
+'			f.Data.DataTable.AcceptChanges("dtRouter")
+'		f.Intrinsic.Control.EndIf
+'	f.Data.DataView.Close("dtRouter", "dvRouterM")
+	f.Intrinsic.String.Build("{3} pcs {1}{4} ", v.Screen.Form!ddlCutType.Text, v.Screen.Form!txtLengthID.Text, v.Screen.Form!txtWidthOD.Text, v.Screen.Form!txtQTY.Text, v.Ambient.DblQuote, v.Local.sText)
+	gui.Form.txtGroupNote.Text(v.Local.sText)
+	'Load Method
+	f.Intrinsic.Control.CallSub("LoadMethod")
+	'Calculate Totals
+	f.Intrinsic.Control.CallSub("calculateTotal")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.calcListOneDim.End
+
+Program.Sub.calcTwoDim.Start
+f.Intrinsic.Control.Try
+	'Check Line Type
+	f.Intrinsic.Control.If(v.Screen.Form!ddlLineType.Text, =, "Pull")
+		f.Intrinsic.Control.CallSub("calcPull")
+	f.Intrinsic.Control.ElseIf(v.Screen.Form!ddlLineType.Text, =, "Single")
+		f.Intrinsic.Control.CallSub("calcSingleTwoDim")
+	f.Intrinsic.Control.ElseIf(v.Screen.Form!ddlLineType.Text, =, "List")
+		f.Intrinsic.Control.CallSub("calcListwoDim")
+	f.Intrinsic.Control.Else	
+		f.Intrinsic.UI.Msgbox("No Line Type Selected.")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.calcTwoDim.End
+
+Program.Sub.calcSingleTwoDim.Start
+v.Local.sCutType.Declare
+
+v.Local.fQty.Declare
+
+v.Local.fWidth.Declare
+v.Local.fLength.Declare
+v.Local.fArea.Declare
+v.Local.fThickness.Declare
+
+v.Local.sSQL.Declare
+
+v.Local.fArg1.Declare
+v.Local.fArg2.Declare
+v.Local.fAdder.Declare
+v.Local.fPer.Declare
+
+v.Local.fGross_Lbs.Declare
+
+v.Local.fCuts.Declare
+'Router Variables
+v.Local.fQtyRouterOne.Declare
+v.Local.fCostUOM.Declare
+v.Local.fCostOne.Declare
+v.Local.fCostLot.Declare
+v.Local.fPriceUOM.Declare
+v.Local.fPriceOne.Declare
+v.Local.fPriceLot.Declare
+f.Intrinsic.Control.Try
+	v.Local.sCutType.Set(v.Screen.Form!ddlCutType.Text)
+	f.Intrinsic.String.Trim(v.Local.sCutType, v.Local.sCutType)
+	'Check Width Lenght
+	f.Intrinsic.Control.CallSub("CheckWL")
+	v.Local.fWidth.Set(v.Screen.Form!txtWidthOD.Text)
+	v.Local.fLength.Set(v.Screen.Form!txtLengthID.Text)
+	v.Global.fCurW.Set(v.Local.fWidth)
+	v.Global.fCurL.Set(v.Local.fLength)
+	v.Local.fQty.Set(v.Screen.Form!txtQTY.Text)
+	'Check Cut Type
+	f.Intrinsic.Control.SelectCase(v.Local.sCutType.UCase)
+		f.Intrinsic.Control.Case("SHAPE")
+		'Get Cuts
+			'(Width * 2) + (Length * 2)	
+			'1 ARGS
+			f.Intrinsic.Math.Mult(v.Local.fWidth, 2, v.Local.fWidth)
+			'2 ARGS
+			f.Intrinsic.Math.Mult(v.Local.fLength, 2, v.Local.fLength)
+			'+ 
+			f.Intrinsic.Math.Add(v.Local.fWidth, v.Local.fLength, v.Local.fCuts)
+		'set Cuts
+			f.Intrinsic.Control.If(v.Screen.Form!txtCuts.Text, <>, "")
+				v.Local.fCuts.Set(v.Screen.Form!txtCuts.Text)
+			f.Intrinsic.Control.Else
+				gui.Form.txtCuts.Text(v.Local.fCuts)
+			f.Intrinsic.Control.EndIf
+		'Get Material Used
+			'Get Thickness
+			v.Local.fThickness.Set(v.DataTable.dtMaterial(0).Thickness!FieldVal)
+			'Get Area
+			v.Local.fArea.Set(v.DataTable.dtMaterial(0).Area_In!FieldVal)
+			f.Intrinsic.Control.If(v.Local.fArea, =, 0)
+				v.Local.fArea.Set(1)
+			f.Intrinsic.Control.EndIf
+			'Get Adder
+			f.ODBC.Connection!con.OpenCompanyConnection
+				f.Intrinsic.String.Build("Select Top 1 Adder from GCG_6827_2D_ADDER where Thickness = '{0}'", v.Local.fThickness, v.Local.sSQL)
+				f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, v.Local.fAdder)
+				f.Intrinsic.String.Build("Select Top 1 Percentage from GCG_6827_2D_PERCENT where Area = '{0}'", v.Local.fArea, v.Local.sSQL)
+				f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, v.Local.fPer)
+			f.ODBC.Connection!con.Close
+			'Check if FPER
+			f.Intrinsic.Math.Div(v.Local.fWidth, 2, v.Local.fWidth)
+			f.Intrinsic.Math.Div(v.Local.fLength, 2, v.Local.fLength)
+			'First Args, Adding Adders
+			f.Intrinsic.Math.Add(v.Local.fLength, v.Local.fAdder, v.Local.fLength)
+			f.Intrinsic.Math.Add(v.Local.fWidth, v.Local.fAdder, v.Local.fWidth)
+			f.Intrinsic.Math.Mult(v.Local.fLength, v.Local.fWidth, v.Local.fQty, v.Local.fArg1)
+			f.Intrinsic.Math.Div(v.Local.fArg1, v.Local.fArea, v.Local.fArg1)
+			'Gross Up
+			f.Intrinsic.Math.Div(v.Local.fArg1, v.Local.fPer, v.Local.fArg1)
+			f.Intrinsic.Math.Ceiling(v.Local.fArg1, v.Local.fArg1)
+			f.Intrinsic.Math.Mult(v.Local.fArg1, v.Local.fPer, v.Local.fArg1)
+		'Set Material Used.
+			f.Data.DataTable.SetValue("dtMaterial", 0, "Material_Used", v.Local.fArg1)	
+	'End Case
+		f.Intrinsic.Control.Case("SAW")
+		'Get Cuts
+			'Width + 1
+			f.Intrinsic.Math.Add(v.Local.fWidth, 1, v.Local.fCuts)
+		'set Cuts
+			f.Intrinsic.Control.If(v.Screen.Form!txtCuts.Text, <>, "")
+				v.Local.fCuts.Set(v.Screen.Form!txtCuts.Text)
+			f.Intrinsic.Control.Else
+				gui.Form.txtCuts.Text(v.Local.fCuts)
+			f.Intrinsic.Control.EndIf
+		'Check which field is filled
+		f.Intrinsic.Control.If(v.Local.fLength, =, 0)
+			f.Intrinsic.Math.Mult(v.Local.fQty, v.Local.fWidth, v.Local.fArg1)
+			f.Intrinsic.Math.Div(v.Local.fArg1, v.DataTable.dtMaterial(0).Width!FieldValFloat, v.Local.fArg1)
+		f.Intrinsic.Control.Else
+			f.Intrinsic.Math.Mult(v.Local.fQty, v.Local.fLength, v.Local.fArg1)
+			f.Intrinsic.Math.Div(v.Local.fArg1, v.DataTable.dtMaterial(0).Length!FieldValFloat, v.Local.fArg1)
+		f.Intrinsic.Control.EndIf
+		'Get Material Used
+			'f.Intrinsic.Math.Div(1, v.Local.fQty, v.Local.fArg1)
+			f.Intrinsic.Math.Ceiling(v.Local.fArg1, v.Local.fArg1)
+		'Set Material Used.
+			f.Data.DataTable.SetValue("dtMaterial", 0, "Material_Used", v.Local.fArg1)	
+	'End Case
+		f.Intrinsic.Control.Case("OD/ID")
+		'Get Cuts
+			'PI*(width/2)^2 + PI*(Length/2)^2
+			'1 ARGS
+			f.Intrinsic.Math.Div(v.Local.fWidth, 2, v.Local.fWidth)
+			f.Intrinsic.Math.Mult(v.Local.fWidth, v.Local.fWidth, v.Ambient.PI, v.Local.fWidth)
+			'2 ARGS
+			f.Intrinsic.Math.Div(v.Local.fLength, 2, v.Local.fLength)
+			f.Intrinsic.Math.Mult(v.Local.fLength, v.Local.fLength, v.Ambient.PI, v.Local.fLength)
+			'+
+			f.Intrinsic.Math.Add(v.Local.fWidth, v.Local.fLength, v.Local.fCuts)
+		'set Cuts
+			f.Intrinsic.Control.If(v.Screen.Form!txtCuts.Text, <>, "")
+				v.Local.fCuts.Set(v.Screen.Form!txtCuts.Text)
+			f.Intrinsic.Control.Else
+				gui.Form.txtCuts.Text(v.Local.fCuts)
+			f.Intrinsic.Control.EndIf
+		'Get Material Used
+			f.Intrinsic.Math.Mult(v.Local.fQty, v.Local.fCuts, v.Local.fArg1)
+			f.Intrinsic.Math.Div(v.DataTable.dtMaterial(0).Area_In!FieldVal, v.Local.fArg1, v.Local.fArg1)
+			f.Intrinsic.Math.Ceiling(v.Local.fArg1, v.Local.fArg1)
+		'Set Material Used.
+			f.Data.DataTable.SetValue("dtMaterial", 0, "Material_Used", v.Local.fArg1)
+	'End Case
+	f.Intrinsic.Control.EndSelect
+'Calcualte Router Data
+	v.Local.fGross_Lbs.Set(v.DataTable.dtMaterial(0).Gross_LBS!FieldValFloat)
+	'Set Material Use and Weight
+	f.Intrinsic.Control.If(v.DataTable.dtMaterial(0).UOM!FieldValTrim, =, "EA")
+		v.Local.fQtyRouterOne.Set(1)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.Math.Div(v.Local.fGross_Lbs, v.Local.fQty, v.Local.fQtyRouterOne)
+		'v.Local.fQtyRouterOne.Set(v.DataTable.dtMaterial(0).weight!FieldVal)
+	f.Intrinsic.Control.EndIf
+	'Set Router
+	f.Data.DataView.Create("dtRouter", "dvRouterM", 22, "LMO = 'M'", )
+		f.Intrinsic.Control.If(v.DataView.dtRouter!dvRouterM.RowCount, >, 0)
+			'Costs:
+			v.Local.fCostUOM.Set(v.DataTable.dtMaterial(0).Cost_Lbs!FieldValFloat)
+			f.Intrinsic.Math.Mult(v.Local.fCostUOM, v.Local.fQtyRouterOne, v.Local.fCostOne)
+			f.Intrinsic.Math.Mult(v.Local.fCostOne, v.Local.fQty, v.Local.fCostLot)
+			'Prices
+			v.Local.fPriceUOM.Set(v.DataTable.dtMaterial(0).Price_Lbs!FieldValFloat)
+			f.Intrinsic.Math.Mult(v.Local.fPriceUOM, v.Local.fQtyRouterOne, v.Local.fPriceOne)
+			f.Intrinsic.Math.Mult(v.Local.fPriceOne, v.Local.fQty, v.Local.fPriceLot)
+			'Set Values
+			f.Data.DataView.SetValue("dtRouter", "dvRouterM", 0, "Qty", v.Local.fQtyRouterOne, "Cost_UOM", v.Local.fCostUOM , "Cost_One", v.Local.fCostOne, "Cost_Lot", v.Local.fCostLot, "Price_UOM", v.Local.fPriceUOM , "Price_One", v.Local.fPriceOne, "Price_Lot", v.Local.fPriceLot)
+			f.Data.DataTable.AcceptChanges("dtRouter")
+		f.Intrinsic.Control.EndIf
+	f.Data.DataView.Close("dtRouter", "dvRouterM")
+	'Load Method
+	f.Intrinsic.Control.CallSub("LoadMethod")
+	'Calculate Totals
+	f.Intrinsic.Control.CallSub("calculateTotal")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.calcSingleTwoDim.End
+
+Program.Sub.calcListwoDim.Start
+v.Local.sCutType.Declare
+
+v.Local.fQty.Declare
+
+v.Local.fWidth.Declare
+v.Local.fLength.Declare
+v.Local.fArea.Declare
+v.Local.fThickness.Declare
+
+v.Local.sSQL.Declare
+
+v.Local.fArg1.Declare
+v.Local.fArg2.Declare
+v.Local.fAdder.Declare
+v.Local.fPer.Declare
+
+v.Local.fGross_Lbs.Declare
+
+v.Local.fCuts.Declare
+'Router Variables
+v.Local.fQtyRouterOne.Declare
+v.Local.fCostUOM.Declare
+v.Local.fCostOne.Declare
+v.Local.fCostLot.Declare
+v.Local.fPriceUOM.Declare
+v.Local.fPriceOne.Declare
+v.Local.fPriceLot.Declare
+
+v.Local.sText.Declare
+f.Intrinsic.Control.Try
+	v.Local.sCutType.Set(v.Screen.Form!ddlCutType.Text)
+	f.Intrinsic.String.Trim(v.Local.sCutType, v.Local.sCutType)
+	'Check Width Lenght
+	f.Intrinsic.Control.CallSub("CheckWL")
+	v.Local.fWidth.Set(v.Screen.Form!txtWidthOD.Text)
+	v.Local.fLength.Set(v.Screen.Form!txtLengthID.Text)
+	v.Global.fCurW.Set(v.Local.fWidth)
+	v.Global.fCurL.Set(v.Local.fLength)
+	v.Local.fQty.Set(v.Screen.Form!txtQTY.Text)
+	'Check Cut Type
+	f.Intrinsic.Control.SelectCase(v.Local.sCutType.UCase)
+		f.Intrinsic.Control.Case("SHAPE")
+		'Get Cuts
+			'(Width * 2) + (Length * 2)	
+			'1 ARGS
+			f.Intrinsic.Math.Mult(v.Local.fWidth, 2, v.Local.fWidth)
+			'2 ARGS
+			f.Intrinsic.Math.Mult(v.Local.fLength, 2, v.Local.fLength)
+			'+ 
+			f.Intrinsic.Math.Add(v.Local.fWidth, v.Local.fLength, v.Local.fCuts)
+		'set Cuts
+			f.Intrinsic.Control.If(v.Screen.Form!txtCuts.Text, <>, "")
+				v.Local.fCuts.Set(v.Screen.Form!txtCuts.Text)
+			f.Intrinsic.Control.Else
+				gui.Form.txtCuts.Text(v.Local.fCuts)
+			f.Intrinsic.Control.EndIf
+		'Get Material Used
+			'Get Thickness
+			v.Local.fThickness.Set(v.DataTable.dtMaterial(0).Thickness!FieldVal)
+			'Get Area
+			v.Local.fArea.Set(v.DataTable.dtMaterial(0).Area_In!FieldVal)
+			f.Intrinsic.Control.If(v.Local.fArea, =, 0)
+				v.Local.fArea.Set(1)
+			f.Intrinsic.Control.EndIf
+			'Get Adder
+			f.ODBC.Connection!con.OpenCompanyConnection
+				f.Intrinsic.String.Build("Select Top 1 Adder from GCG_6827_2D_ADDER where Thickness = '{0}'", v.Local.fThickness, v.Local.sSQL)
+				f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, v.Local.fAdder)
+				f.Intrinsic.String.Build("Select Top 1 Percentage from GCG_6827_2D_PERCENT where Area = '{0}'", v.Local.fArea, v.Local.sSQL)
+				f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, v.Local.fPer)
+			f.ODBC.Connection!con.Close
+			'Check if FPER
+			f.Intrinsic.Math.Div(v.Local.fWidth, 2, v.Local.fWidth)
+			f.Intrinsic.Math.Div(v.Local.fLength, 2, v.Local.fLength)
+			'First Args, Adding Adders
+			f.Intrinsic.Math.Add(v.Local.fLength, v.Local.fAdder, v.Local.fLength)
+			f.Intrinsic.Math.Add(v.Local.fWidth, v.Local.fAdder, v.Local.fWidth)
+			f.Intrinsic.Math.Mult(v.Local.fLength, v.Local.fWidth, v.Local.fQty, v.Local.fArg1)
+			f.Intrinsic.Math.Div(v.Local.fArg1, v.Local.fArea, v.Local.fArg1)
+			'Gross Up
+			f.Intrinsic.Math.Div(v.Local.fArg1, v.Local.fPer, v.Local.fArg1)
+			'f.Intrinsic.Math.Ceiling(v.Local.fArg1, v.Local.fArg1)
+			f.Intrinsic.Math.Mult(v.Local.fArg1, v.Local.fPer, v.Local.fArg1)
+		'Set Material Used.
+			f.Data.DataTable.SetValue("dtMaterial", 0, "Material_Used", v.Local.fArg1)	
+	'End Case
+		f.Intrinsic.Control.Case("SAW")
+		'Get Cuts
+			'Width + 1
+			f.Intrinsic.Math.Add(v.Local.fWidth, 1, v.Local.fCuts)
+		'set Cuts
+			f.Intrinsic.Control.If(v.Screen.Form!txtCuts.Text, <>, "")
+				v.Local.fCuts.Set(v.Screen.Form!txtCuts.Text)
+			f.Intrinsic.Control.Else
+				gui.Form.txtCuts.Text(v.Local.fCuts)
+			f.Intrinsic.Control.EndIf
+		'Check which field is filled
+		f.Intrinsic.Control.If(v.Local.fLength, =, 0)
+			f.Intrinsic.Math.Mult(v.Local.fQty, v.Local.fWidth, v.Local.fArg1)
+			f.Intrinsic.Math.Div(v.Local.fArg1, v.DataTable.dtMaterial(0).Width!FieldValFloat, v.Local.fArg1)
+		f.Intrinsic.Control.Else
+			f.Intrinsic.Math.Mult(v.Local.fQty, v.Local.fLength, v.Local.fArg1)
+			f.Intrinsic.Math.Div(v.Local.fArg1, v.DataTable.dtMaterial(0).Length!FieldValFloat, v.Local.fArg1)
+		f.Intrinsic.Control.EndIf
+		'Get Material Used
+			'f.Intrinsic.Math.Div(1, v.Local.fQty, v.Local.fArg1)
+			'f.Intrinsic.Math.Ceiling(v.Local.fArg1, v.Local.fArg1)
+		'Set Material Used.
+			f.Data.DataTable.SetValue("dtMaterial", 0, "Material_Used", v.Local.fArg1)	
+	'End Case
+		f.Intrinsic.Control.Case("OD/ID")
+		'Get Cuts
+			'PI*(width/2)^2 + PI*(Length/2)^2
+			'1 ARGS
+			f.Intrinsic.Math.Div(v.Local.fWidth, 2, v.Local.fWidth)
+			f.Intrinsic.Math.Mult(v.Local.fWidth, v.Local.fWidth, v.Ambient.PI, v.Local.fWidth)
+			'2 ARGS
+			f.Intrinsic.Math.Div(v.Local.fLength, 2, v.Local.fLength)
+			f.Intrinsic.Math.Mult(v.Local.fLength, v.Local.fLength, v.Ambient.PI, v.Local.fLength)
+			'+
+			f.Intrinsic.Math.Add(v.Local.fWidth, v.Local.fLength, v.Local.fCuts)
+		'set Cuts
+			f.Intrinsic.Control.If(v.Screen.Form!txtCuts.Text, <>, "")
+				v.Local.fCuts.Set(v.Screen.Form!txtCuts.Text)
+			f.Intrinsic.Control.Else
+				gui.Form.txtCuts.Text(v.Local.fCuts)
+			f.Intrinsic.Control.EndIf
+		'Get Material Used
+			f.Intrinsic.Math.Mult(v.Local.fQty, v.Local.fCuts, v.Local.fArg1)
+			f.Intrinsic.Math.Div(v.DataTable.dtMaterial(0).Area_In!FieldVal, v.Local.fArg1, v.Local.fArg1)
+			'f.Intrinsic.Math.Ceiling(v.Local.fArg1, v.Local.fArg1)
+		'Set Material Used.
+			f.Data.DataTable.SetValue("dtMaterial", 0, "Material_Used", v.Local.fArg1)
+	'End Case
+	f.Intrinsic.Control.EndSelect
+''Calcualte Router Data
+'	v.Local.fGross_Lbs.Set(v.DataTable.dtMaterial(0).Gross_LBS!FieldValFloat)
+'	'Set Material Use and Weight
+'	f.Intrinsic.Control.If(v.DataTable.dtMaterial(0).UOM!FieldValTrim, =, "EA")
+'		v.Local.fQtyRouterOne.Set(1)
+'	f.Intrinsic.Control.Else
+'		f.Intrinsic.Math.Div(v.Local.fGross_Lbs, v.Local.fQty, v.Local.fQtyRouterOne)
+'		'v.Local.fQtyRouterOne.Set(v.DataTable.dtMaterial(0).weight!FieldVal)
+'	f.Intrinsic.Control.EndIf
+'	'Set Router
+'	f.Data.DataView.Create("dtRouter", "dvRouterM", 22, "LMO = 'M'", )
+'		f.Intrinsic.Control.If(v.DataView.dtRouter!dvRouterM.RowCount, >, 0)
+'			'Costs:
+'			v.Local.fCostUOM.Set(v.DataTable.dtMaterial(0).Cost_Lbs!FieldValFloat)
+'			f.Intrinsic.Math.Mult(v.Local.fCostUOM, v.Local.fQtyRouterOne, v.Local.fCostOne)
+'			f.Intrinsic.Math.Mult(v.Local.fCostOne, v.Local.fQty, v.Local.fCostLot)
+'			'Prices
+'			v.Local.fPriceUOM.Set(v.DataTable.dtMaterial(0).Price_Lbs!FieldValFloat)
+'			f.Intrinsic.Math.Mult(v.Local.fPriceUOM, v.Local.fQtyRouterOne, v.Local.fPriceOne)
+'			f.Intrinsic.Math.Mult(v.Local.fPriceOne, v.Local.fQty, v.Local.fPriceLot)
+'			'Set Values
+'			f.Data.DataView.SetValue("dtRouter", "dvRouterM", 0, "Qty", v.Local.fQtyRouterOne, "Cost_UOM", v.Local.fCostUOM , "Cost_One", v.Local.fCostOne, "Cost_Lot", v.Local.fCostLot, "Price_UOM", v.Local.fPriceUOM , "Price_One", v.Local.fPriceOne, "Price_Lot", v.Local.fPriceLot)
+'			f.Data.DataTable.AcceptChanges("dtRouter")
+'		f.Intrinsic.Control.EndIf
+'	f.Data.DataView.Close("dtRouter", "dvRouterM")
+		f.Intrinsic.String.Build("{3} pcs {1}{4} X {2}{4}", v.Screen.Form!ddlCutType.Text, v.Screen.Form!txtLengthID.Text, v.Screen.Form!txtWidthOD.Text, v.Screen.Form!txtQTY.Text, v.Ambient.DblQuote, v.Local.sText)
+		gui.Form.txtGroupNote.Text(v.Local.sText)
+	'Load Method
+	f.Intrinsic.Control.CallSub("LoadMethod")
+	'Calculate Totals
+	f.Intrinsic.Control.CallSub("calculateTotal")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.calcListwoDim.End
+
+Program.Sub.LoadMethod.Start
+v.Local.sSQL.Declare
+
+v.Local.fThickness.Declare
+v.Local.sCutType.Declare
+v.Local.sMaterialType.Declare
+v.Local.fInch.Declare
+
+v.Local.fQty.Declare
+v.Local.fStdCost.Declare
+
+v.Local.fStdPrice.Declare
+v.Local.fMin.Declare
+v.Local.fCalc.Declare
+v.Local.fCutSpeed.Declare
+
+v.Local.fSetup.Declare
+v.Local.sTemp.Declare
+v.Local.fActualPrice.Declare
+v.Local.fMult.Declare
+v.Local.bD_One.Declare
+v.Local.bD_Two.Declare
+
+v.Local.fCost_WC.Declare
+
+'Router Variables
+v.Local.fQtyRouterOne.Declare
+v.Local.fCostUOM.Declare
+v.Local.fCostOne.Declare
+v.Local.fCostLot.Declare
+v.Local.fPriceUOM.Declare
+v.Local.fPriceOne.Declare
+v.Local.fPriceLot.Declare
+
+v.Local.fTimeHR_One.Declare
+v.Local.fTimeHR_Lot.Declare
+
+v.Local.sCutTypeScreen.Declare
+f.Intrinsic.Control.Try
+'Set Variables
+	v.Local.fThickness.Set(v.DataTable.dtMaterial(0).Thickness!FieldVal)
+	v.Local.sMaterialType.Set(v.DataTable.dtMaterial(0).Material_Type!FieldVal)
+	v.Local.fInch.Set(v.Screen.Form!txtCuts.Text)
+	v.Local.fQty.Set(v.Screen.Form!txtQTY.Text)
+	v.Local.sCutTypeScreen.Set(v.Screen.Form!ddlCutType.Text)
+	f.Intrinsic.String.Trim(v.Local.sCutTypeScreen, v.Local.sCutTypeScreen)
+'Check for Empty
+	f.Intrinsic.Control.If(v.Screen.Form!ddlMethod.ItemData, =,"")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+'Get Data from DB	
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Intrinsic.String.Build("Select * from GCG_6827_METHOD where Method = '{0}'", v.Screen.Form!ddlMethod.ItemData, v.Local.sSQL)
+		f.Data.DataTable.CreateFromSQL("tmpDT", "con", v.Local.sSQL)
+		f.Data.DataTable.DeleteRow("dtMethod")
+		f.Data.DataTable.Merge("tmpDT", "dtMethod", false, 2)
+		f.Data.DataTable.AcceptChanges("dtMethod")
+		'Set Cut Type
+		v.Local.sCutType.Set(v.DataTable.tmpDT(0).Method_Type!FieldValTrim)
+		f.Intrinsic.Control.If(v.Local.sCutType.Trim, =, "SHEAR")
+			v.Local.fThickness.Set(0)
+		f.Intrinsic.Control.EndIf
+		v.Local.fMult.Set(v.DataTable.tmpDT(0).RuntimeMultiplier!FieldVal)
+		f.Intrinsic.Control.If(v.Global.sMat_Dimension, =, 1)
+			f.Intrinsic.Control.If(v.DataTable.tmpDT(0).D_One!FieldVal)
+			f.Intrinsic.Control.Else
+				f.Data.DataTable.Close("tmpDT")
+				f.Intrinsic.UI.Msgbox("The Selected Material is 2 Dimensional, the Selected Method does not allow it.")
+				f.Intrinsic.Control.ExitSub
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.If(v.Global.sMat_Dimension, =, 2)
+			f.Intrinsic.Control.If(v.DataTable.tmpDT(0).D_Two!FieldVal)
+			f.Intrinsic.Control.Else
+				f.Data.DataTable.Close("tmpDT")
+				f.Intrinsic.UI.Msgbox("The Selected Material is 1 Dimensional, the Selected Method does not allow it.")
+				f.Intrinsic.Control.ExitSub
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.EndIf
+		f.Data.DataTable.Close("tmpDT")
+		'Get Calc Price
+		f.Intrinsic.String.Build("Select top 1 standard_Bill from V_WORKCENTERS where machine = '{0}'", v.Screen.Form!ddlMethod.ItemData, v.Local.sSQL)
+		f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, v.Local.fPriceUOM)
+		'Get Calc Cost
+		f.Intrinsic.String.Build("Select top 1 standard_Cost from V_WORKCENTERS where machine = '{0}'", v.Screen.Form!ddlMethod.ItemData, v.Local.sSQL)
+		f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, v.Local.fCostUOM)
+		v.Local.fCost_WC.Set(v.Local.fCostUOM)
+		'Get Speed
+		f.Intrinsic.String.Build("Select top 1 Mat_Value from GCG_6827_Cuts where Inches >= '{0}' and CutType = '{1}' and Material = '{2}' order by inches asc", v.Local.fThickness, v.Local.sCutType.UCase, v.Local.sMaterialType.UCase, v.Local.sSQL)
+		f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, v.Local.fCutSpeed)
+	f.ODBC.Connection!con.Close
+	
+'Get Price
+	'Minimum
+	v.Local.fMin.Set(v.DataTable.dtMethod(0).Minimum!FieldVal)
+	v.Local.fSetup.Set(v.DataTable.dtMethod(0).Setup!FieldVal)
+	'
+	f.Intrinsic.Control.If(v.Local.fCutSpeed, =, 0)
+		v.Local.fCostUOM.Set(0)
+		v.Local.fCostOne.Set(0)
+		v.Local.fCostLot.Set(0)
+		v.Local.fPriceUOM.Set(0)
+		v.Local.fPriceOne.Set(0)
+		v.Local.fPriceLot.Set(0)
+	f.Intrinsic.Control.Else
+		'Get Calc
+		f.Intrinsic.Control.If(v.Global.sMat_Dimension, =, "1")
+			'New Calc
+			'f.Intrinsic.Math.Mult(v.Local.fQty, v.DataTable.dtMaterial(0).FaceArea.FieldValFloat, v.Local.fCalc)
+			f.Intrinsic.Math.Mult(v.DataTable.dtMaterial(0).FaceArea.FieldValFloat, 1, v.Local.fCalc)
+			f.Intrinsic.Math.Div(v.Local.fCalc, v.Local.fCutSpeed, v.Local.fTimeHR_One)
+			f.Intrinsic.Math.Div(v.Local.fTimeHR_One, 60, v.Local.fTimeHR_One)
+			'Price and cost for One
+			f.Intrinsic.Math.Mult(v.Local.fPriceUOM, v.Local.fTimeHR_One, v.Local.fPriceOne)
+			f.Intrinsic.Math.Mult(v.Local.fCostUOM, v.Local.fTimeHR_One, v.Local.fCostOne)
+			'Price adn Cost for Lot
+			f.Intrinsic.Math.Mult(v.Local.fTimeHR_One, v.Local.fQty, v.Local.fTimeHR_Lot)				
+			f.Intrinsic.Math.Mult(v.Local.fPriceUOM, v.Local.fTimeHR_Lot, v.Local.fPriceLot)
+			f.Intrinsic.Math.Mult(v.Local.fCostUOM, v.Local.fTimeHR_Lot, v.Local.fCostLot)
+		f.Intrinsic.Control.Else		
+			f.Intrinsic.Control.If(v.Local.sTemp.Trim, =, "SHEAR")
+				f.Intrinsic.Math.Mult(v.Local.fInch, v.Local.fCutSpeed, v.Local.fTimeHR_One)
+				f.Intrinsic.Math.Mult(v.Local.fTimeHR_One, v.Local.fMult, v.Local.fTimeHR_One)
+				f.Intrinsic.Math.Div(v.Local.fTimeHR_One, 60, v.Local.fTimeHR_One)
+				'Price and cost for One
+				f.Intrinsic.Math.Mult(v.Local.fPriceUOM, v.Local.fTimeHR_One, v.Local.fPriceOne)
+				f.Intrinsic.Math.Mult(v.Local.fCostUOM, v.Local.fTimeHR_One, v.Local.fCostOne)
+				'Price adn Cost for Lot
+				f.Intrinsic.Math.Mult(v.Local.fTimeHR_One, v.Local.fQty, v.Local.fTimeHR_Lot)				
+				f.Intrinsic.Math.Mult(v.Local.fPriceUOM, v.Local.fTimeHR_Lot, v.Local.fPriceLot)
+				f.Intrinsic.Math.Mult(v.Local.fCostUOM, v.Local.fTimeHR_Lot, v.Local.fCostLot)
+			f.Intrinsic.Control.Else
+			'2 Dimensional Materials
+				'Check if Saw
+				f.Intrinsic.Control.If( v.Local.sCutTypeScreen.UCase, =, "SAW")
+					'f.Intrinsic.Math.Mult(v.Local.fQty, v.DataTable.dtMaterial(0).FaceArea.FieldValFloat, v.Local.fCalc)
+					f.Intrinsic.Math.Mult(v.DataTable.dtMaterial(0).FaceArea.FieldValFloat, 1, v.Local.fCalc)
+					f.Intrinsic.Math.Div(v.Local.fCalc, v.Local.fCutSpeed, v.Local.fTimeHR_One)
+					f.Intrinsic.Math.Div(v.Local.fTimeHR_One, 60, v.Local.fTimeHR_One)
+					'Price and cost for One
+					f.Intrinsic.Math.Mult(v.Local.fPriceUOM, v.Local.fTimeHR_One, v.Local.fPriceOne)
+					f.Intrinsic.Math.Mult(v.Local.fCostUOM, v.Local.fTimeHR_One, v.Local.fCostOne)
+					'Price adn Cost for Lot
+					f.Intrinsic.Math.Mult(v.Local.fTimeHR_One, v.Local.fQty, v.Local.fTimeHR_Lot)				
+					f.Intrinsic.Math.Mult(v.Local.fPriceUOM, v.Local.fTimeHR_Lot, v.Local.fPriceLot)
+					f.Intrinsic.Math.Mult(v.Local.fCostUOM, v.Local.fTimeHR_Lot, v.Local.fCostLot)
+				f.Intrinsic.Control.Else
+					f.Intrinsic.Math.Div(v.Local.fInch, v.Local.fCutSpeed, v.Local.fTimeHR_One)
+					f.Intrinsic.Math.Mult(v.Local.fTimeHR_One, v.Local.fMult, v.Local.fTimeHR_One)
+					f.Intrinsic.Math.Div(v.Local.fTimeHR_One, 60, v.Local.fTimeHR_One)
+					'Price and cost for One
+					f.Intrinsic.Math.Mult(v.Local.fPriceUOM, v.Local.fTimeHR_One, v.Local.fPriceOne)
+					f.Intrinsic.Math.Mult(v.Local.fCostUOM, v.Local.fTimeHR_One, v.Local.fCostOne)
+					'Price adn Cost for Lot
+					f.Intrinsic.Math.Mult(v.Local.fTimeHR_One, v.Local.fQty, v.Local.fTimeHR_Lot)				
+					f.Intrinsic.Math.Mult(v.Local.fPriceUOM, v.Local.fTimeHR_Lot, v.Local.fPriceLot)
+					f.Intrinsic.Math.Mult(v.Local.fCostUOM, v.Local.fTimeHR_Lot, v.Local.fCostLot)
+				f.Intrinsic.Control.EndIf
+				
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.EndIf		
+	f.Intrinsic.Control.EndIf
+	'Get Actual price
+	'
+	f.Intrinsic.Control.If(v.Local.fPriceLot, <, v.Local.fMin)
+		v.Local.fPriceLot.Set(v.Local.fMin)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Math.Add(v.Local.fPriceLot, v.Local.fSetup, v.Local.fPriceLot)
+	f.Intrinsic.Math.Div(v.Local.fPriceLot, v.Local.fQty, v.Local.fPriceOne)
+	'Multiplier
+	'f.Intrinsic.Math.Mult(v.Local.fActualPrice, v.Local.fMult, v.Local.fActualPrice)
+	'Set Values
+	f.Data.DataTable.SetValue("dtMethod", 0, "Cost_WC", v.Local.fCostUOM, "Cost_One", v.Local.fCostOne, "Cost_Lot", v.Local.fCostLot, "Price_WC", v.Local.fPriceUOM, "Price_One", v.Local.fPriceOne, "Price_Lot", v.Local.fPriceLot, "Time_HR_One", v.Local.fTimeHR_One, "Time_HR_Lot", v.Local.fTimeHR_Lot)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.LoadMethod.End
+
+Program.Sub.Comments.Start
+${$5$}$3.0.0.0$}$1
+${$6$}$aanazco$}$20230125124542521$}$7aQAV3Tor/tR9bkuakHbuzQlHVuXCGOz8eP9dq02peX6notiJqOURnStqyNu9kk65pFUZm4hNU0=
+Program.Sub.Comments.End
